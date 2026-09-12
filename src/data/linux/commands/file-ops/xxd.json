@@ -1,0 +1,52 @@
+{
+  "name": "xxd",
+  "description": "以十六进制转储查看文件内容",
+  "synopsis": "xxd [选项] [文件]",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "十六进制",
+    "hex",
+    "转储",
+    "查看",
+    "二进制",
+    "dump",
+    "字节"
+  ],
+  "common_options": [
+    {
+      "name": "-b",
+      "description": "以二进制位形式显示"
+    },
+    {
+      "name": "-c",
+      "description": "每行显示的字节数，默认 16"
+    },
+    {
+      "name": "-l",
+      "description": "只显示前 n 个字节"
+    },
+    {
+      "name": "-r",
+      "description": "将十六进制转储还原为原始文件"
+    }
+  ],
+  "related": [
+    "cat",
+    "md5sum"
+  ],
+  "examples": [
+    {
+      "description": "以十六进制查看文件内容",
+      "code": "xxd file.bin"
+    },
+    {
+      "description": "只查看文件前 128 字节",
+      "code": "xxd -l 128 file.bin"
+    },
+    {
+      "description": "将十六进制转储还原为二进制文件",
+      "code": "xxd -r dump.hex > restored.bin"
+    }
+  ]
+}
