@@ -25,7 +25,9 @@ jobs:
           node-version: 20
           cache: npm
       - name: 安装依赖
-        run: npm ci
+        # 用 npm install 而非 npm ci：本仓库 lockfile 由 Windows 生成，
+        # 仅含 win32 平台的 rollup 二进制条目；npm install 会按 CI(linux) 平台实时解析补齐
+        run: npm install --no-audit --no-fund
       - name: 数据校验
         run: npm run check
       - name: 构建
