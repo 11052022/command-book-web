@@ -97,6 +97,29 @@ npm run check
 
 `npm run build` 输出纯静态 `dist/`，可部署到任意静态托管（Gitee Pages / GitHub Pages / Nginx / 对象存储）。hash 路由无需服务器 fallback。
 
+### GitHub Pages（自动部署，已配置）
+
+仓库已配置 GitHub Actions（`.github/workflows/deploy.yml`）：**push 到 `master` 即自动构建并发布**，无需手动操作。
+
+- 线上地址：https://11052022.github.io/command-book-web/
+- 更新流程：本地 `git commit` 后推送 GitHub 即可自动上线
+
+### 双远端提交（Gitee + GitHub）
+
+本地仓库同时关联两个远端：
+
+| 远端名 | 地址 | 用途 |
+|---|---|---|
+| `origin` | gitee.com/fang-mingrui/command-book-web | 国内源码镜像 |
+| `github` | github.com/11052022/command-book-web | 源码 + 触发自动部署 |
+
+```bash
+git push origin master   # 推 Gitee（国内备份）
+git push github master   # 推 GitHub（触发自动部署）
+```
+
+> 注意：GitHub 需要代理才能连接（本地代理端口 7897）。
+
 ## 文档
 
 - 用户手册（小白向）：`docs/user-guide.md`
