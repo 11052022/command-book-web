@@ -1,0 +1,90 @@
+{
+  "name": "CONFIG",
+  "description": "运行时获取或修改 Redis 配置参数——支持 GET（查看）、SET（修改未持久化）、REWRITE（写入文件）、RESETSTAT（重置统计）",
+  "synopsis": "CONFIG subcommand [argument ...]",
+  "category": "server",
+  "danger_level": "high",
+  "tags": [
+    "配置",
+    "参数",
+    "运维",
+    "调优",
+    "修改",
+    "危险"
+  ],
+  "builder_options": {
+    "subcommands": [
+      {
+        "name": "GET",
+        "label": "GET — 查看配置",
+        "arguments": [
+          { "key": "pattern", "label": "匹配模式", "placeholder": "*maxmemory*", "required": true }
+        ],
+        "tokens": [],
+        "exclusiveGroups": []
+      },
+      {
+        "name": "SET",
+        "label": "SET — 修改配置",
+        "arguments": [
+          { "key": "key", "label": "配置项", "placeholder": "maxmemory", "required": true },
+          { "key": "value", "label": "新值", "placeholder": "1073741824", "required": true }
+        ],
+        "tokens": [],
+        "exclusiveGroups": []
+      },
+      {
+        "name": "REWRITE",
+        "label": "REWRITE — 持久化",
+        "arguments": [],
+        "tokens": [],
+        "exclusiveGroups": []
+      },
+      {
+        "name": "RESETSTAT",
+        "label": "RESETSTAT — 重置统计",
+        "arguments": [],
+        "tokens": [],
+        "exclusiveGroups": []
+      }
+    ]
+  },
+  "common_options": [
+    {
+      "name": "CONFIG GET <pattern>",
+      "description": "获取匹配 pattern 的配置项及其值"
+    },
+    {
+      "name": "CONFIG SET <key> <value>",
+      "description": "运行时设置配置项（不持久化，重启失效）"
+    },
+    {
+      "name": "CONFIG REWRITE",
+      "description": "将当前运行配置写回 redis.conf 文件持久化"
+    },
+    {
+      "name": "CONFIG RESETSTAT",
+      "description": "重置 INFO stats 中的统计计数器"
+    }
+  ],
+  "related": [
+    "INFO",
+    "SLOWLOG",
+    "MEMORY",
+    "SAVE"
+  ],
+  "examples": [
+    {
+      "description": "查看所有日志相关配置",
+      "code": "CONFIG GET *log*"
+    },
+    {
+      "description": "运行时修改 maxmemory 为 1GB",
+      "code": "CONFIG SET maxmemory 1073741824"
+    },
+    {
+      "description": "持久化当前配置到文件",
+      "code": "CONFIG REWRITE"
+    }
+  ]
+}

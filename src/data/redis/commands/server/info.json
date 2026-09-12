@@ -1,0 +1,65 @@
+{
+  "name": "INFO",
+  "description": "返回 Redis 服务器的各种统计信息和状态——包括内存、CPU、客户端、复制、持久化等全面数据",
+  "synopsis": "INFO [section]",
+  "category": "server",
+  "danger_level": "low",
+  "tags": [
+    "信息",
+    "统计",
+    "监控",
+    "诊断",
+    "状态",
+    "运维"
+  ],
+  "common_options": [
+    {
+      "name": "server",
+      "description": "服务器常规信息"
+    },
+    {
+      "name": "clients",
+      "description": "客户端连接信息"
+    },
+    {
+      "name": "memory",
+      "description": "内存使用详情"
+    },
+    {
+      "name": "stats",
+      "description": "命令统计和性能计数"
+    },
+    {
+      "name": "replication",
+      "description": "主从复制状态"
+    },
+    {
+      "name": "cpu",
+      "description": "CPU 消耗统计"
+    },
+    {
+      "name": "persistence",
+      "description": "RDB 和 AOF 持久化信息"
+    }
+  ],
+  "related": [
+    "CONFIG",
+    "MONITOR",
+    "SLOWLOG",
+    "MEMORY"
+  ],
+  "examples": [
+    {
+      "description": "查看全部信息",
+      "code": "INFO"
+    },
+    {
+      "description": "只看内存相关",
+      "code": "INFO memory"
+    },
+    {
+      "description": "查看复制状态",
+      "code": "INFO replication"
+    }
+  ]
+}

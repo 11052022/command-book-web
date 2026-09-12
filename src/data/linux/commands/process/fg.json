@@ -1,0 +1,28 @@
+{
+  "name": "fg",
+  "description": "将后台作业恢复到前台运行",
+  "synopsis": "fg [作业号]",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "前台",
+    "恢复",
+    "后台",
+    "作业"
+  ],
+  "common_options": [],
+  "related": [
+    "bg",
+    "jobs"
+  ],
+  "examples": [
+    {
+      "description": "将最后一个后台任务恢复到前台",
+      "code": "fg"
+    },
+    {
+      "description": "将指定作业号的任务恢复到前台",
+      "code": "fg %1"
+    }
+  ]
+}

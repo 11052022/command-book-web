@@ -1,0 +1,49 @@
+{
+  "name": "tail",
+  "description": "输出文件末尾的若干行",
+  "synopsis": "tail [选项] [文件...]",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "查看",
+    "末尾",
+    "尾部",
+    "最后",
+    "文件",
+    "跟踪",
+    "实时"
+  ],
+  "common_options": [
+    {
+      "name": "-n",
+      "description": "指定输出的行数（默认 10）"
+    },
+    {
+      "name": "-f",
+      "description": "实时跟踪文件新增内容"
+    },
+    {
+      "name": "-F",
+      "description": "同 -f 但文件被删除重建后继续跟踪"
+    }
+  ],
+  "related": [
+    "head",
+    "less",
+    "cat"
+  ],
+  "examples": [
+    {
+      "description": "查看文件最后 10 行",
+      "code": "tail file.txt"
+    },
+    {
+      "description": "查看文件最后 50 行",
+      "code": "tail -n 50 file.txt"
+    },
+    {
+      "description": "实时查看日志",
+      "code": "tail -f /var/log/syslog"
+    }
+  ]
+}

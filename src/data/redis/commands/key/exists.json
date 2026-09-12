@@ -1,0 +1,23 @@
+{
+  "name": "EXISTS",
+  "description": "检查一个或多个 key 是否存在",
+  "synopsis": "EXISTS key [key ...]",
+  "category": "key",
+  "danger_level": "low",
+  "tags": [
+    "存在",
+    "判断",
+    "检查"
+  ],
+  "common_options": [],
+  "related": [
+    "DEL",
+    "TYPE"
+  ],
+  "examples": [
+    {
+      "description": "检查 key 是否存在",
+      "code": "EXISTS user:1:name"
+    }
+  ]
+}

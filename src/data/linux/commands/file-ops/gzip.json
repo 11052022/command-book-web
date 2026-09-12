@@ -1,0 +1,50 @@
+{
+  "name": "gzip",
+  "description": "使用 GNU zip 压缩文件",
+  "synopsis": "gzip [选项] 文件...",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "压缩",
+    "文件",
+    "gzip"
+  ],
+  "common_options": [
+    {
+      "name": "-d",
+      "description": "解压（等同 gunzip）"
+    },
+    {
+      "name": "-k",
+      "description": "保留原始文件"
+    },
+    {
+      "name": "-v",
+      "description": "显示压缩信息"
+    },
+    {
+      "name": "-r",
+      "description": "递归压缩目录中所有文件"
+    }
+  ],
+  "related": [
+    "gunzip",
+    "tar",
+    "bzip2",
+    "xz"
+  ],
+  "examples": [
+    {
+      "description": "压缩文件",
+      "code": "gzip file.txt"
+    },
+    {
+      "description": "解压文件",
+      "code": "gzip -d file.txt.gz"
+    },
+    {
+      "description": "压缩但保留原文件",
+      "code": "gzip -k file.txt"
+    }
+  ]
+}

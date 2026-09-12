@@ -1,0 +1,44 @@
+{
+  "name": "XTRIM",
+  "description": "裁剪 Stream 长度——按 MAXLEN（最大消息数）或 MINID（最小 ID）策略删除旧消息",
+  "synopsis": "XTRIM key MAXLEN [=|~] count",
+  "category": "stream",
+  "danger_level": "medium",
+  "tags": [
+    "裁剪",
+    "截断",
+    "限制长度",
+    "Stream",
+    "清理"
+  ],
+  "common_options": [
+    {
+      "name": "MAXLEN = count",
+      "description": "精确裁剪，严格保留 count 条"
+    },
+    {
+      "name": "MAXLEN ~ count",
+      "description": "近似裁剪，性能更好（推荐）"
+    },
+    {
+      "name": "MINID = id",
+      "description": "删除所有 ID 小于指定值的消息"
+    }
+  ],
+  "related": [
+    "XADD",
+    "XDEL",
+    "XLEN",
+    "XRANGE"
+  ],
+  "examples": [
+    {
+      "description": "裁剪为最多保留 1000 条（近似，高效）",
+      "code": "XTRIM mystream MAXLEN ~ 1000"
+    },
+    {
+      "description": "精确裁剪为 1000 条",
+      "code": "XTRIM mystream MAXLEN = 1000"
+    }
+  ]
+}

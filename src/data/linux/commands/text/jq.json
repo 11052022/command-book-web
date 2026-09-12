@@ -1,0 +1,53 @@
+{
+  "name": "jq",
+  "description": "命令行 JSON 处理工具",
+  "synopsis": "jq [选项] 过滤器 [文件]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": [
+    "JSON",
+    "处理",
+    "查询",
+    "格式化",
+    "API",
+    "解析",
+    "过滤"
+  ],
+  "related": [
+    "yq",
+    "json_pp",
+    "python"
+  ],
+  "common_options": [
+    {
+      "name": "-r",
+      "description": "输出原始字符串（不带引号）"
+    },
+    {
+      "name": "-c",
+      "description": "紧凑输出"
+    },
+    {
+      "name": "-s",
+      "description": "将输入视为数组"
+    }
+  ],
+  "examples": [
+    {
+      "description": "美化 JSON 输出",
+      "code": "cat data.json | jq ."
+    },
+    {
+      "description": "提取字段",
+      "code": "jq -r '.name' data.json"
+    },
+    {
+      "description": "过滤数组元素",
+      "code": "jq '.[] | select(.age > 18)' users.json"
+    },
+    {
+      "description": "从 curl API 响应提取数据",
+      "code": "curl -s api.example.com | jq '.data[0].id'"
+    }
+  ]
+}

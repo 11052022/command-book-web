@@ -1,0 +1,25 @@
+{
+  "name": "SISMEMBER",
+  "description": "判断 member 元素是否是集合的成员",
+  "synopsis": "SISMEMBER key member",
+  "category": "set",
+  "danger_level": "low",
+  "tags": [
+    "判断",
+    "存在",
+    "集合",
+    "成员",
+    "检查"
+  ],
+  "common_options": [],
+  "related": [
+    "SADD",
+    "SMEMBERS"
+  ],
+  "examples": [
+    {
+      "description": "检查用户是否有 vip 标签",
+      "code": "SISMEMBER user:1:tags vip"
+    }
+  ]
+}

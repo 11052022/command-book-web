@@ -1,0 +1,35 @@
+{
+  "name": "service",
+  "description": "管理 SysV init 服务（传统 init 系统）",
+  "synopsis": "service 服务名 命令",
+  "category": "进程管理",
+  "danger_level": "high",
+  "tags": [
+    "服务",
+    "启动",
+    "停止",
+    "重启",
+    "SysV",
+    "init"
+  ],
+  "related": [
+    "systemctl",
+    "systemd",
+    "chkconfig"
+  ],
+  "common_options": [],
+  "examples": [
+    {
+      "description": "启动服务",
+      "code": "sudo service nginx start"
+    },
+    {
+      "description": "查看服务状态",
+      "code": "sudo service nginx status"
+    },
+    {
+      "description": "重启服务",
+      "code": "sudo service nginx restart"
+    }
+  ]
+}

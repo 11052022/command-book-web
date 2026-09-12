@@ -1,0 +1,36 @@
+{
+  "name": "HSET",
+  "description": "将哈希表 key 中的字段设为指定值",
+  "synopsis": "HSET key field value [field value ...]",
+  "category": "hash",
+  "danger_level": "low",
+  "tags": [
+    "设置",
+    "写入",
+    "哈希",
+    "字段",
+    "对象"
+  ],
+  "common_options": [],
+  "related": [
+    "HGET",
+    "HGETALL",
+    "HDEL"
+  ],
+  "builder_options": {
+    "arguments": [
+      { "key": "key", "label": "Key", "placeholder": "user:1", "required": true },
+      { "key": "field", "label": "字段名", "placeholder": "name", "required": true },
+      { "key": "value", "label": "字段值", "placeholder": "Alice", "required": true },
+      { "key": "extra", "label": "更多 (field value ...)", "placeholder": "age 25 city Beijing", "required": false }
+    ],
+    "tokens": [],
+    "exclusiveGroups": []
+  },
+  "examples": [
+    {
+      "description": "设置用户信息",
+      "code": "HSET user:1 name Alice age 25 city Beijing"
+    }
+  ]
+}

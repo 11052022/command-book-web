@@ -1,0 +1,56 @@
+{
+  "name": "nmap",
+  "description": "网络扫描和安全审计工具",
+  "synopsis": "nmap [扫描类型] [选项] 目标",
+  "category": "网络相关",
+  "danger_level": "high",
+  "tags": [
+    "扫描",
+    "端口",
+    "安全",
+    "网络",
+    "探测",
+    "审计"
+  ],
+  "related": [
+    "nc",
+    "netstat",
+    "masscan"
+  ],
+  "common_options": [
+    {
+      "name": "-sS",
+      "description": "SYN 半开扫描"
+    },
+    {
+      "name": "-p",
+      "description": "指定端口范围"
+    },
+    {
+      "name": "-sV",
+      "description": "探测服务版本"
+    },
+    {
+      "name": "-O",
+      "description": "探测操作系统"
+    },
+    {
+      "name": "-A",
+      "description": "全面扫描"
+    }
+  ],
+  "examples": [
+    {
+      "description": "扫描常用端口",
+      "code": "nmap 192.168.1.1"
+    },
+    {
+      "description": "快速扫描指定端口",
+      "code": "nmap -p 22,80,443 192.168.1.1"
+    },
+    {
+      "description": "全面探测",
+      "code": "nmap -A 192.168.1.1"
+    }
+  ]
+}

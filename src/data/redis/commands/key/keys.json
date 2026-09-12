@@ -1,0 +1,26 @@
+{
+  "name": "KEYS",
+  "description": "查找所有匹配给定模式的 key（生产慎用）",
+  "synopsis": "KEYS pattern",
+  "category": "key",
+  "danger_level": "high",
+  "tags": [
+    "查找",
+    "搜索",
+    "模式",
+    "匹配",
+    "危险",
+    "阻塞"
+  ],
+  "common_options": [],
+  "related": [
+    "SCAN",
+    "TYPE"
+  ],
+  "examples": [
+    {
+      "description": "查找所有 user 开头的 key",
+      "code": "KEYS user:*"
+    }
+  ]
+}

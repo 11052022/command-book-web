@@ -1,0 +1,64 @@
+{
+  "name": "cp",
+  "description": "复制文件或目录",
+  "synopsis": "cp [选项] 源文件 目标文件",
+  "category": "文件操作",
+  "danger_level": "medium",
+  "tags": [
+    "复制",
+    "拷贝",
+    "文件",
+    "目录",
+    "备份"
+  ],
+  "common_options": [
+    {
+      "name": "-r",
+      "description": "递归复制整个目录"
+    },
+    {
+      "name": "-i",
+      "description": "覆盖前询问确认"
+    },
+    {
+      "name": "-v",
+      "description": "显示复制过程"
+    },
+    {
+      "name": "-u",
+      "description": "仅复制更新的文件（目标更旧或不存在）"
+    },
+    {
+      "name": "-p",
+      "description": "保留文件属性（权限、时间戳）"
+    },
+    {
+      "name": "-a",
+      "description": "归档模式，保留所有属性和链接"
+    }
+  ],
+  "related": [
+    "mv",
+    "rsync",
+    "scp",
+    "dd"
+  ],
+  "examples": [
+    {
+      "description": "复制文件",
+      "code": "cp file.txt file_backup.txt"
+    },
+    {
+      "description": "复制目录（递归）",
+      "code": "cp -r /src/dir /dest/dir"
+    },
+    {
+      "description": "复制前询问确认",
+      "code": "cp -i source.txt dest.txt"
+    },
+    {
+      "description": "保留属性的归档复制",
+      "code": "cp -a /home/user /backup/user"
+    }
+  ]
+}

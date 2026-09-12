@@ -1,0 +1,86 @@
+{
+  "name": "sort",
+  "description": "对文本行进行排序",
+  "synopsis": "sort [选项] [文件...]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": [
+    "排序",
+    "文本",
+    "升序",
+    "降序",
+    "排列"
+  ],
+  "common_options": [
+    {
+      "name": "-n",
+      "description": "按数值排序"
+    },
+    {
+      "name": "-r",
+      "description": "反向排序（降序）"
+    },
+    {
+      "name": "-k",
+      "description": "指定排序的列"
+    },
+    {
+      "name": "-u",
+      "description": "去重（仅保留唯一行）"
+    },
+    {
+      "name": "-t",
+      "description": "指定字段分隔符"
+    },
+    {
+      "name": "-h",
+      "description": "人类可读的大小排序（如 2K, 1G）"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "排序模式",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-n", "label": "按数值排序", "hint": "numeric" },
+          { "flag": "-r", "label": "降序排列", "hint": "reverse" },
+          { "flag": "-u", "label": "去重（只保留唯一行）", "hint": "unique" },
+          { "flag": "-h", "label": "人类可读大小排序", "hint": "2K < 1G" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "file", "label": "输入文件", "placeholder": "data.txt 或留空（stdin）", "prefix": "" },
+      { "key": "key", "label": "排序字段 (列号)", "placeholder": "2", "prefix": "-k" },
+      { "key": "sep", "label": "字段分隔符", "placeholder": ", 或 : 或 \\t", "prefix": "-t" }
+    ]
+  },
+  "related": [
+    "uniq",
+    "awk",
+    "comm"
+  ],
+  "examples": [
+    {
+      "description": "按字母序排序",
+      "code": "sort file.txt"
+    },
+    {
+      "description": "按数值降序排序",
+      "code": "sort -nr numbers.txt"
+    },
+    {
+      "description": "按第 2 列排序（逗号分隔）",
+      "code": "sort -t',' -k2 data.csv"
+    },
+    {
+      "description": "去重排序",
+      "code": "sort -u file.txt"
+    },
+    {
+      "description": "人类可读大小排序",
+      "code": "du -h | sort -hr"
+    }
+  ]
+}

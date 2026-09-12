@@ -1,0 +1,27 @@
+{
+  "name": "SDIFF",
+  "description": "返回第一个集合与其它集合的差集——即存在于第一个集合但不在其他集合中的成员",
+  "synopsis": "SDIFF key [key ...]",
+  "category": "set",
+  "danger_level": "low",
+  "tags": [
+    "差集",
+    "集合",
+    "排除",
+    "差异",
+    "计算"
+  ],
+  "common_options": [],
+  "related": [
+    "SINTER",
+    "SUNION",
+    "SMEMBERS",
+    "SDIFFSTORE"
+  ],
+  "examples": [
+    {
+      "description": "找出「我可能感兴趣」但还未关注的用户",
+      "code": "SDIFF recommend:users following:me"
+    }
+  ]
+}

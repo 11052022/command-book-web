@@ -1,0 +1,18 @@
+{
+  "name": "git describe",
+  "description": "显示离当前提交最近的标签——常用于生成版本号或验证当前代码基于哪个 tag",
+  "synopsis": "git describe [options] [<commit>]",
+  "category": "tag",
+  "danger_level": "low",
+  "tags": ["标签", "describe", "版本号", "tag", "距离"],
+  "common_options": [
+    { "name": "--tags", "description": "使用所有标签（不仅仅是带注释的）" },
+    { "name": "--always", "description": "没有标签时显示缩写的 SHA" },
+    { "name": "--dirty", "description": "工作区有未提交修改时追加 -dirty 后缀" }
+  ],
+  "related": ["git tag", "git log", "git rev-parse"],
+  "examples": [
+    { "description": "查看当前提交最接近的标签", "code": "git describe --tags" },
+    { "description": "生成含修改标记的描述", "code": "git describe --tags --dirty" }
+  ]
+}

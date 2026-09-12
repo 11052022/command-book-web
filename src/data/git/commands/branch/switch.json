@@ -1,0 +1,20 @@
+{
+  "name": "git switch",
+  "description": "切换到指定分支——Git 2.23+ 引入，比 checkout 更专注，纯分支切换不涉及文件恢复",
+  "synopsis": "git switch [options] <branch>",
+  "category": "branch",
+  "danger_level": "low",
+  "tags": ["切换", "switch", "分支", "2.23"],
+  "common_options": [
+    { "name": "-c <branch>", "description": "创建新分支并切换过去" },
+    { "name": "-C <branch>", "description": "强制创建新分支并切换（覆盖已有）" },
+    { "name": "--detach", "description": "切换到指定提交（分离 HEAD）" },
+    { "name": "- / --discard-changes", "description": "放弃本地修改后切换" }
+  ],
+  "related": ["git checkout", "git restore", "git branch"],
+  "examples": [
+    { "description": "切换到已有分支", "code": "git switch main" },
+    { "description": "创建并切换到新分支", "code": "git switch -c feature/new-api" },
+    { "description": "返回上一个分支", "code": "git switch -" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "git revert",
+  "description": "创建一个新提交来撤销指定提交的更改——安全的撤销方式，不重写历史，适合已推送的提交",
+  "synopsis": "git revert [options] <commit>...",
+  "category": "branch",
+  "danger_level": "medium",
+  "tags": ["撤销", "revert", "回滚", "安全", "历史"],
+  "common_options": [
+    { "name": "-n / --no-commit", "description": "只应用撤销到暂存区但不自动提交" },
+    { "name": "-m <parent>", "description": "撤销合并提交时需指定保留哪一侧的父提交（通常用 -m 1）" },
+    { "name": "--continue", "description": "解决冲突后继续" }
+  ],
+  "related": ["git reset", "git cherry-pick", "git log"],
+  "examples": [
+    { "description": "撤销某个提交", "code": "git revert a1b2c3d" },
+    { "description": "撤销合并提交", "code": "git revert -m 1 <merge-commit>" }
+  ]
+}

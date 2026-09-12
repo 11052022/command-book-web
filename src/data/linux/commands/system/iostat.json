@@ -1,0 +1,49 @@
+{
+  "name": "iostat",
+  "description": "查看 CPU 和磁盘 I/O 统计",
+  "synopsis": "iostat [选项] [间隔] [次数]",
+  "category": "系统信息",
+  "danger_level": "low",
+  "tags": [
+    "IO",
+    "磁盘",
+    "CPU",
+    "性能",
+    "统计",
+    "监控"
+  ],
+  "related": [
+    "vmstat",
+    "mpstat",
+    "iotop",
+    "sar"
+  ],
+  "common_options": [
+    {
+      "name": "-x",
+      "description": "显示扩展统计"
+    },
+    {
+      "name": "-d",
+      "description": "只显示磁盘统计"
+    },
+    {
+      "name": "-c",
+      "description": "只显示 CPU 统计"
+    }
+  ],
+  "examples": [
+    {
+      "description": "查看 I/O 统计",
+      "code": "iostat"
+    },
+    {
+      "description": "每 1 秒刷新扩展统计",
+      "code": "iostat -x 1"
+    },
+    {
+      "description": "只查看磁盘 I/O",
+      "code": "iostat -d 2 5"
+    }
+  ]
+}

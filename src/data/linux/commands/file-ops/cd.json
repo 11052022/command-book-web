@@ -1,0 +1,44 @@
+{
+  "name": "cd",
+  "description": "切换工作目录",
+  "synopsis": "cd [目录路径]",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "切换",
+    "目录",
+    "进入",
+    "跳转",
+    "文件夹",
+    "路径"
+  ],
+  "common_options": [],
+  "related": [
+    "pwd",
+    "ls",
+    "pushd",
+    "popd"
+  ],
+  "examples": [
+    {
+      "description": "进入指定目录",
+      "code": "cd /home/user/projects"
+    },
+    {
+      "description": "返回上级目录",
+      "code": "cd .."
+    },
+    {
+      "description": "返回上一次所在的目录",
+      "code": "cd -"
+    },
+    {
+      "description": "回到用户主目录",
+      "code": "cd ~"
+    },
+    {
+      "description": "回到用户主目录",
+      "code": "cd"
+    }
+  ]
+}

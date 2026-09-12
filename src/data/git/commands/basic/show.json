@@ -1,0 +1,19 @@
+{
+  "name": "git show",
+  "description": "显示指定对象（提交、标签、分支等）的详细信息——包括提交信息和完整 diff",
+  "synopsis": "git show [options] <object>",
+  "category": "basic",
+  "danger_level": "low",
+  "tags": ["查看", "显示", "提交详情", "show", "diff"],
+  "common_options": [
+    { "name": "--stat", "description": "只显示文件变更统计" },
+    { "name": "--name-only", "description": "只显示变更文件名" },
+    { "name": "--format=<fmt>", "description": "自定义输出格式" }
+  ],
+  "related": ["git log", "git diff", "git cat-file"],
+  "examples": [
+    { "description": "查看最新提交的详细信息", "code": "git show HEAD" },
+    { "description": "查看指定提交的内容", "code": "git show a1b2c3d" },
+    { "description": "只显示变更文件列表", "code": "git show --name-only HEAD" }
+  ]
+}

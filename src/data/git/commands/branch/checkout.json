@@ -1,0 +1,34 @@
+{
+  "name": "git checkout",
+  "description": "切换分支或恢复工作区文件——Git 最常用的命令之一，具有分支切换和文件恢复双重功能",
+  "synopsis": "git checkout [options] <branch> | <commit> -- <file>",
+  "category": "branch",
+  "danger_level": "medium",
+  "tags": ["切换", "checkout", "分支", "恢复", "文件", "检出"],
+  "common_options": [
+    { "name": "-b <branch>", "description": "创建新分支并切换到该分支" },
+    { "name": "-B <branch>", "description": "创建/重置新分支并切换" },
+    { "name": "-- <file>", "description": "从指定提交中恢复文件到工作区" },
+    { "name": "--detach", "description": "切换到指定提交（分离 HEAD 状态）" }
+  ],
+  "related": ["git switch", "git restore", "git branch", "git reset"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-b", "label": "创建新分支并切换", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "target", "label": "目标分支/提交", "placeholder": "main 或 feature/new-ui", "prefix": "" }
+    ]
+  },
+  "examples": [
+    { "description": "切换到已有分支", "code": "git checkout main" },
+    { "description": "创建并切换到新分支", "code": "git checkout -b feature/new-dashboard" },
+    { "description": "撤销某文件的修改（恢复到上一次提交状态）", "code": "git checkout -- app.js" }
+  ]
+}

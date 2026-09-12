@@ -1,0 +1,40 @@
+{
+  "name": "traceroute",
+  "description": "跟踪数据包到目标主机的路由路径",
+  "synopsis": "traceroute [选项] 目标",
+  "category": "网络相关",
+  "danger_level": "low",
+  "tags": [
+    "网络",
+    "路由",
+    "跟踪",
+    "诊断",
+    "路径",
+    "跳数"
+  ],
+  "common_options": [
+    {
+      "name": "-n",
+      "description": "不解析主机名（更快）"
+    },
+    {
+      "name": "-m",
+      "description": "指定最大跳数"
+    }
+  ],
+  "related": [
+    "ping",
+    "mtr",
+    "tracepath"
+  ],
+  "examples": [
+    {
+      "description": "跟踪到目标的路由",
+      "code": "traceroute google.com"
+    },
+    {
+      "description": "不解析主机名",
+      "code": "traceroute -n 8.8.8.8"
+    }
+  ]
+}

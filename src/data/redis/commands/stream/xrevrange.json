@@ -1,0 +1,33 @@
+{
+  "name": "XREVRANGE",
+  "description": "按 ID 范围逆序读取 Stream 中的消息——从最新到最旧，与 XRANGE 相反",
+  "synopsis": "XREVRANGE key end start [COUNT count]",
+  "category": "stream",
+  "danger_level": "low",
+  "tags": [
+    "读取",
+    "范围",
+    "逆序",
+    "Stream",
+    "消息",
+    "最新"
+  ],
+  "common_options": [
+    {
+      "name": "COUNT count",
+      "description": "最多返回 count 条消息"
+    }
+  ],
+  "related": [
+    "XRANGE",
+    "XADD",
+    "XREAD",
+    "XLEN"
+  ],
+  "examples": [
+    {
+      "description": "查看最新 5 条消息（逆序）",
+      "code": "XREVRANGE mystream + - COUNT 5"
+    }
+  ]
+}

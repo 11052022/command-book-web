@@ -1,0 +1,36 @@
+{
+  "name": "git rebase",
+  "description": "将当前分支的提交重新应用到另一个分支的顶端——产生线性历史，比 merge 更干净但更危险",
+  "synopsis": "git rebase [options] [<upstream>] [<branch>]",
+  "category": "branch",
+  "danger_level": "high",
+  "tags": ["变基", "rebase", "线性", "重写历史", "整理", "提交"],
+  "common_options": [
+    { "name": "-i / --interactive", "description": "交互式变基——可以压缩、重排、删除、修改提交" },
+    { "name": "--onto <newbase>", "description": "将提交移植到新的基点上" },
+    { "name": "--continue", "description": "解决冲突后继续变基" },
+    { "name": "--abort", "description": "放弃变基并恢复到变基前状态" },
+    { "name": "--skip", "description": "跳过当前有冲突的提交" },
+    { "name": "-X theirs / -X ours", "description": "冲突时自动选择策略" }
+  ],
+  "related": ["git merge", "git cherry-pick", "git reflog", "git reset"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "变基模式",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-i", "label": "交互式变基", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "upstream", "label": "目标分支/基点", "placeholder": "main 或 HEAD~5", "prefix": "" }
+    ]
+  },
+  "examples": [
+    { "description": "将当前分支变基到 main", "code": "git rebase main" },
+    { "description": "交互式变基最近 5 次提交", "code": "git rebase -i HEAD~5" },
+    { "description": "将 feature 移植到新的基点上", "code": "git rebase --onto main develop feature" }
+  ]
+}

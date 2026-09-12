@@ -1,0 +1,30 @@
+{
+  "name": "ZCOUNT",
+  "description": "返回有序集合中分数在指定区间内的成员数量",
+  "synopsis": "ZCOUNT key min max",
+  "category": "sorted-set",
+  "danger_level": "low",
+  "tags": [
+    "计数",
+    "区间",
+    "分数",
+    "有序集合",
+    "统计"
+  ],
+  "common_options": [],
+  "related": [
+    "ZRANGEBYSCORE",
+    "ZCARD",
+    "ZADD"
+  ],
+  "examples": [
+    {
+      "description": "统计分数 60-100 的及格人数",
+      "code": "ZCOUNT exam:scores 60 100"
+    },
+    {
+      "description": "排除边界（用小括号表示开区间）",
+      "code": "ZCOUNT exam:scores (60 (100"
+    }
+  ]
+}

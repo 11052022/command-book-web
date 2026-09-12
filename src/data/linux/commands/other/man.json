@@ -1,0 +1,42 @@
+{
+  "name": "man",
+  "description": "查看命令的手册页（帮助文档）",
+  "synopsis": "man [选项] 命令名",
+  "category": "其他常用",
+  "danger_level": "low",
+  "tags": [
+    "帮助",
+    "文档",
+    "手册",
+    "查看",
+    "说明",
+    "参考"
+  ],
+  "common_options": [
+    {
+      "name": "-k",
+      "description": "按关键词搜索手册页"
+    }
+  ],
+  "related": [
+    "tldr",
+    "info",
+    "whatis",
+    "help",
+    "--help"
+  ],
+  "examples": [
+    {
+      "description": "查看命令手册",
+      "code": "man ls"
+    },
+    {
+      "description": "搜索相关手册",
+      "code": "man -k partition"
+    },
+    {
+      "description": "查看指定章节",
+      "code": "man 5 crontab"
+    }
+  ]
+}

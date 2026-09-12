@@ -1,0 +1,76 @@
+{
+  "name": "kill",
+  "description": "向进程发送信号（通常用于终止进程）",
+  "synopsis": "kill [选项] <PID>",
+  "category": "进程管理",
+  "danger_level": "critical",
+  "tags": [
+    "终止",
+    "结束",
+    "杀掉",
+    "进程",
+    "信号",
+    "停止",
+    "强制"
+  ],
+  "common_options": [
+    {
+      "name": "-9",
+      "description": "强制终止（SIGKILL）"
+    },
+    {
+      "name": "-15",
+      "description": "正常终止（SIGTERM，默认）"
+    },
+    {
+      "name": "-l",
+      "description": "列出所有可用的信号"
+    },
+    {
+      "name": "-HUP",
+      "description": "挂起信号，常用于重载配置"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "发送信号",
+        "type": "radio",
+        "options": [
+          { "flag": "", "label": "SIGTERM（正常终止，默认）", "hint": "signal 15" },
+          { "flag": "-9", "label": "SIGKILL（强制杀死）", "hint": "signal 9" },
+          { "flag": "-HUP", "label": "SIGHUP（挂起/重载配置）", "hint": "signal 1" },
+          { "flag": "-2", "label": "SIGINT（Ctrl+C 中断）", "hint": "signal 2" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "pid", "label": "进程 PID", "placeholder": "1234", "prefix": "" }
+    ]
+  },
+  "related": [
+    "killall",
+    "pkill",
+    "ps",
+    "top",
+    "pgrep"
+  ],
+  "examples": [
+    {
+      "description": "正常终止进程",
+      "code": "kill 1234"
+    },
+    {
+      "description": "强制终止进程",
+      "code": "kill -9 1234"
+    },
+    {
+      "description": "重载进程配置",
+      "code": "kill -HUP 1234"
+    },
+    {
+      "description": "列出所有信号",
+      "code": "kill -l"
+    }
+  ]
+}

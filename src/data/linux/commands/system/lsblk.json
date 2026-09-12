@@ -1,0 +1,41 @@
+{
+  "name": "lsblk",
+  "description": "列出块设备信息（磁盘、分区）",
+  "synopsis": "lsblk [选项]",
+  "category": "系统信息",
+  "danger_level": "low",
+  "tags": [
+    "磁盘",
+    "分区",
+    "设备",
+    "查看",
+    "块",
+    "USB"
+  ],
+  "common_options": [
+    {
+      "name": "-f",
+      "description": "显示文件系统和 UUID"
+    },
+    {
+      "name": "-o",
+      "description": "自定义输出列"
+    }
+  ],
+  "related": [
+    "fdisk",
+    "blkid",
+    "df",
+    "mount"
+  ],
+  "examples": [
+    {
+      "description": "查看所有块设备",
+      "code": "lsblk"
+    },
+    {
+      "description": "查看设备及文件系统",
+      "code": "lsblk -f"
+    }
+  ]
+}

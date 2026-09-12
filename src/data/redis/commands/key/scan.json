@@ -1,0 +1,37 @@
+{
+  "name": "SCAN",
+  "description": "迭代当前数据库中的 key（非阻塞，推荐用于生产）",
+  "synopsis": "SCAN cursor [MATCH pattern] [COUNT count]",
+  "category": "key",
+  "danger_level": "low",
+  "tags": [
+    "扫描",
+    "迭代",
+    "键",
+    "生产安全",
+    "游标",
+    "分页"
+  ],
+  "common_options": [],
+  "related": [
+    "KEYS",
+    "TYPE"
+  ],
+  "builder_options": {
+    "arguments": [
+      { "key": "cursor", "label": "游标", "placeholder": "0", "required": true }
+    ],
+    "tokens": [
+      { "key": "MATCH", "label": "匹配 pattern", "hasValue": true, "placeholder": "user:*" },
+      { "key": "COUNT", "label": "每次迭代返回数量（建议值）", "hasValue": true, "placeholder": "100" },
+      { "key": "TYPE", "label": "只返回指定类型的 key", "hasValue": true, "placeholder": "string" }
+    ],
+    "exclusiveGroups": []
+  },
+  "examples": [
+    {
+      "description": "逐步扫描所有 user:* key",
+      "code": "SCAN 0 MATCH user:* COUNT 100"
+    }
+  ]
+}

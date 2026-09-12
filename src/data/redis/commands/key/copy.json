@@ -1,0 +1,35 @@
+{
+  "name": "COPY",
+  "description": "将 key 的值复制到新 key（Redis 6.2+），支持 REPLACE 选项覆盖已存在的目标 key，原子操作无需 GET+SET 两步",
+  "synopsis": "COPY source destination [DB dest-db] [REPLACE]",
+  "category": "key",
+  "danger_level": "low",
+  "tags": [
+    "复制",
+    "克隆",
+    "备份",
+    "原子"
+  ],
+  "common_options": [
+    {
+      "name": "REPLACE",
+      "description": "如果目标 key 已存在则覆盖"
+    }
+  ],
+  "related": [
+    "DUMP",
+    "RESTORE",
+    "RENAME",
+    "MOVE"
+  ],
+  "examples": [
+    {
+      "description": "快速克隆一个 key 的值",
+      "code": "COPY user:1:profile user:1:profile-backup"
+    },
+    {
+      "description": "覆盖式复制",
+      "code": "COPY session:abc session:current REPLACE"
+    }
+  ]
+}

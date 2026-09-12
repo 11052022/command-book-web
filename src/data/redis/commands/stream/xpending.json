@@ -1,0 +1,37 @@
+{
+  "name": "XPENDING",
+  "description": "查看消费者组中待处理的消息——用于监控消息积压、排查未 ACK 消息、消费者健康检查",
+  "synopsis": "XPENDING key group [[IDLE min-idle-time] start end count [consumer]]",
+  "category": "stream",
+  "danger_level": "low",
+  "tags": [
+    "待处理",
+    "PEL",
+    "消费者组",
+    "诊断",
+    "监控",
+    "Stream"
+  ],
+  "common_options": [
+    {
+      "name": "IDLE ms",
+      "description": "只返回空闲超过指定毫秒的消息"
+    }
+  ],
+  "related": [
+    "XACK",
+    "XREADGROUP",
+    "XGROUP",
+    "XADD"
+  ],
+  "examples": [
+    {
+      "description": "查看消费者组待处理消息总数",
+      "code": "XPENDING mystream mygroup"
+    },
+    {
+      "description": "查看超过 60 秒未 ACK 的消息（异常排查）",
+      "code": "XPENDING mystream mygroup IDLE 60000 - + 10"
+    }
+  ]
+}

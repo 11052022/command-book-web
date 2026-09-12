@@ -1,0 +1,21 @@
+{
+  "name": "git worktree",
+  "description": "管理多个工作目录——同一仓库同时 checkout 到不同文件夹，免去来回切换分支的麻烦",
+  "synopsis": "git worktree <add | list | remove | prune> [options]",
+  "category": "branch",
+  "danger_level": "low",
+  "tags": ["工作树", "worktree", "多分支", "并行", "切换"],
+  "common_options": [
+    { "name": "add <path> <branch>", "description": "在新路径检出指定分支（创建一个新的工作目录）" },
+    { "name": "add -b <branch> <path>", "description": "创建新分支并在新路径检出" },
+    { "name": "list", "description": "列出所有工作目录" },
+    { "name": "remove <path>", "description": "删除工作目录（分支必须已合并）" },
+    { "name": "prune", "description": "清理已不存在的工作目录记录" }
+  ],
+  "related": ["git branch", "git checkout", "git switch", "git stash"],
+  "examples": [
+    { "description": "在 ../project-hotfix 目录检出 hotfix 分支", "code": "git worktree add ../project-hotfix hotfix" },
+    { "description": "查看所有工作目录", "code": "git worktree list" },
+    { "description": "删除 worktree（先确认已合并）", "code": "git worktree remove ../project-hotfix" }
+  ]
+}

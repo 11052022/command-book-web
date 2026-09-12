@@ -1,0 +1,27 @@
+{
+  "name": "LASTSAVE",
+  "description": "返回最近一次 Redis 成功将数据保存到磁盘的 Unix 时间戳——用于确认备份是否完成",
+  "synopsis": "LASTSAVE",
+  "category": "server",
+  "danger_level": "low",
+  "tags": [
+    "持久化",
+    "时间戳",
+    "备份",
+    "检查",
+    "运维"
+  ],
+  "common_options": [],
+  "related": [
+    "SAVE",
+    "BGSAVE",
+    "INFO",
+    "TIME"
+  ],
+  "examples": [
+    {
+      "description": "查看上次成功持久化的时间",
+      "code": "LASTSAVE"
+    }
+  ]
+}

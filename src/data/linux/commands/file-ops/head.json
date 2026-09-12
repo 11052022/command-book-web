@@ -1,0 +1,44 @@
+{
+  "name": "head",
+  "description": "输出文件开头的若干行",
+  "synopsis": "head [选项] [文件...]",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "查看",
+    "开头",
+    "前几行",
+    "文件",
+    "头部"
+  ],
+  "common_options": [
+    {
+      "name": "-n",
+      "description": "指定输出的行数（默认 10）"
+    },
+    {
+      "name": "-c",
+      "description": "输出前 N 个字节"
+    }
+  ],
+  "related": [
+    "tail",
+    "less",
+    "cat",
+    "sed"
+  ],
+  "examples": [
+    {
+      "description": "查看文件前 10 行",
+      "code": "head file.txt"
+    },
+    {
+      "description": "查看文件前 20 行",
+      "code": "head -n 20 file.txt"
+    },
+    {
+      "description": "查看文件前 100 个字节",
+      "code": "head -c 100 file.txt"
+    }
+  ]
+}

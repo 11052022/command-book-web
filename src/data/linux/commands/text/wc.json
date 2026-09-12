@@ -1,0 +1,57 @@
+{
+  "name": "wc",
+  "description": "统计文件的行数、单词数和字节数",
+  "synopsis": "wc [选项] [文件...]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": [
+    "统计",
+    "行数",
+    "单词",
+    "计数",
+    "数量",
+    "字数",
+    "大小"
+  ],
+  "common_options": [
+    {
+      "name": "-l",
+      "description": "只显示行数"
+    },
+    {
+      "name": "-w",
+      "description": "只显示单词数"
+    },
+    {
+      "name": "-c",
+      "description": "只显示字节数"
+    },
+    {
+      "name": "-m",
+      "description": "只显示字符数"
+    }
+  ],
+  "related": [
+    "du",
+    "cat",
+    "awk"
+  ],
+  "examples": [
+    {
+      "description": "统计文件行数",
+      "code": "wc -l file.txt"
+    },
+    {
+      "description": "统计文件字数",
+      "code": "wc -w essay.txt"
+    },
+    {
+      "description": "统计目录下文件数量",
+      "code": "ls | wc -l"
+    },
+    {
+      "description": "统计代码行数",
+      "code": "find . -name \"*.js\" | xargs wc -l"
+    }
+  ]
+}

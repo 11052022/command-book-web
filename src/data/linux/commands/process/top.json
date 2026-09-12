@@ -1,0 +1,54 @@
+{
+  "name": "top",
+  "description": "实时显示系统进程和资源使用情况",
+  "synopsis": "top [选项]",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "进程",
+    "监控",
+    "实时",
+    "资源",
+    "CPU",
+    "内存",
+    "性能"
+  ],
+  "common_options": [
+    {
+      "name": "-u",
+      "description": "只显示指定用户的进程"
+    },
+    {
+      "name": "-p",
+      "description": "只监控指定 PID"
+    },
+    {
+      "name": "-d",
+      "description": "指定刷新间隔（秒）"
+    },
+    {
+      "name": "-o",
+      "description": "按指定字段排序"
+    }
+  ],
+  "related": [
+    "htop",
+    "ps",
+    "vmstat",
+    "glances"
+  ],
+  "examples": [
+    {
+      "description": "启动实时进程监控",
+      "code": "top"
+    },
+    {
+      "description": "每 2 秒刷新一次",
+      "code": "top -d 2"
+    },
+    {
+      "description": "只监控特定进程",
+      "code": "top -p 1234"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "MEMORY",
+  "description": "内存诊断工具——查看内存使用详情、分析 key 的内存占用、获取优化建议",
+  "synopsis": "MEMORY subcommand [argument ...]",
+  "category": "server",
+  "danger_level": "low",
+  "tags": [
+    "内存",
+    "诊断",
+    "优化",
+    "分析",
+    "运维"
+  ],
+  "common_options": [
+    {
+      "name": "MEMORY USAGE <key> [SAMPLES count]",
+      "description": "估算指定 key 及其值占用的内存字节数"
+    },
+    {
+      "name": "MEMORY STATS",
+      "description": "返回内存使用的详细统计信息"
+    },
+    {
+      "name": "MEMORY DOCTOR",
+      "description": "输出内存问题诊断报告和优化建议"
+    },
+    {
+      "name": "MEMORY MALLOC-STATS",
+      "description": "返回内存分配器内部统计"
+    }
+  ],
+  "related": [
+    "INFO",
+    "CONFIG",
+    "OBJECT",
+    "UNLINK"
+  ],
+  "examples": [
+    {
+      "description": "估算大 key 占用内存",
+      "code": "MEMORY USAGE big:hash:key"
+    },
+    {
+      "description": "获取内存诊断报告",
+      "code": "MEMORY DOCTOR"
+    }
+  ]
+}

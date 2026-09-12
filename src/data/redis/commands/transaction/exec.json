@@ -1,0 +1,31 @@
+{
+  "name": "EXEC",
+  "description": "执行 MULTI 开启的事务块中所有排队的命令——所有命令按顺序原子执行，中间不会被其他客户端打断",
+  "synopsis": "EXEC",
+  "category": "transaction",
+  "danger_level": "medium",
+  "tags": [
+    "事务",
+    "执行",
+    "原子",
+    "提交",
+    "批量"
+  ],
+  "common_options": [],
+  "related": [
+    "MULTI",
+    "DISCARD",
+    "WATCH",
+    "UNWATCH"
+  ],
+  "examples": [
+    {
+      "description": "提交事务块",
+      "code": "MULTI\nSET key1 val1\nSET key2 val2\nEXEC  # 返回 [OK, OK]"
+    },
+    {
+      "description": "WATCH 后的 EXEC——如果被监视 key 被修改，EXEC 返回 nil",
+      "code": "WATCH balance\nMULTI\nDECRBY balance 100\nEXEC  # 若 balance 被修改则返回 nil"
+    }
+  ]
+}

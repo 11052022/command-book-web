@@ -1,0 +1,52 @@
+{
+  "name": "snap",
+  "description": "Ubuntu 的通用包管理系统",
+  "synopsis": "snap [命令] [包名]",
+  "category": "包管理",
+  "danger_level": "medium",
+  "tags": [
+    "包",
+    "安装",
+    "软件",
+    "Ubuntu",
+    "snap",
+    "通用"
+  ],
+  "common_options": [
+    {
+      "name": "install",
+      "description": "安装 snap 包"
+    },
+    {
+      "name": "remove",
+      "description": "移除 snap 包"
+    },
+    {
+      "name": "list",
+      "description": "列出已安装的 snap 包"
+    },
+    {
+      "name": "find",
+      "description": "搜索 snap 包"
+    }
+  ],
+  "related": [
+    "apt",
+    "flatpak",
+    "appimage"
+  ],
+  "examples": [
+    {
+      "description": "搜索软件包",
+      "code": "snap find vscode"
+    },
+    {
+      "description": "安装软件包",
+      "code": "sudo snap install vscode"
+    },
+    {
+      "description": "列出已安装的包",
+      "code": "snap list"
+    }
+  ]
+}

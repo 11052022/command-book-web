@@ -1,0 +1,108 @@
+{
+  "name": "tar",
+  "description": "打包/解包归档文件",
+  "synopsis": "tar [选项] [文件...]",
+  "category": "文件操作",
+  "danger_level": "medium",
+  "tags": [
+    "打包",
+    "解压",
+    "压缩",
+    "归档",
+    "备份",
+    "解包"
+  ],
+  "common_options": [
+    {
+      "name": "-c",
+      "description": "创建归档"
+    },
+    {
+      "name": "-x",
+      "description": "解压归档"
+    },
+    {
+      "name": "-v",
+      "description": "显示处理过程"
+    },
+    {
+      "name": "-f",
+      "description": "指定归档文件名"
+    },
+    {
+      "name": "-z",
+      "description": "使用 gzip 压缩/解压"
+    },
+    {
+      "name": "-j",
+      "description": "使用 bzip2 压缩/解压"
+    },
+    {
+      "name": "-t",
+      "description": "列出归档内容"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "操作模式（选一个）",
+        "type": "radio",
+        "options": [
+          { "flag": "-c", "label": "创建归档", "hint": "create" },
+          { "flag": "-x", "label": "解压归档", "hint": "extract" },
+          { "flag": "-t", "label": "列出归档内容", "hint": "list" }
+        ]
+      },
+      {
+        "label": "压缩方式",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-z", "label": "gzip (.tar.gz)", "hint": "" },
+          { "flag": "-j", "label": "bzip2 (.tar.bz2)", "hint": "" },
+          { "flag": "-J", "label": "xz (.tar.xz)", "hint": "" }
+        ]
+      },
+      {
+        "label": "附加选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-v", "label": "显示处理过程", "hint": "verbose" },
+          { "flag": "-k", "label": "不覆盖已有文件", "hint": "keep old files" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "archive", "label": "归档文件名", "placeholder": "archive.tar.gz", "prefix": "-f" },
+      { "key": "target", "label": "目标文件/目录", "placeholder": "./mydata" }
+    ]
+  },
+  "related": [
+    "gzip",
+    "zip",
+    "unzip",
+    "bzip2",
+    "xz"
+  ],
+  "examples": [
+    {
+      "description": "打包目录为 tar.gz",
+      "code": "tar -czvf archive.tar.gz /path/to/dir"
+    },
+    {
+      "description": "解压 tar.gz",
+      "code": "tar -xzvf archive.tar.gz"
+    },
+    {
+      "description": "解压到指定目录",
+      "code": "tar -xzvf archive.tar.gz -C /target/dir"
+    },
+    {
+      "description": "列出归档内容（不解压）",
+      "code": "tar -tzvf archive.tar.gz"
+    },
+    {
+      "description": "打包为 tar.bz2",
+      "code": "tar -cjvf archive.tar.bz2 /path/to/dir"
+    }
+  ]
+}

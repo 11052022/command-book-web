@@ -1,0 +1,43 @@
+{
+  "name": "ZRANGE",
+  "description": "按索引区间返回有序集合中的成员（分数低到高）",
+  "synopsis": "ZRANGE key start stop [WITHSCORES]",
+  "category": "sorted-set",
+  "danger_level": "low",
+  "tags": [
+    "范围",
+    "有序集合",
+    "查询",
+    "排名",
+    "升序"
+  ],
+  "common_options": [],
+  "related": [
+    "ZREVRANGE",
+    "ZRANK",
+    "ZADD"
+  ],
+  "builder_options": {
+    "arguments": [
+      { "key": "key", "label": "Key", "placeholder": "leaderboard", "required": true },
+      { "key": "start", "label": "起始索引", "placeholder": "0", "required": true },
+      { "key": "stop", "label": "结束索引", "placeholder": "9", "required": true }
+    ],
+    "tokens": [
+      { "key": "WITHSCORES", "label": "同时返回分数", "hasValue": false },
+      { "key": "BYSCORE", "label": "按分数范围查询", "hasValue": false },
+      { "key": "BYLEX", "label": "按字典序范围查询", "hasValue": false },
+      { "key": "REV", "label": "逆序排列", "hasValue": false },
+      { "key": "LIMIT", "label": "分页（offset count）", "hasValue": true, "placeholder": "0 10" }
+    ],
+    "exclusiveGroups": [
+      { "label": "范围模式", "tokens": ["BYSCORE", "BYLEX"] }
+    ]
+  },
+  "examples": [
+    {
+      "description": "获取排行榜 Top 10（升序）",
+      "code": "ZRANGE leaderboard 0 9 WITHSCORES"
+    }
+  ]
+}

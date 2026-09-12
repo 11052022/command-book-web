@@ -1,0 +1,44 @@
+{
+  "name": "who",
+  "description": "显示当前登录系统的用户",
+  "synopsis": "who [选项]",
+  "category": "用户权限",
+  "danger_level": "low",
+  "tags": [
+    "登录",
+    "用户",
+    "查看",
+    "在线",
+    "当前"
+  ],
+  "common_options": [
+    {
+      "name": "-b",
+      "description": "显示系统最近启动时间"
+    },
+    {
+      "name": "-r",
+      "description": "显示当前运行级别"
+    }
+  ],
+  "related": [
+    "whoami",
+    "w",
+    "last",
+    "users"
+  ],
+  "examples": [
+    {
+      "description": "查看当前登录用户",
+      "code": "who"
+    },
+    {
+      "description": "查看系统启动时间",
+      "code": "who -b"
+    },
+    {
+      "description": "查看自己是谁",
+      "code": "whoami"
+    }
+  ]
+}

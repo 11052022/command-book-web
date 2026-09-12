@@ -1,0 +1,25 @@
+{
+  "name": "RPOP",
+  "description": "移除并返回列表的最后一个元素",
+  "synopsis": "RPOP key [count]",
+  "category": "list",
+  "danger_level": "medium",
+  "tags": [
+    "弹出",
+    "列表",
+    "尾部",
+    "移除",
+    "消费"
+  ],
+  "common_options": [],
+  "related": [
+    "RPUSH",
+    "LPOP"
+  ],
+  "examples": [
+    {
+      "description": "从队列尾部取出任务",
+      "code": "RPOP queue:tasks"
+    }
+  ]
+}

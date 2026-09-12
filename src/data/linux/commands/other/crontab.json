@@ -1,0 +1,49 @@
+{
+  "name": "crontab",
+  "description": "管理定时任务（cron jobs）",
+  "synopsis": "crontab [选项]",
+  "category": "其他常用",
+  "danger_level": "medium",
+  "tags": [
+    "定时",
+    "计划",
+    "任务",
+    "自动化",
+    "周期",
+    "调度"
+  ],
+  "common_options": [
+    {
+      "name": "-e",
+      "description": "编辑当前用户的 crontab"
+    },
+    {
+      "name": "-l",
+      "description": "列出当前用户的 crontab"
+    },
+    {
+      "name": "-r",
+      "description": "删除当前用户的 crontab"
+    }
+  ],
+  "related": [
+    "cron",
+    "at",
+    "systemd.timer",
+    "anacron"
+  ],
+  "examples": [
+    {
+      "description": "编辑定时任务",
+      "code": "crontab -e"
+    },
+    {
+      "description": "查看定时任务",
+      "code": "crontab -l"
+    },
+    {
+      "description": "每天凌晨 2 点执行备份（crontab 格式）",
+      "code": "0 2 * * * /scripts/backup.sh"
+    }
+  ]
+}

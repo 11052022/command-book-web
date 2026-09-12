@@ -1,0 +1,67 @@
+{
+  "name": "dd",
+  "description": "按块复制和转换文件（常用于制作启动盘）",
+  "synopsis": "dd if=输入 of=输出 [选项]",
+  "category": "磁盘存储",
+  "danger_level": "critical",
+  "tags": [
+    "复制",
+    "磁盘",
+    "备份",
+    "克隆",
+    "写入",
+    "镜像",
+    "USB"
+  ],
+  "common_options": [
+    {
+      "name": "bs",
+      "description": "块大小（如 4M）"
+    },
+    {
+      "name": "count",
+      "description": "复制的块数"
+    },
+    {
+      "name": "status",
+      "description": "进度显示（status=progress）"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "附加选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "status=progress", "label": "显示进度", "hint": "" },
+          { "flag": "conv=fsync", "label": "写入后同步（更安全）", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "if", "label": "输入文件 (if)", "placeholder": "/dev/sda 或 ubuntu.iso", "prefix": "if=" },
+      { "key": "of", "label": "输出文件 (of)", "placeholder": "/dev/sdb 或 disk.img", "prefix": "of=" },
+      { "key": "bs", "label": "块大小 (bs)", "placeholder": "4M", "prefix": "bs=" },
+      { "key": "count", "label": "块数量 (count)", "placeholder": "留空=全部", "prefix": "count=" }
+    ]
+  },
+  "related": [
+    "cp",
+    "cat",
+    "pv"
+  ],
+  "examples": [
+    {
+      "description": "制作 USB 启动盘（危险！确保 of 正确）",
+      "code": "sudo dd if=ubuntu.iso of=/dev/sdb bs=4M status=progress"
+    },
+    {
+      "description": "备份整个磁盘",
+      "code": "sudo dd if=/dev/sda of=/backup/disk.img bs=4M status=progress"
+    },
+    {
+      "description": "创建指定大小的文件",
+      "code": "dd if=/dev/zero of=testfile bs=1M count=100"
+    }
+  ]
+}

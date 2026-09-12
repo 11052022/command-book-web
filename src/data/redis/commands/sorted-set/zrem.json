@@ -1,0 +1,24 @@
+{
+  "name": "ZREM",
+  "description": "移除有序集合中的一个或多个成员",
+  "synopsis": "ZREM key member [member ...]",
+  "category": "sorted-set",
+  "danger_level": "medium",
+  "tags": [
+    "移除",
+    "删除",
+    "有序集合",
+    "成员"
+  ],
+  "common_options": [],
+  "related": [
+    "ZADD",
+    "ZRANK"
+  ],
+  "examples": [
+    {
+      "description": "从排行榜移除玩家",
+      "code": "ZREM leaderboard player:2"
+    }
+  ]
+}

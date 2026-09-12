@@ -1,0 +1,36 @@
+{
+  "name": "md5sum",
+  "description": "计算文件的 MD5 校验值",
+  "synopsis": "md5sum [选项] 文件...",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "校验",
+    "MD5",
+    "哈希",
+    "完整性",
+    "验证",
+    "文件"
+  ],
+  "related": [
+    "sha256sum",
+    "sha1sum",
+    "cksum"
+  ],
+  "common_options": [
+    {
+      "name": "-c",
+      "description": "从文件读取并验证校验和"
+    }
+  ],
+  "examples": [
+    {
+      "description": "计算 MD5 值",
+      "code": "md5sum file.iso"
+    },
+    {
+      "description": "批量校验文件",
+      "code": "md5sum -c checksums.md5"
+    }
+  ]
+}

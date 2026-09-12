@@ -1,0 +1,35 @@
+{
+  "name": "nice",
+  "description": "以指定优先级运行程序",
+  "synopsis": "nice [-n 优先级] 命令",
+  "category": "进程管理",
+  "danger_level": "medium",
+  "tags": [
+    "优先级",
+    "进程",
+    "调度",
+    "CPU",
+    "运行"
+  ],
+  "common_options": [
+    {
+      "name": "-n",
+      "description": "设置优先级（-20 最高, 19 最低）"
+    }
+  ],
+  "related": [
+    "renice",
+    "top",
+    "ionice"
+  ],
+  "examples": [
+    {
+      "description": "以低优先级运行编译",
+      "code": "nice -n 19 make"
+    },
+    {
+      "description": "以高优先级运行",
+      "code": "nice -n -10 ./important_task"
+    }
+  ]
+}

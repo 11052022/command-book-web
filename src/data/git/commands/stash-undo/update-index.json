@@ -1,0 +1,19 @@
+{
+  "name": "git update-index",
+  "description": "修改 Git 索引（暂存区）状态——常用于临时忽略已追踪文件的本地修改，避免误提交配置文件",
+  "synopsis": "git update-index [options] <file>...",
+  "category": "stash-undo",
+  "danger_level": "medium",
+  "tags": ["索引", "忽略", "本地", "配置", "暂存", "假设不变"],
+  "common_options": [
+    { "name": "--assume-unchanged", "description": "假设文件未修改——本地改动不会被 git status 看到也不会被提交" },
+    { "name": "--no-assume-unchanged", "description": "取消 --assume-unchanged，恢复追踪" },
+    { "name": "--skip-worktree", "description": "更彻底的本地忽略标记（推荐用于本地配置）" },
+    { "name": "--no-skip-worktree", "description": "取消 --skip-worktree" }
+  ],
+  "related": ["git status", "git stash", "git rm --cached", "git add"],
+  "examples": [
+    { "description": "临时忽略某个配置文件的本地修改", "code": "git update-index --assume-unchanged config/database.yml" },
+    { "description": "恢复追踪", "code": "git update-index --no-assume-unchanged config/database.yml" }
+  ]
+}

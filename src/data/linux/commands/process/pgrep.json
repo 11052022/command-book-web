@@ -1,0 +1,40 @@
+{
+  "name": "pgrep",
+  "description": "按进程名搜索并返回 PID",
+  "synopsis": "pgrep [选项] 进程名",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "进程",
+    "查找",
+    "搜索",
+    "PID",
+    "名字"
+  ],
+  "common_options": [
+    {
+      "name": "-l",
+      "description": "同时显示进程名和 PID"
+    },
+    {
+      "name": "-u",
+      "description": "只匹配指定用户的进程"
+    }
+  ],
+  "related": [
+    "pkill",
+    "pidof",
+    "ps",
+    "kill"
+  ],
+  "examples": [
+    {
+      "description": "查找 nginx 的 PID",
+      "code": "pgrep nginx"
+    },
+    {
+      "description": "显示进程名和 PID",
+      "code": "pgrep -l nginx"
+    }
+  ]
+}

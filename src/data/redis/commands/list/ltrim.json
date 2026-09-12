@@ -1,0 +1,32 @@
+{
+  "name": "LTRIM",
+  "description": "裁剪列表，只保留指定区间内的元素——常用于保留最新 N 条记录",
+  "synopsis": "LTRIM key start stop",
+  "category": "list",
+  "danger_level": "medium",
+  "tags": [
+    "裁剪",
+    "截断",
+    "列表",
+    "保留",
+    "限制长度",
+    "最新"
+  ],
+  "common_options": [],
+  "related": [
+    "LPUSH",
+    "RPUSH",
+    "LRANGE",
+    "LREM"
+  ],
+  "examples": [
+    {
+      "description": "只保留最近 100 条浏览历史",
+      "code": "LTRIM user:1:history 0 99"
+    },
+    {
+      "description": "只保留最新一条日志（其余全删）",
+      "code": "LTRIM app:recent-logs 0 0"
+    }
+  ]
+}

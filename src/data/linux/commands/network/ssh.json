@@ -1,0 +1,81 @@
+{
+  "name": "ssh",
+  "description": "安全远程登录到另一台主机",
+  "synopsis": "ssh [选项] 用户@主机",
+  "category": "网络相关",
+  "danger_level": "medium",
+  "tags": [
+    "远程",
+    "登录",
+    "连接",
+    "服务器",
+    "安全",
+    "shell"
+  ],
+  "common_options": [
+    {
+      "name": "-p",
+      "description": "指定端口"
+    },
+    {
+      "name": "-i",
+      "description": "指定私钥文件"
+    },
+    {
+      "name": "-L",
+      "description": "本地端口转发"
+    },
+    {
+      "name": "-R",
+      "description": "远程端口转发"
+    },
+    {
+      "name": "-X",
+      "description": "启用 X11 转发"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "连接选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-v", "label": "详细输出（调试用）", "hint": "verbose" },
+          { "flag": "-X", "label": "启用 X11 图形转发", "hint": "" },
+          { "flag": "-A", "label": "启用 SSH Agent 转发", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "host", "label": "用户@主机", "placeholder": "user@192.168.1.100", "prefix": "" },
+      { "key": "port", "label": "端口号", "placeholder": "2222", "prefix": "-p" },
+      { "key": "key", "label": "私钥文件", "placeholder": "~/.ssh/id_rsa", "prefix": "-i" },
+      { "key": "forward", "label": "本地端口转发", "placeholder": "8080:localhost:80", "prefix": "-L" }
+    ]
+  },
+  "related": [
+    "scp",
+    "sftp",
+    "ssh-keygen",
+    "ssh-copy-id",
+    "mosh"
+  ],
+  "examples": [
+    {
+      "description": "远程登录服务器",
+      "code": "ssh user@192.168.1.100"
+    },
+    {
+      "description": "使用指定端口登录",
+      "code": "ssh -p 2222 user@example.com"
+    },
+    {
+      "description": "使用密钥登录",
+      "code": "ssh -i ~/.ssh/mykey user@example.com"
+    },
+    {
+      "description": "本地端口转发",
+      "code": "ssh -L 8080:localhost:80 user@server"
+    }
+  ]
+}

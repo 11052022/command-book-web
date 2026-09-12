@@ -1,0 +1,39 @@
+{
+  "name": "timeout",
+  "description": "限制命令的执行时间（超时自动终止）",
+  "synopsis": "timeout [选项] 时间 命令",
+  "category": "其他常用",
+  "danger_level": "medium",
+  "tags": [
+    "超时",
+    "限制",
+    "时间",
+    "终止",
+    "运行"
+  ],
+  "related": [
+    "sleep",
+    "watch",
+    "time"
+  ],
+  "common_options": [
+    {
+      "name": "-s",
+      "description": "指定超时后发送的信号"
+    },
+    {
+      "name": "-k",
+      "description": "发送 KILL 前的等待时间"
+    }
+  ],
+  "examples": [
+    {
+      "description": "限制命令执行 5 秒",
+      "code": "timeout 5s ping google.com"
+    },
+    {
+      "description": "超时后强制终止",
+      "code": "timeout -s KILL 10s ./slow_script.sh"
+    }
+  ]
+}

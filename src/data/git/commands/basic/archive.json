@@ -1,0 +1,18 @@
+{
+  "name": "git archive",
+  "description": "将仓库内容打包导出为 tar/zip 文件——不含 .git 目录，用于部署或分发源码",
+  "synopsis": "git archive [options] <tree-ish> [-- <path>...]",
+  "category": "basic",
+  "danger_level": "low",
+  "tags": ["打包", "archive", "导出", "部署", "tar", "zip"],
+  "common_options": [
+    { "name": "--format=tar.gz / -o", "description": "指定输出格式和文件名" },
+    { "name": "--output=<file> / -o", "description": "写入到指定文件（而非 stdout）" },
+    { "name": "--prefix=<dir>/", "description": "在压缩包中添加目录前缀" }
+  ],
+  "related": ["git tag", "git clone", "git bundle"],
+  "examples": [
+    { "description": "导出最新代码为 tar.gz", "code": "git archive --format=tar.gz -o project.tar.gz HEAD" },
+    { "description": "导出指定版本", "code": "git archive -o v1.0.zip v1.0.0" }
+  ]
+}

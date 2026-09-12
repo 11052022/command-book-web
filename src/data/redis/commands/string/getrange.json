@@ -1,0 +1,31 @@
+{
+  "name": "GETRANGE",
+  "description": "返回 key 中字符串值的子字符串（按字节位置），类似 substr()",
+  "synopsis": "GETRANGE key start end",
+  "category": "string",
+  "danger_level": "low",
+  "tags": [
+    "子串",
+    "切片",
+    "字符串",
+    "截取",
+    "范围"
+  ],
+  "common_options": [],
+  "related": [
+    "SETRANGE",
+    "GET",
+    "STRLEN",
+    "SUBSTR"
+  ],
+  "examples": [
+    {
+      "description": "获取字符串的前 5 个字符",
+      "code": "SET msg 'Hello World'\nGETRANGE msg 0 4"
+    },
+    {
+      "description": "获取最后 5 个字符（负数表示从末尾计数）",
+      "code": "GETRANGE msg -5 -1"
+    }
+  ]
+}

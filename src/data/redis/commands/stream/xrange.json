@@ -1,0 +1,38 @@
+{
+  "name": "XRANGE",
+  "description": "按 ID 范围正序读取 Stream 中的消息——支持 -（最小）和 +（最大）作为边界，支持 COUNT 限制条数",
+  "synopsis": "XRANGE key start end [COUNT count]",
+  "category": "stream",
+  "danger_level": "low",
+  "tags": [
+    "读取",
+    "范围",
+    "正序",
+    "Stream",
+    "消息",
+    "查询"
+  ],
+  "common_options": [
+    {
+      "name": "COUNT count",
+      "description": "最多返回 count 条消息"
+    }
+  ],
+  "related": [
+    "XREVRANGE",
+    "XADD",
+    "XREAD",
+    "XLEN",
+    "XDEL"
+  ],
+  "examples": [
+    {
+      "description": "读取 Stream 中所有消息",
+      "code": "XRANGE mystream - +"
+    },
+    {
+      "description": "读取最新的 10 条消息",
+      "code": "XRANGE mystream - + COUNT 10"
+    }
+  ]
+}

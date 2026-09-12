@@ -1,0 +1,46 @@
+{
+  "name": "git diff",
+  "description": "显示文件差异——工作区与暂存区、暂存区与最新提交、或任意两次提交之间",
+  "synopsis": "git diff [options] [<commit>] [--] [<path>...]",
+  "category": "basic",
+  "danger_level": "low",
+  "tags": ["差异", "对比", "diff", "比较", "修改", "代码审查"],
+  "common_options": [
+    { "name": "--staged / --cached", "description": "显示已暂存但尚未提交的差异" },
+    { "name": "<commit1> <commit2>", "description": "比较两次提交之间的差异" },
+    { "name": "--stat", "description": "只显示文件变更统计而不显示详细 diff" },
+    { "name": "--name-only", "description": "只列出变更的文件名" },
+    { "name": "-w", "description": "忽略空白字符差异" }
+  ],
+  "related": ["git status", "git add", "git log", "git show"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "对比目标",
+        "type": "radio",
+        "options": [
+          { "flag": "", "label": "工作区 vs 暂存区（默认）", "hint": "" },
+          { "flag": "--staged", "label": "暂存区 vs 最新提交", "hint": "" }
+        ]
+      },
+      {
+        "label": "输出格式",
+        "type": "checkbox",
+        "options": [
+          { "flag": "--stat", "label": "只显示变更统计", "hint": "" },
+          { "flag": "--name-only", "label": "只列出文件名", "hint": "" },
+          { "flag": "-w", "label": "忽略空白字符", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "compare", "label": "比较范围", "placeholder": "HEAD~1 或 main..feature", "prefix": "" }
+    ]
+  },
+  "examples": [
+    { "description": "查看工作区未暂存的修改", "code": "git diff" },
+    { "description": "查看已暂存的修改", "code": "git diff --staged" },
+    { "description": "比较两个分支的差异", "code": "git diff main..feature" },
+    { "description": "只显示变更文件统计", "code": "git diff --stat HEAD~1" }
+  ]
+}

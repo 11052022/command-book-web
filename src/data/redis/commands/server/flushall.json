@@ -1,0 +1,41 @@
+{
+  "name": "FLUSHALL",
+  "description": "删除 Redis 所有数据库中全部 key——比 FLUSHDB 更彻底，清空整个实例，操作绝对不可逆！",
+  "synopsis": "FLUSHALL [ASYNC|SYNC]",
+  "category": "server",
+  "danger_level": "critical",
+  "tags": [
+    "清空",
+    "全部",
+    "危险",
+    "不可逆",
+    "灾难",
+    "谨慎"
+  ],
+  "common_options": [
+    {
+      "name": "ASYNC",
+      "description": "异步清空——后台线程回收内存，不阻塞（Redis 4.0+）"
+    },
+    {
+      "name": "SYNC",
+      "description": "同步清空（默认行为，会阻塞）"
+    }
+  ],
+  "related": [
+    "FLUSHDB",
+    "DEL",
+    "UNLINK",
+    "DBSIZE"
+  ],
+  "examples": [
+    {
+      "description": "清空所有数据库（⚠️生产禁用！）",
+      "code": "FLUSHALL"
+    },
+    {
+      "description": "异步清空所有库",
+      "code": "FLUSHALL ASYNC"
+    }
+  ]
+}

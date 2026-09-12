@@ -1,0 +1,40 @@
+{
+  "name": "file",
+  "description": "检测文件类型",
+  "synopsis": "file [选项] 文件...",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "类型",
+    "文件",
+    "检测",
+    "识别",
+    "查看",
+    "格式"
+  ],
+  "common_options": [
+    {
+      "name": "-i",
+      "description": "输出 MIME 类型"
+    },
+    {
+      "name": "-z",
+      "description": "尝试查看压缩文件内部"
+    }
+  ],
+  "related": [
+    "stat",
+    "ls",
+    "mimetype"
+  ],
+  "examples": [
+    {
+      "description": "检测文件类型",
+      "code": "file unknown.bin"
+    },
+    {
+      "description": "输出 MIME 类型",
+      "code": "file -i document.pdf"
+    }
+  ]
+}

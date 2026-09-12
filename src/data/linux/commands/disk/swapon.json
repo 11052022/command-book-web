@@ -1,0 +1,44 @@
+{
+  "name": "swapon",
+  "description": "启用交换空间",
+  "synopsis": "swapon [选项] [设备]",
+  "category": "磁盘存储",
+  "danger_level": "high",
+  "tags": [
+    "交换",
+    "swap",
+    "内存",
+    "虚拟内存",
+    "启用"
+  ],
+  "related": [
+    "swapoff",
+    "free",
+    "mkswap",
+    "vmstat"
+  ],
+  "common_options": [
+    {
+      "name": "-s",
+      "description": "显示交换使用摘要"
+    },
+    {
+      "name": "-a",
+      "description": "启用所有 swap"
+    }
+  ],
+  "examples": [
+    {
+      "description": "查看交换空间使用",
+      "code": "swapon --show"
+    },
+    {
+      "description": "启用 swap 分区",
+      "code": "sudo swapon /dev/sdb2"
+    },
+    {
+      "description": "创建并启用 swap 文件",
+      "code": "sudo fallocate -l 2G /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile"
+    }
+  ]
+}

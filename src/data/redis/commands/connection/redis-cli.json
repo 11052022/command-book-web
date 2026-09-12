@@ -1,0 +1,111 @@
+{
+  "name": "redis-cli",
+  "description": "Redis 命令行客户端，用于连接 Redis 服务器并执行命令。支持交互模式、批量模式、管道模式等多种使用方式",
+  "synopsis": "redis-cli [OPTIONS] [cmd [arg [arg ...]]]",
+  "category": "connection",
+  "danger_level": "medium",
+  "tags": ["连接", "客户端", "终端", "命令行", "登录", "Shell", "交互", "工具"],
+  "common_options": [
+    { "name": "-h <host>", "description": "Redis 服务器主机地址（默认 127.0.0.1）" },
+    { "name": "-p <port>", "description": "Redis 服务器端口（默认 6379）" },
+    { "name": "-a <password>", "description": "认证密码（命令行明文传递，不安全）" },
+    { "name": "-n <db>", "description": "选择数据库编号（默认 0）" },
+    { "name": "-u <uri>", "description": "以 URI 格式指定连接：redis://user:pass@host:port/db" },
+    { "name": "--tls", "description": "启用 TLS/SSL 加密连接" },
+    { "name": "--cacert <file>", "description": "TLS 连接的 CA 证书文件路径" },
+    { "name": "-c", "description": "启用集群模式（自动重定向到正确的节点）" },
+    { "name": "-r <n>", "description": "重复执行命令 n 次（配合 -i 使用）" },
+    { "name": "-i <interval>", "description": "每次命令执行间隔秒数（配合 -r 使用）" },
+    { "name": "--no-auth-warning", "description": "屏蔽命令行传密码的安全警告" },
+    { "name": "--raw", "description": "原样输出（不格式化中文/换行等特殊字符）" },
+    { "name": "--no-raw", "description": "显示原始字节（调试用）" },
+    { "name": "--csv", "description": "以 CSV 格式输出结果" },
+    { "name": "--stat", "description": "实时打印 Redis 服务器统计信息" },
+    { "name": "--bigkeys", "description": "扫描数据库中占用空间最大的 key（生产慎用）" },
+    { "name": "--memkeys", "description": "扫描数据库中内存占用最大的 key" },
+    { "name": "--hotkeys", "description": "扫描最频繁访问的 key（需 maxmemory-policy=LFU）" },
+    { "name": "--latency", "description": "测量 Redis 服务器延迟" },
+    { "name": "--latency-history", "description": "持续记录延迟变化历史" },
+    { "name": "--scan", "description": "扫描所有 key 的类型和大小" },
+    { "name": "--pipe", "description": "管道模式：从 stdin 读取命令批量发送（极速导入数据）" },
+    { "name": "--eval <file>", "description": "执行 Lua 脚本文件" },
+    { "name": "--rdb <file>", "description": "解析并导出 RDB 文件内容" },
+    { "name": "-v", "description": "显示版本信息" },
+    { "name": "--help", "description": "显示帮助信息" }
+  ],
+  "related": ["redis-server", "MONITOR", "INFO", "PING"],
+  "examples": [
+    {
+      "description": "连接本地 Redis 并进入交互模式",
+      "code": "redis-cli"
+    },
+    {
+      "description": "连接远程 Redis 服务器（指定主机和端口）",
+      "code": "redis-cli -h 192.168.1.100 -p 6380"
+    },
+    {
+      "description": "带密码认证连接",
+      "code": "redis-cli -a 'myStrongPassword'"
+    },
+    {
+      "description": "使用 URI 方式连接（推荐，避免密码泄漏到 shell 历史）",
+      "code": "redis-cli -u redis://:password@host:6379/0"
+    },
+    {
+      "description": "连接后直接执行单条命令，输出结果后退出",
+      "code": "redis-cli PING"
+    },
+    {
+      "description": "选择 2 号数据库并获取 key 的值",
+      "code": "redis-cli -n 2 GET user:1:name"
+    },
+    {
+      "description": "集群模式连接（自动跟随 MOVED 重定向）",
+      "code": "redis-cli -c -h cluster-node1 -p 7000"
+    },
+    {
+      "description": "TLS 加密连接（Redis 6+ 生产推荐）",
+      "code": "redis-cli --tls --cacert /etc/redis/ca.crt -h redis.example.com"
+    },
+    {
+      "description": "管道模式批量导入数据（极速，适合数据迁移）",
+      "code": "cat commands.txt | redis-cli --pipe"
+    },
+    {
+      "description": "每隔 2 秒重复执行 INFO server，用于监控",
+      "code": "redis-cli -r 10 -i 2 INFO server"
+    },
+    {
+      "description": "实时监控模式：持续打印 Redis 每秒处理的命令数、内存等",
+      "code": "redis-cli --stat"
+    },
+    {
+      "description": "扫描大 key（找出占用最多的 key）",
+      "code": "redis-cli --bigkeys"
+    },
+    {
+      "description": "测量服务器响应延迟",
+      "code": "redis-cli --latency"
+    },
+    {
+      "description": "延迟历史记录（连续采样 30 秒）",
+      "code": "redis-cli --latency-history"
+    },
+    {
+      "description": "执行外部 Lua 脚本文件",
+      "code": "redis-cli --eval /path/to/script.lua key1 key2 , arg1 arg2"
+    },
+    {
+      "description": "CSV 格式输出（适合脚本解析）",
+      "code": "redis-cli --csv KEYS 'user:*'"
+    },
+    {
+      "description": "列出所有以 user: 开头的 key（原生格式）",
+      "code": "redis-cli KEYS 'user:*'"
+    },
+    {
+      "description": "从标准输入读取命令交互执行（脚本中常用）",
+      "code": "echo 'GET user:1:name' | redis-cli"
+    }
+  ]
+}

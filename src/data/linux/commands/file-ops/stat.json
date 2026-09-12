@@ -1,0 +1,37 @@
+{
+  "name": "stat",
+  "description": "显示文件或文件系统的详细信息",
+  "synopsis": "stat [选项] 文件...",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "信息",
+    "文件",
+    "大小",
+    "时间",
+    "权限",
+    "inode",
+    "查看"
+  ],
+  "common_options": [
+    {
+      "name": "-c",
+      "description": "自定义输出格式"
+    }
+  ],
+  "related": [
+    "ls",
+    "file",
+    "df"
+  ],
+  "examples": [
+    {
+      "description": "查看文件详细信息",
+      "code": "stat file.txt"
+    },
+    {
+      "description": "只显示文件大小",
+      "code": "stat -c %s file.txt"
+    }
+  ]
+}

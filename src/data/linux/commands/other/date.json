@@ -1,0 +1,47 @@
+{
+  "name": "date",
+  "description": "显示或设置系统日期和时间",
+  "synopsis": "date [选项] [+格式]",
+  "category": "其他常用",
+  "danger_level": "low",
+  "tags": [
+    "日期",
+    "时间",
+    "显示",
+    "设置",
+    "格式"
+  ],
+  "common_options": [
+    {
+      "name": "+%Y-%m-%d",
+      "description": "YYYY-MM-DD 格式"
+    },
+    {
+      "name": "+%s",
+      "description": "Unix 时间戳"
+    }
+  ],
+  "related": [
+    "timedatectl",
+    "cal",
+    "hwclock"
+  ],
+  "examples": [
+    {
+      "description": "显示当前日期时间",
+      "code": "date"
+    },
+    {
+      "description": "格式化输出",
+      "code": "date '+%Y-%m-%d %H:%M:%S'"
+    },
+    {
+      "description": "显示 Unix 时间戳",
+      "code": "date +%s"
+    },
+    {
+      "description": "显示 UTC 时间",
+      "code": "date -u"
+    }
+  ]
+}

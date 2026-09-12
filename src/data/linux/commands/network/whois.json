@@ -1,0 +1,31 @@
+{
+  "name": "whois",
+  "description": "查询域名注册信息",
+  "synopsis": "whois 域名",
+  "category": "网络相关",
+  "danger_level": "low",
+  "tags": [
+    "域名",
+    "查询",
+    "注册",
+    "信息",
+    "whois"
+  ],
+  "related": [
+    "dig",
+    "nslookup",
+    "host"
+  ],
+  "common_options": [
+    {
+      "name": "-h",
+      "description": "指定 whois 服务器"
+    }
+  ],
+  "examples": [
+    {
+      "description": "查询域名信息",
+      "code": "whois example.com"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "ping",
+  "description": "测试网络连通性（发送 ICMP 请求）",
+  "synopsis": "ping [选项] 目标",
+  "category": "网络相关",
+  "danger_level": "low",
+  "tags": [
+    "网络",
+    "测试",
+    "连通",
+    "延迟",
+    "连接",
+    "网络测试"
+  ],
+  "common_options": [
+    {
+      "name": "-c",
+      "description": "指定发包数量"
+    },
+    {
+      "name": "-i",
+      "description": "指定发包间隔（秒）"
+    },
+    {
+      "name": "-s",
+      "description": "指定数据包大小"
+    }
+  ],
+  "related": [
+    "traceroute",
+    "mtr",
+    "curl",
+    "nc"
+  ],
+  "examples": [
+    {
+      "description": "测试网络连通性",
+      "code": "ping google.com"
+    },
+    {
+      "description": "发送 4 个包后停止",
+      "code": "ping -c 4 192.168.1.1"
+    },
+    {
+      "description": "快速测试（0.2 秒间隔）",
+      "code": "ping -i 0.2 -c 10 8.8.8.8"
+    }
+  ]
+}

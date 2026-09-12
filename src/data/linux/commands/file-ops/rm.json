@@ -1,0 +1,57 @@
+{
+  "name": "rm",
+  "description": "删除文件或目录",
+  "synopsis": "rm [选项] 文件...",
+  "category": "文件操作",
+  "danger_level": "critical",
+  "tags": [
+    "删除",
+    "移除",
+    "清除",
+    "文件",
+    "目录",
+    "文件夹"
+  ],
+  "common_options": [
+    {
+      "name": "-r",
+      "description": "递归删除目录及其内容"
+    },
+    {
+      "name": "-f",
+      "description": "强制删除，不提示确认"
+    },
+    {
+      "name": "-i",
+      "description": "删除每个文件前询问确认"
+    },
+    {
+      "name": "-v",
+      "description": "显示删除过程"
+    }
+  ],
+  "related": [
+    "rmdir",
+    "unlink",
+    "shred",
+    "find"
+  ],
+  "examples": [
+    {
+      "description": "删除文件",
+      "code": "rm file.txt"
+    },
+    {
+      "description": "强制递归删除目录（危险！）",
+      "code": "rm -rf /path/to/directory"
+    },
+    {
+      "description": "删除前逐个确认",
+      "code": "rm -i *.log"
+    },
+    {
+      "description": "删除所有 .tmp 文件",
+      "code": "rm *.tmp"
+    }
+  ]
+}

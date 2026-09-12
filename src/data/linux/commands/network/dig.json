@@ -1,0 +1,48 @@
+{
+  "name": "dig",
+  "description": "DNS 诊断工具（比 nslookup 更详细）",
+  "synopsis": "dig [选项] 域名 [记录类型]",
+  "category": "网络相关",
+  "danger_level": "low",
+  "tags": [
+    "DNS",
+    "域名",
+    "查询",
+    "解析",
+    "诊断",
+    "记录"
+  ],
+  "common_options": [
+    {
+      "name": "+short",
+      "description": "简洁输出"
+    },
+    {
+      "name": "-t",
+      "description": "指定记录类型（A, MX, TXT 等）"
+    }
+  ],
+  "related": [
+    "nslookup",
+    "host",
+    "whois"
+  ],
+  "examples": [
+    {
+      "description": "查询域名 A 记录",
+      "code": "dig google.com"
+    },
+    {
+      "description": "简洁输出",
+      "code": "dig +short google.com"
+    },
+    {
+      "description": "查询 MX 记录",
+      "code": "dig -t MX google.com"
+    },
+    {
+      "description": "查询所有记录",
+      "code": "dig -t ANY google.com"
+    }
+  ]
+}

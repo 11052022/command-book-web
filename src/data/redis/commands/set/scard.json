@@ -1,0 +1,24 @@
+{
+  "name": "SCARD",
+  "description": "返回集合中元素的数量",
+  "synopsis": "SCARD key",
+  "category": "set",
+  "danger_level": "low",
+  "tags": [
+    "统计",
+    "集合",
+    "大小",
+    "数量"
+  ],
+  "common_options": [],
+  "related": [
+    "SADD",
+    "SMEMBERS"
+  ],
+  "examples": [
+    {
+      "description": "统计用户标签数量",
+      "code": "SCARD user:1:tags"
+    }
+  ]
+}

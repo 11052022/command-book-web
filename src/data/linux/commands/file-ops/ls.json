@@ -1,0 +1,66 @@
+{
+  "name": "ls",
+  "description": "列出目录内容",
+  "synopsis": "ls [选项] [路径]",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "列出",
+    "查看",
+    "目录",
+    "文件",
+    "列表",
+    "显示",
+    "文件夹"
+  ],
+  "common_options": [
+    {
+      "name": "-l",
+      "description": "长格式显示，包含权限、大小、时间"
+    },
+    {
+      "name": "-a",
+      "description": "显示所有文件，包括隐藏文件"
+    },
+    {
+      "name": "-h",
+      "description": "以人类可读的大小格式显示"
+    },
+    {
+      "name": "-t",
+      "description": "按修改时间排序"
+    },
+    {
+      "name": "-r",
+      "description": "反向排序"
+    },
+    {
+      "name": "-R",
+      "description": "递归列出子目录"
+    }
+  ],
+  "related": [
+    "tree",
+    "stat",
+    "dir",
+    "find"
+  ],
+  "examples": [
+    {
+      "description": "列出当前目录内容（详细格式）",
+      "code": "ls -l"
+    },
+    {
+      "description": "列出所有文件（含隐藏文件），人类可读大小",
+      "code": "ls -lah"
+    },
+    {
+      "description": "按时间排序，最新的在最前",
+      "code": "ls -lt"
+    },
+    {
+      "description": "递归显示所有子目录",
+      "code": "ls -R /home/user"
+    }
+  ]
+}

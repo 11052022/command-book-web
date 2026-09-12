@@ -1,0 +1,57 @@
+{
+  "name": "pacman",
+  "description": "Arch Linux 的包管理工具",
+  "synopsis": "pacman [操作] [选项] [包名]",
+  "category": "包管理",
+  "danger_level": "high",
+  "tags": [
+    "安装",
+    "更新",
+    "包",
+    "软件",
+    "Arch",
+    "Manjaro"
+  ],
+  "common_options": [
+    {
+      "name": "-S",
+      "description": "同步（安装/搜索/更新）"
+    },
+    {
+      "name": "-R",
+      "description": "删除软件包"
+    },
+    {
+      "name": "-Q",
+      "description": "查询本地数据库"
+    },
+    {
+      "name": "-Syu",
+      "description": "完整系统更新"
+    }
+  ],
+  "related": [
+    "yay",
+    "paru",
+    "pamac",
+    "makepkg"
+  ],
+  "examples": [
+    {
+      "description": "安装软件包",
+      "code": "sudo pacman -S firefox"
+    },
+    {
+      "description": "完全系统更新",
+      "code": "sudo pacman -Syu"
+    },
+    {
+      "description": "搜索软件包",
+      "code": "pacman -Ss python"
+    },
+    {
+      "description": "删除软件包及孤立依赖",
+      "code": "sudo pacman -Rns package_name"
+    }
+  ]
+}

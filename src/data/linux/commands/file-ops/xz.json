@@ -1,0 +1,47 @@
+{
+  "name": "xz",
+  "description": "使用 LZMA 算法压缩文件（极高压缩比）",
+  "synopsis": "xz [选项] 文件...",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "压缩",
+    "文件",
+    "xz",
+    "高压缩比"
+  ],
+  "related": [
+    "unxz",
+    "gzip",
+    "bzip2",
+    "tar"
+  ],
+  "common_options": [
+    {
+      "name": "-d",
+      "description": "解压"
+    },
+    {
+      "name": "-k",
+      "description": "保留原始文件"
+    },
+    {
+      "name": "-9",
+      "description": "最高压缩级别"
+    }
+  ],
+  "examples": [
+    {
+      "description": "压缩文件",
+      "code": "xz file.txt"
+    },
+    {
+      "description": "解压文件",
+      "code": "xz -d file.txt.xz"
+    },
+    {
+      "description": "最高压缩比",
+      "code": "xz -9k large_file.log"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "name": "lscpu",
+  "description": "显示 CPU 架构信息，包括型号、核数、线程数、缓存大小、NUMA 拓扑等",
+  "synopsis": "lscpu [选项]",
+  "category": "系统信息",
+  "danger_level": "low",
+  "tags": [
+    "CPU",
+    "处理器",
+    "信息",
+    "查看",
+    "核",
+    "架构",
+    "硬件",
+    "缓存",
+    "NUMA",
+    "线程",
+    "型号"
+  ],
+  "common_options": [
+    { "name": "-a", "description": "同时显示在线和离线 CPU" },
+    { "name": "-c", "description": "仅显示离线 CPU" },
+    { "name": "-e", "description": "以可解析的格式显示（等号分隔的键值对）" },
+    { "name": "-p", "description": "仅显示在线 CPU" },
+    { "name": "-x", "description": "显示十六进制掩码（如 CPU 掩码）" },
+    { "name": "-J", "description": "以 JSON 格式输出" },
+    { "name": "-s", "description": "仅显示指定缓存层级的信息（如 -s 1 显示 L1 缓存）" },
+    { "name": "--parse", "description": "输出解析友好的格式，适合脚本处理" }
+  ],
+  "related": [
+    "lspci",
+    "lsusb",
+    "lshw",
+    "nproc",
+    "cat /proc/cpuinfo",
+    "dmidecode",
+    "cpuinfo"
+  ],
+  "examples": [
+    {
+      "description": "查看 CPU 完整信息（型号、核数、线程、缓存、NUMA）",
+      "code": "lscpu"
+    },
+    {
+      "description": "只查看 CPU 核数",
+      "code": "lscpu | grep '^CPU(s):'"
+    },
+    {
+      "description": "查看 CPU 型号名称",
+      "code": "lscpu | grep 'Model name'"
+    },
+    {
+      "description": "以 JSON 格式输出（方便脚本解析）",
+      "code": "lscpu -J"
+    },
+    {
+      "description": "查看每个核的在线状态",
+      "code": "lscpu -e"
+    },
+    {
+      "description": "查看 CPU 是否支持虚拟化",
+      "code": "lscpu | grep -i virt"
+    },
+    {
+      "description": "查看 L1/L2/L3 各级缓存大小",
+      "code": "lscpu | grep -E 'L1|L2|L3'"
+    }
+  ]
+}

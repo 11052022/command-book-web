@@ -1,0 +1,24 @@
+{
+  "name": "ZCARD",
+  "description": "返回有序集合中元素的数量",
+  "synopsis": "ZCARD key",
+  "category": "sorted-set",
+  "danger_level": "low",
+  "tags": [
+    "统计",
+    "有序集合",
+    "大小",
+    "数量"
+  ],
+  "common_options": [],
+  "related": [
+    "ZADD",
+    "ZCOUNT"
+  ],
+  "examples": [
+    {
+      "description": "统计排行榜成员数",
+      "code": "ZCARD leaderboard"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "HGET",
+  "description": "获取哈希表中指定字段的值",
+  "synopsis": "HGET key field",
+  "category": "hash",
+  "danger_level": "low",
+  "tags": [
+    "获取",
+    "读取",
+    "哈希",
+    "字段",
+    "查询"
+  ],
+  "common_options": [],
+  "related": [
+    "HSET",
+    "HMGET",
+    "HGETALL"
+  ],
+  "examples": [
+    {
+      "description": "获取用户姓名",
+      "code": "HGET user:1 name"
+    }
+  ]
+}

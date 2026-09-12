@@ -1,0 +1,48 @@
+{
+  "name": "fsck",
+  "description": "检查和修复文件系统错误",
+  "synopsis": "fsck [选项] 设备",
+  "category": "磁盘存储",
+  "danger_level": "critical",
+  "tags": [
+    "检查",
+    "修复",
+    "文件系统",
+    "磁盘",
+    "错误"
+  ],
+  "related": [
+    "mount",
+    "umount",
+    "mkfs",
+    "badblocks"
+  ],
+  "common_options": [
+    {
+      "name": "-A",
+      "description": "检查所有文件系统"
+    },
+    {
+      "name": "-N",
+      "description": "干运行（不实际修复）"
+    },
+    {
+      "name": "-y",
+      "description": "所有提示自动回答 yes"
+    }
+  ],
+  "examples": [
+    {
+      "description": "检查文件系统（需先卸载）",
+      "code": "sudo fsck /dev/sdb1"
+    },
+    {
+      "description": "自动修复所有错误",
+      "code": "sudo fsck -y /dev/sdb1"
+    },
+    {
+      "description": "干运行查看问题但不修复",
+      "code": "sudo fsck -N /dev/sdb1"
+    }
+  ]
+}

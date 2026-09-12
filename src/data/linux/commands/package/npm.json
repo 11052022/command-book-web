@@ -1,0 +1,57 @@
+{
+  "name": "npm",
+  "description": "Node.js 包管理器",
+  "synopsis": "npm [命令] [包名]",
+  "category": "包管理",
+  "danger_level": "medium",
+  "tags": [
+    "Node.js",
+    "包",
+    "安装",
+    "npm",
+    "JavaScript",
+    "模块"
+  ],
+  "related": [
+    "yarn",
+    "pnpm",
+    "npx",
+    "node"
+  ],
+  "common_options": [
+    {
+      "name": "install",
+      "description": "安装依赖"
+    },
+    {
+      "name": "-g",
+      "description": "全局安装"
+    },
+    {
+      "name": "uninstall",
+      "description": "卸载包"
+    },
+    {
+      "name": "init",
+      "description": "初始化项目"
+    }
+  ],
+  "examples": [
+    {
+      "description": "初始化项目",
+      "code": "npm init -y"
+    },
+    {
+      "description": "安装包",
+      "code": "npm install lodash"
+    },
+    {
+      "description": "全局安装工具",
+      "code": "npm install -g typescript"
+    },
+    {
+      "description": "运行脚本",
+      "code": "npm run build"
+    }
+  ]
+}

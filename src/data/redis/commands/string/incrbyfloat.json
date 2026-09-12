@@ -1,0 +1,33 @@
+{
+  "name": "INCRBYFLOAT",
+  "description": "将 key 中储存的数字值加上指定的浮点数增量（原子操作）",
+  "synopsis": "INCRBYFLOAT key increment",
+  "category": "string",
+  "danger_level": "low",
+  "tags": [
+    "递增",
+    "浮点数",
+    "小数",
+    "原子",
+    "计数",
+    "精度"
+  ],
+  "common_options": [],
+  "related": [
+    "INCR",
+    "INCRBY",
+    "DECR",
+    "GET",
+    "SET"
+  ],
+  "examples": [
+    {
+      "description": "给账户余额加 9.99 元",
+      "code": "INCRBYFLOAT account:balance 9.99"
+    },
+    {
+      "description": "扣除 5.50（传负数）",
+      "code": "INCRBYFLOAT account:balance -5.50"
+    }
+  ]
+}

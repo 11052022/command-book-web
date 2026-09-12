@@ -1,0 +1,36 @@
+{
+  "name": "chgrp",
+  "description": "修改文件或目录的所属组",
+  "synopsis": "chgrp [选项] 组 文件...",
+  "category": "用户权限",
+  "danger_level": "medium",
+  "tags": [
+    "组",
+    "修改",
+    "文件",
+    "所有者",
+    "权限",
+    "归属"
+  ],
+  "common_options": [
+    {
+      "name": "-R",
+      "description": "递归修改目录及其内容"
+    }
+  ],
+  "related": [
+    "chown",
+    "chmod",
+    "groups"
+  ],
+  "examples": [
+    {
+      "description": "修改文件所属组",
+      "code": "chgrp developers file.txt"
+    },
+    {
+      "description": "递归修改目录组",
+      "code": "chgrp -R www-data /var/www"
+    }
+  ]
+}

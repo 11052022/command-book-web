@@ -1,0 +1,52 @@
+{
+  "name": "sudo",
+  "description": "以超级用户或其他用户身份执行命令",
+  "synopsis": "sudo [选项] 命令",
+  "category": "用户权限",
+  "danger_level": "high",
+  "tags": [
+    "超级",
+    "管理员",
+    "权限",
+    "root",
+    "提权",
+    "执行"
+  ],
+  "common_options": [
+    {
+      "name": "-u",
+      "description": "以指定用户身份执行"
+    },
+    {
+      "name": "-i",
+      "description": "以目标用户身份启动登录 shell"
+    },
+    {
+      "name": "-l",
+      "description": "列出当前用户可执行的命令"
+    }
+  ],
+  "related": [
+    "su",
+    "visudo",
+    "pkexec"
+  ],
+  "examples": [
+    {
+      "description": "以 root 身份执行命令",
+      "code": "sudo apt update"
+    },
+    {
+      "description": "以指定用户身份执行命令",
+      "code": "sudo -u postgres psql"
+    },
+    {
+      "description": "切换到 root 用户",
+      "code": "sudo -i"
+    },
+    {
+      "description": "查看可执行的 sudo 命令",
+      "code": "sudo -l"
+    }
+  ]
+}

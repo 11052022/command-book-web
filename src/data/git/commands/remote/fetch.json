@@ -1,0 +1,34 @@
+{
+  "name": "git fetch",
+  "description": "从远程仓库下载最新数据但不合并——安全地查看远程更新，不影响本地工作",
+  "synopsis": "git fetch [options] [<remote>] [<branch>]",
+  "category": "remote",
+  "danger_level": "low",
+  "tags": ["获取", "fetch", "远程", "下载", "更新", "拉取"],
+  "common_options": [
+    { "name": "--all", "description": "从所有远程仓库获取" },
+    { "name": "-p / --prune", "description": "同时清理本地已删除的远程分支引用" },
+    { "name": "--tags", "description": "同时获取所有标签" }
+  ],
+  "related": ["git pull", "git push", "git remote", "git merge"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "--prune", "label": "清理已删除的远程分支引用", "hint": "" },
+          { "flag": "--all", "label": "从所有远程获取", "hint": "" },
+          { "flag": "--tags", "label": "同时获取所有标签", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "remote", "label": "远程仓库（可选）", "placeholder": "origin", "prefix": "" }
+    ]
+  },
+  "examples": [
+    { "description": "从默认远程获取最新数据", "code": "git fetch" },
+    { "description": "获取并清理已删除的远程分支", "code": "git fetch --prune" }
+  ]
+}

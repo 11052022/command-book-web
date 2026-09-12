@@ -1,0 +1,40 @@
+{
+  "name": "CLIENT LIST",
+  "description": "返回当前所有客户端连接的信息列表——包括 ID、IP、状态、最近命令等，用于排查连接问题和性能分析",
+  "synopsis": "CLIENT LIST [TYPE normal|master|replica|pubsub]",
+  "category": "server",
+  "danger_level": "low",
+  "tags": [
+    "客户端",
+    "连接",
+    "诊断",
+    "排查",
+    "运维"
+  ],
+  "common_options": [
+    {
+      "name": "TYPE normal",
+      "description": "只显示普通客户端"
+    },
+    {
+      "name": "TYPE pubsub",
+      "description": "只显示发布订阅客户端"
+    }
+  ],
+  "related": [
+    "CLIENT KILL",
+    "INFO",
+    "MONITOR",
+    "CONFIG"
+  ],
+  "examples": [
+    {
+      "description": "查看所有客户端连接",
+      "code": "CLIENT LIST"
+    },
+    {
+      "description": "查看发布订阅客户端",
+      "code": "CLIENT LIST TYPE pubsub"
+    }
+  ]
+}

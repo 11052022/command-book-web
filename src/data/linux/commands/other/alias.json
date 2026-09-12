@@ -1,0 +1,38 @@
+{
+  "name": "alias",
+  "description": "创建命令别名（快捷方式）",
+  "synopsis": "alias [别名='命令']",
+  "category": "其他常用",
+  "danger_level": "low",
+  "tags": [
+    "别名",
+    "快捷",
+    "简化",
+    "缩写",
+    "自定义"
+  ],
+  "common_options": [],
+  "related": [
+    "unalias",
+    "export",
+    "source"
+  ],
+  "examples": [
+    {
+      "description": "创建别名",
+      "code": "alias ll='ls -lah'"
+    },
+    {
+      "description": "列出所有别名",
+      "code": "alias"
+    },
+    {
+      "description": "删除别名",
+      "code": "unalias ll"
+    },
+    {
+      "description": "创建常用别名",
+      "code": "alias gs='git status'"
+    }
+  ]
+}

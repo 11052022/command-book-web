@@ -1,0 +1,23 @@
+{
+  "name": "PERSIST",
+  "description": "移除 key 的过期时间，使其永久有效",
+  "synopsis": "PERSIST key",
+  "category": "key",
+  "danger_level": "low",
+  "tags": [
+    "持久化",
+    "永不过期",
+    "取消过期"
+  ],
+  "common_options": [],
+  "related": [
+    "EXPIRE",
+    "TTL"
+  ],
+  "examples": [
+    {
+      "description": "取消 key 的过期时间",
+      "code": "PERSIST user:1:cache"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "PUBSUB",
+  "description": "查看发布/订阅系统状态",
+  "synopsis": "PUBSUB subcommand [argument ...]",
+  "category": "pubsub",
+  "danger_level": "low",
+  "tags": [
+    "查看",
+    "频道",
+    "订阅统计",
+    "诊断"
+  ],
+  "common_options": [],
+  "related": [
+    "PUBLISH",
+    "SUBSCRIBE"
+  ],
+  "examples": [
+    {
+      "description": "列出当前活跃频道",
+      "code": "PUBSUB CHANNELS"
+    },
+    {
+      "description": "查看频道订阅者数量",
+      "code": "PUBSUB NUMSUB news"
+    }
+  ]
+}

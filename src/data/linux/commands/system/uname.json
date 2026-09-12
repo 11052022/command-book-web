@@ -1,0 +1,53 @@
+{
+  "name": "uname",
+  "description": "显示系统基本信息",
+  "synopsis": "uname [选项]",
+  "category": "系统信息",
+  "danger_level": "low",
+  "tags": [
+    "系统",
+    "信息",
+    "内核",
+    "版本",
+    "架构",
+    "主机"
+  ],
+  "common_options": [
+    {
+      "name": "-a",
+      "description": "显示所有信息"
+    },
+    {
+      "name": "-r",
+      "description": "内核版本"
+    },
+    {
+      "name": "-m",
+      "description": "硬件架构"
+    },
+    {
+      "name": "-s",
+      "description": "内核名称"
+    }
+  ],
+  "related": [
+    "hostname",
+    "arch",
+    "lsb_release",
+    "neofetch"
+  ],
+  "examples": [
+    {
+      "description": "显示所有系统信息",
+      "code": "uname -a"
+    },
+    {
+      "description": "查看内核版本",
+      "code": "uname -r"
+    },
+    {
+      "description": "查看硬件架构",
+      "code": "uname -m"
+    }
+  ]
+}

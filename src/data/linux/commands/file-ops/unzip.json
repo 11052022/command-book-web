@@ -1,0 +1,42 @@
+{
+  "name": "unzip",
+  "description": "解压 ZIP 归档",
+  "synopsis": "unzip [选项] 压缩包",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "解压",
+    "zip",
+    "提取",
+    "归档"
+  ],
+  "common_options": [
+    {
+      "name": "-d",
+      "description": "指定解压目录"
+    },
+    {
+      "name": "-l",
+      "description": "列出压缩包内容（不解压）"
+    }
+  ],
+  "related": [
+    "zip",
+    "tar",
+    "gunzip"
+  ],
+  "examples": [
+    {
+      "description": "解压 ZIP 文件",
+      "code": "unzip archive.zip"
+    },
+    {
+      "description": "解压到指定目录",
+      "code": "unzip archive.zip -d /target/dir"
+    },
+    {
+      "description": "列出压缩包内容",
+      "code": "unzip -l archive.zip"
+    }
+  ]
+}

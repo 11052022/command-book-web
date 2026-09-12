@@ -1,0 +1,33 @@
+{
+  "name": "SETEX",
+  "description": "设置 key 的值并同时指定过期时间（秒）——SET + EXPIRE 的原子版本",
+  "synopsis": "SETEX key seconds value",
+  "category": "string",
+  "danger_level": "low",
+  "tags": [
+    "设置",
+    "过期",
+    "原子",
+    "字符串",
+    "缓存",
+    "TTL"
+  ],
+  "common_options": [],
+  "related": [
+    "SET",
+    "SETNX",
+    "EXPIRE",
+    "PSETEX",
+    "GETSET"
+  ],
+  "examples": [
+    {
+      "description": "缓存数据 60 秒后自动过期",
+      "code": "SETEX user:1:profile 60 '{\"name\":\"Alice\",\"age\":25}'"
+    },
+    {
+      "description": "设置验证码 300 秒（5 分钟）有效",
+      "code": "SETEX sms:code:13800138000 300 492837"
+    }
+  ]
+}

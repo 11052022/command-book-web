@@ -1,0 +1,16 @@
+{
+  "name": "git mv",
+  "description": "移动或重命名文件并自动暂存——等价于 mv + git rm + git add",
+  "synopsis": "git mv [options] <source> <destination>",
+  "category": "stash-undo",
+  "danger_level": "low",
+  "tags": ["移动", "重命名", "mv", "文件", "暂存"],
+  "common_options": [
+    { "name": "-f / --force", "description": "强制覆盖目标文件" }
+  ],
+  "related": ["git rm", "git add", "git status"],
+  "examples": [
+    { "description": "重命名文件", "code": "git mv old-name.js new-name.js" },
+    { "description": "移动文件到目录", "code": "git mv utils.js src/utils/" }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "history",
+  "description": "显示命令历史记录",
+  "synopsis": "history [选项]",
+  "category": "其他常用",
+  "danger_level": "low",
+  "tags": [
+    "历史",
+    "记录",
+    "之前",
+    "命令",
+    "查看"
+  ],
+  "common_options": [
+    {
+      "name": "-c",
+      "description": "清空历史记录"
+    }
+  ],
+  "related": [
+    "fc",
+    "!!"
+  ],
+  "examples": [
+    {
+      "description": "查看历史命令",
+      "code": "history"
+    },
+    {
+      "description": "查看最近 20 条命令",
+      "code": "history 20"
+    },
+    {
+      "description": "使用 !! 执行上一条命令",
+      "code": "!!"
+    },
+    {
+      "description": "搜索历史再执行（Ctrl+R）",
+      "code": "(按 Ctrl+R 输入关键词)"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "less",
+  "description": "分页查看文件内容（支持前后翻页）",
+  "synopsis": "less [选项] 文件",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "查看",
+    "浏览",
+    "翻页",
+    "文件",
+    "内容",
+    "分页",
+    "阅读"
+  ],
+  "common_options": [
+    {
+      "name": "-N",
+      "description": "显示行号"
+    },
+    {
+      "name": "-i",
+      "description": "搜索时忽略大小写"
+    },
+    {
+      "name": "-S",
+      "description": "不换行（横向滚动）"
+    }
+  ],
+  "related": [
+    "more",
+    "cat",
+    "head",
+    "tail"
+  ],
+  "examples": [
+    {
+      "description": "分页查看大文件",
+      "code": "less large_file.log"
+    },
+    {
+      "description": "带行号查看",
+      "code": "less -N file.txt"
+    },
+    {
+      "description": "查看时搜索关键词（输入 /keyword）",
+      "code": "less file.txt"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "git grep",
+  "description": "在 Git 追踪的文件中搜索匹配的文本——比普通 grep 更快且支持 Git 版本范围",
+  "synopsis": "git grep [options] <pattern>",
+  "category": "inspect",
+  "danger_level": "low",
+  "tags": ["搜索", "grep", "查找", "文本", "正则", "代码"],
+  "common_options": [
+    { "name": "-i / --ignore-case", "description": "忽略大小写" },
+    { "name": "-n", "description": "显示行号" },
+    { "name": "-l / --name-only", "description": "只输出包含匹配的文件名" },
+    { "name": "-c / --count", "description": "只输出每个文件的匹配次数" },
+    { "name": "--cached", "description": "只在暂存区中搜索" },
+    { "name": "<revision>", "description": "在指定版本中搜索" }
+  ],
+  "related": ["git log", "git blame", "git show"],
+  "examples": [
+    { "description": "搜索 TODO 注释", "code": "git grep -n \"TODO\"" },
+    { "description": "忽略大小写搜索函数定义", "code": "git grep -in \"function fetchUser\"" },
+    { "description": "只列出包含关键字的文件", "code": "git grep -l \"deprecated\"" }
+  ]
+}

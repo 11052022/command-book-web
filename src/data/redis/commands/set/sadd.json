@@ -1,0 +1,27 @@
+{
+  "name": "SADD",
+  "description": "向集合中添加一个或多个成员",
+  "synopsis": "SADD key member [member ...]",
+  "category": "set",
+  "danger_level": "low",
+  "tags": [
+    "添加",
+    "集合",
+    "成员",
+    "写入",
+    "去重"
+  ],
+  "common_options": [],
+  "related": [
+    "SREM",
+    "SMEMBERS",
+    "SISMEMBER",
+    "SCARD"
+  ],
+  "examples": [
+    {
+      "description": "添加用户标签",
+      "code": "SADD user:1:tags vip premium active"
+    }
+  ]
+}

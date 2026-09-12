@@ -1,0 +1,16 @@
+{
+  "name": "git range-diff",
+  "description": "比较两个提交范围之间的差异——常用于 rebase 后验证是否引入了意外变更",
+  "synopsis": "git range-diff [options] <range1> <range2>",
+  "category": "inspect",
+  "danger_level": "low",
+  "tags": ["对比", "range-diff", "rebase", "验证", "范围"],
+  "common_options": [
+    { "name": "--creation-factor=<n>", "description": "调整匹配精度（默认 60，越高越严格）" }
+  ],
+  "related": ["git rebase", "git diff", "git log"],
+  "examples": [
+    { "description": "比较 rebase 前后的提交变化", "code": "git range-diff main..feature main..feature-rebased" },
+    { "description": "验证 force push 前后差异", "code": "git range-diff origin/feature@{1} origin/feature" }
+  ]
+}

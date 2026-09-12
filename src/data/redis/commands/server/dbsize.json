@@ -1,0 +1,26 @@
+{
+  "name": "DBSIZE",
+  "description": "返回当前数据库中 key 的数量——快速了解实例数据规模",
+  "synopsis": "DBSIZE",
+  "category": "server",
+  "danger_level": "low",
+  "tags": [
+    "统计",
+    "数量",
+    "规模",
+    "运维"
+  ],
+  "common_options": [],
+  "related": [
+    "INFO",
+    "FLUSHDB",
+    "FLUSHALL",
+    "KEYS"
+  ],
+  "examples": [
+    {
+      "description": "查看当前库有多少个 key",
+      "code": "DBSIZE"
+    }
+  ]
+}

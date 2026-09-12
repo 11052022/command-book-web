@@ -1,0 +1,40 @@
+{
+  "name": "tac",
+  "description": "反向输出文件内容（cat 的反写）",
+  "synopsis": "tac [选项] [文件...]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": [
+    "反向",
+    "倒序",
+    "cat",
+    "文件",
+    "查看"
+  ],
+  "related": [
+    "cat",
+    "rev",
+    "tail",
+    "sort"
+  ],
+  "common_options": [
+    {
+      "name": "-s",
+      "description": "指定分隔符（默认换行）"
+    },
+    {
+      "name": "-b",
+      "description": "在分隔符之前而非之后连接"
+    }
+  ],
+  "examples": [
+    {
+      "description": "反向显示文件内容",
+      "code": "tac file.txt"
+    },
+    {
+      "description": "与 tail 组合取倒数几行",
+      "code": "tac file.txt | head -5"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "tmux",
+  "description": "现代终端复用器（比 screen 更强大）",
+  "synopsis": "tmux [命令]",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "终端",
+    "会话",
+    "分屏",
+    "复用",
+    "多窗口"
+  ],
+  "common_options": [
+    {
+      "name": "new",
+      "description": "新建会话"
+    },
+    {
+      "name": "attach",
+      "description": "重新连接会话"
+    },
+    {
+      "name": "ls",
+      "description": "列出所有会话"
+    }
+  ],
+  "related": [
+    "screen",
+    "nohup",
+    "byobu"
+  ],
+  "examples": [
+    {
+      "description": "创建命名会话",
+      "code": "tmux new -s mysession"
+    },
+    {
+      "description": "列出所有会话",
+      "code": "tmux ls"
+    },
+    {
+      "description": "重新连接会话",
+      "code": "tmux attach -t mysession"
+    },
+    {
+      "description": "水平分屏",
+      "code": "(在 tmux 内) Ctrl+B 然后按 \""
+    }
+  ]
+}

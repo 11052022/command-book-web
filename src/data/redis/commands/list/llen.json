@@ -1,0 +1,25 @@
+{
+  "name": "LLEN",
+  "description": "返回列表的长度",
+  "synopsis": "LLEN key",
+  "category": "list",
+  "danger_level": "low",
+  "tags": [
+    "长度",
+    "列表",
+    "统计",
+    "队列深度"
+  ],
+  "common_options": [],
+  "related": [
+    "LPUSH",
+    "RPUSH",
+    "LRANGE"
+  ],
+  "examples": [
+    {
+      "description": "查看队列中待处理任务数",
+      "code": "LLEN queue:tasks"
+    }
+  ]
+}

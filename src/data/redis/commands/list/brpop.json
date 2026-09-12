@@ -1,0 +1,28 @@
+{
+  "name": "BRPOP",
+  "description": "阻塞式从列表尾部弹出元素——与 BLPOP 对称，常用于先进先出消息队列消费端",
+  "synopsis": "BRPOP key [key ...] timeout",
+  "category": "list",
+  "danger_level": "low",
+  "tags": [
+    "阻塞",
+    "弹出",
+    "队列",
+    "消费者",
+    "FIFO",
+    "超时"
+  ],
+  "common_options": [],
+  "related": [
+    "BLPOP",
+    "RPOP",
+    "LPUSH",
+    "RPUSH"
+  ],
+  "examples": [
+    {
+      "description": "FIFO 队列消费——阻塞等待 10 秒",
+      "code": "BRPOP queue:emails 10"
+    }
+  ]
+}

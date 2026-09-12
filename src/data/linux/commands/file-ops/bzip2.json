@@ -1,0 +1,46 @@
+{
+  "name": "bzip2",
+  "description": "使用 bzip2 算法压缩文件（压缩比高于 gzip）",
+  "synopsis": "bzip2 [选项] 文件...",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "压缩",
+    "文件",
+    "bzip2"
+  ],
+  "related": [
+    "bunzip2",
+    "gzip",
+    "xz",
+    "tar"
+  ],
+  "common_options": [
+    {
+      "name": "-d",
+      "description": "解压"
+    },
+    {
+      "name": "-k",
+      "description": "保留原始文件"
+    },
+    {
+      "name": "-v",
+      "description": "显示压缩信息"
+    }
+  ],
+  "examples": [
+    {
+      "description": "压缩文件",
+      "code": "bzip2 file.txt"
+    },
+    {
+      "description": "解压文件",
+      "code": "bzip2 -d file.txt.bz2"
+    },
+    {
+      "description": "压缩并保留原文件",
+      "code": "bzip2 -k file.txt"
+    }
+  ]
+}

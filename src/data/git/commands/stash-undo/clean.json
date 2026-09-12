@@ -1,0 +1,20 @@
+{
+  "name": "git clean",
+  "description": "删除工作区中所有未跟踪的文件和目录——清理构建产物、临时文件等",
+  "synopsis": "git clean [options]",
+  "category": "stash-undo",
+  "danger_level": "high",
+  "tags": ["清理", "clean", "删除", "未跟踪", "磁盘", "干净"],
+  "common_options": [
+    { "name": "-n / --dry-run", "description": "预览将被删除的文件（不实际删除，强烈建议先运行）" },
+    { "name": "-f / --force", "description": "强制删除（必须指定才能执行）" },
+    { "name": "-d", "description": "同时删除未跟踪的目录" },
+    { "name": "-x", "description": "同时删除 .gitignore 中忽略的文件（如 node_modules）" }
+  ],
+  "related": ["git reset", "git stash", "git status"],
+  "examples": [
+    { "description": "预览将被清理的文件", "code": "git clean -n" },
+    { "description": "删除所有未跟踪文件", "code": "git clean -fd" },
+    { "description": "连同被忽略的文件一起清理", "code": "git clean -fdx" }
+  ]
+}

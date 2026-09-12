@@ -1,0 +1,45 @@
+{
+  "name": "dmesg",
+  "description": "查看内核环形缓冲区日志",
+  "synopsis": "dmesg [选项]",
+  "category": "系统信息",
+  "danger_level": "low",
+  "tags": [
+    "内核",
+    "日志",
+    "查看",
+    "启动",
+    "硬件",
+    "驱动",
+    "错误"
+  ],
+  "common_options": [
+    {
+      "name": "-T",
+      "description": "显示人类可读的时间戳"
+    },
+    {
+      "name": "--level",
+      "description": "按日志级别过滤（err, warn, info）"
+    }
+  ],
+  "related": [
+    "journalctl",
+    "syslog",
+    "lspci"
+  ],
+  "examples": [
+    {
+      "description": "查看内核日志",
+      "code": "dmesg"
+    },
+    {
+      "description": "只查看错误日志",
+      "code": "dmesg --level=err"
+    },
+    {
+      "description": "查看带可读时间的日志",
+      "code": "dmesg -T | tail"
+    }
+  ]
+}

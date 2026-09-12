@@ -1,0 +1,33 @@
+{
+  "name": "ZREVRANGE",
+  "description": "按索引区间返回有序集合中的成员，按分数从高到低排序（ZRANGE 的反向版本）",
+  "synopsis": "ZREVRANGE key start stop [WITHSCORES]",
+  "category": "sorted-set",
+  "danger_level": "low",
+  "tags": [
+    "逆序",
+    "有序集合",
+    "查询",
+    "排名",
+    "降序",
+    "排行榜"
+  ],
+  "common_options": [
+    {
+      "name": "WITHSCORES",
+      "description": "同时返回成员的分数"
+    }
+  ],
+  "related": [
+    "ZRANGE",
+    "ZREVRANK",
+    "ZADD",
+    "ZRANGEBYSCORE"
+  ],
+  "examples": [
+    {
+      "description": "获取排行榜 Top 10（分数从高到低）",
+      "code": "ZREVRANGE leaderboard 0 9 WITHSCORES"
+    }
+  ]
+}

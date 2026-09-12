@@ -1,0 +1,41 @@
+{
+  "name": "XREAD",
+  "description": "阻塞或非阻塞地从多个 Stream 读取消息——支持从指定 ID 之后读取，支持 BLOCK 阻塞等待新消息",
+  "synopsis": "XREAD [COUNT count] [BLOCK milliseconds] STREAMS key [key ...] id [id ...]",
+  "category": "stream",
+  "danger_level": "low",
+  "tags": [
+    "读取",
+    "阻塞",
+    "多流",
+    "消费者",
+    "Stream",
+    "消息"
+  ],
+  "common_options": [
+    {
+      "name": "COUNT count",
+      "description": "每个 Stream 最多返回 count 条"
+    },
+    {
+      "name": "BLOCK ms",
+      "description": "阻塞等待 ms 毫秒，0 表示永久阻塞"
+    }
+  ],
+  "related": [
+    "XREADGROUP",
+    "XRANGE",
+    "XADD",
+    "XGROUP"
+  ],
+  "examples": [
+    {
+      "description": "读取所有新消息（从 ID 0 开始）",
+      "code": "XREAD COUNT 10 STREAMS mystream 0"
+    },
+    {
+      "description": "阻塞等待新消息（最大 5 秒）",
+      "code": "XREAD BLOCK 5000 STREAMS mystream $"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "SUBSCRIBE",
+  "description": "订阅一个或多个频道（进入订阅模式）",
+  "synopsis": "SUBSCRIBE channel [channel ...]",
+  "category": "pubsub",
+  "danger_level": "low",
+  "tags": [
+    "订阅",
+    "消息",
+    "频道",
+    "实时",
+    "监听"
+  ],
+  "common_options": [],
+  "related": [
+    "PUBLISH",
+    "PSUBSCRIBE",
+    "UNSUBSCRIBE"
+  ],
+  "examples": [
+    {
+      "description": "订阅 news 和 alerts 频道",
+      "code": "SUBSCRIBE news alerts"
+    }
+  ]
+}

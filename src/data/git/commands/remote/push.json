@@ -1,0 +1,40 @@
+{
+  "name": "git push",
+  "description": "将本地提交推送到远程仓库——同步你的更改供团队使用",
+  "synopsis": "git push [options] [<remote>] [<branch>]",
+  "category": "remote",
+  "danger_level": "medium",
+  "tags": ["推送", "push", "远程", "上传", "同步", "发布"],
+  "common_options": [
+    { "name": "-u <remote> <branch>", "description": "推送并设置上游追踪（后续直接 git push）" },
+    { "name": "-f / --force", "description": "强制推送（覆盖远程历史，⚠️慎用！）" },
+    { "name": "--force-with-lease", "description": "安全的强制推送——仅当远程分支未被他人更新时才推送" },
+    { "name": "--delete <branch>", "description": "删除远程分支" },
+    { "name": "--tags", "description": "推送所有本地标签到远程" },
+    { "name": "--all", "description": "推送所有分支" }
+  ],
+  "related": ["git pull", "git fetch", "git remote", "git branch"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "推送选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-u", "label": "设置上游追踪", "hint": "" },
+          { "flag": "--force-with-lease", "label": "安全强制推送", "hint": "" },
+          { "flag": "--tags", "label": "同时推送标签", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "remote", "label": "远程仓库", "placeholder": "origin", "prefix": "" },
+      { "key": "branch", "label": "分支名", "placeholder": "main", "prefix": "" }
+    ]
+  },
+  "examples": [
+    { "description": "推送到远程", "code": "git push" },
+    { "description": "首次推送并设置上游", "code": "git push -u origin main" },
+    { "description": "删除远程分支", "code": "git push --delete origin feature/old-branch" },
+    { "description": "安全的强制推送", "code": "git push --force-with-lease" }
+  ]
+}

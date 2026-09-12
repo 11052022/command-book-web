@@ -1,0 +1,31 @@
+{
+  "name": "XACK",
+  "description": "确认消费者组中的消息已被处理——ACK 后消息从 PEL（待处理列表）中移除",
+  "synopsis": "XACK key group id [id ...]",
+  "category": "stream",
+  "danger_level": "low",
+  "tags": [
+    "确认",
+    "ACK",
+    "消费者组",
+    "消息处理",
+    "Stream"
+  ],
+  "common_options": [],
+  "related": [
+    "XREADGROUP",
+    "XGROUP",
+    "XPENDING",
+    "XADD"
+  ],
+  "examples": [
+    {
+      "description": "确认单条消息已处理",
+      "code": "XACK mystream mygroup 1699999999999-0"
+    },
+    {
+      "description": "批量确认多条消息",
+      "code": "XACK mystream mygroup 1699999999999-0 1699999999999-1 1699999999999-2"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "SRANDMEMBER",
+  "description": "随机返回集合中的一个或多个成员但不移除——适用于推荐、随机展示等场景",
+  "synopsis": "SRANDMEMBER key [count]",
+  "category": "set",
+  "danger_level": "low",
+  "tags": [
+    "随机",
+    "集合",
+    "抽取",
+    "推荐",
+    "展示"
+  ],
+  "common_options": [],
+  "related": [
+    "SPOP",
+    "SMEMBERS",
+    "SADD"
+  ],
+  "examples": [
+    {
+      "description": "随机推荐 5 篇文章给用户（不消耗）",
+      "code": "SRANDMEMBER articles:hot 5"
+    },
+    {
+      "description": "count 为负数时允许重复",
+      "code": "SRANDMEMBER candidates -3"
+    }
+  ]
+}

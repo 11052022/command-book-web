@@ -1,0 +1,25 @@
+{
+  "name": "MGET",
+  "description": "批量获取多个 key 的值",
+  "synopsis": "MGET key [key ...]",
+  "category": "string",
+  "danger_level": "low",
+  "tags": [
+    "批量",
+    "获取",
+    "多个",
+    "读取",
+    "性能"
+  ],
+  "common_options": [],
+  "related": [
+    "GET",
+    "MSET"
+  ],
+  "examples": [
+    {
+      "description": "批量获取多个用户名称",
+      "code": "MGET user:1:name user:2:name user:3:name"
+    }
+  ]
+}

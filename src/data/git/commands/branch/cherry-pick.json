@@ -1,0 +1,34 @@
+{
+  "name": "git cherry-pick",
+  "description": "将指定提交的修改应用到当前分支——精准搬运单个或一组提交，不改变提交历史",
+  "synopsis": "git cherry-pick [options] <commit>...",
+  "category": "branch",
+  "danger_level": "medium",
+  "tags": ["cherry-pick", "挑选", "搬运", "提交", "移植", "补丁"],
+  "common_options": [
+    { "name": "-n / --no-commit", "description": "只应用更改到暂存区但不自动提交" },
+    { "name": "-x", "description": "在提交信息中附加原始提交的 SHA" },
+    { "name": "--continue", "description": "解决冲突后继续" },
+    { "name": "--abort", "description": "放弃并恢复到 cherry-pick 前状态" }
+  ],
+  "related": ["git merge", "git rebase", "git revert"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-n", "label": "不自动提交（只暂存）", "hint": "" },
+          { "flag": "-x", "label": "在提交信息中记录原始 SHA", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "commits", "label": "提交 SHA（空格分隔多个）", "placeholder": "a1b2c3d e4f5g6h", "prefix": "" }
+    ]
+  },
+  "examples": [
+    { "description": "将某个提交搬运到当前分支", "code": "git cherry-pick a1b2c3d" },
+    { "description": "搬运连续的多个提交", "code": "git cherry-pick a1b2c3d..e4f5g6h" }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "locate",
+  "description": "通过索引数据库快速查找文件路径",
+  "synopsis": "locate [选项] 模式",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "搜索",
+    "查找",
+    "文件",
+    "快速",
+    "索引",
+    "路径"
+  ],
+  "common_options": [
+    {
+      "name": "-i",
+      "description": "忽略大小写"
+    },
+    {
+      "name": "-c",
+      "description": "只显示匹配数量"
+    },
+    {
+      "name": "-l",
+      "description": "限制输出数量"
+    }
+  ],
+  "related": [
+    "find",
+    "updatedb",
+    "mlocate",
+    "which"
+  ],
+  "examples": [
+    {
+      "description": "快速查找文件",
+      "code": "locate nginx.conf"
+    },
+    {
+      "description": "忽略大小写查找",
+      "code": "locate -i README"
+    },
+    {
+      "description": "限制结果数量",
+      "code": "locate -l 10 *.pdf"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "ZADD",
+  "description": "向有序集合中添加一个或多个成员及分数",
+  "synopsis": "ZADD key [NX|XX] [GT|LT] [CH] [INCR] score member [score member ...]",
+  "category": "sorted-set",
+  "danger_level": "low",
+  "tags": [
+    "添加",
+    "有序集合",
+    "分数",
+    "排名",
+    "写入"
+  ],
+  "common_options": [
+    {
+      "name": "NX",
+      "description": "仅添加新成员"
+    },
+    {
+      "name": "XX",
+      "description": "仅更新已存在成员"
+    },
+    {
+      "name": "INCR",
+      "description": "递增分数而非设置"
+    }
+  ],
+  "related": [
+    "ZREM",
+    "ZSCORE",
+    "ZRANGE",
+    "ZRANK"
+  ],
+  "builder_options": {
+    "arguments": [
+      { "key": "key", "label": "Key", "placeholder": "leaderboard", "required": true },
+      { "key": "score", "label": "分数", "placeholder": "1000", "required": true },
+      { "key": "member", "label": "成员", "placeholder": "player:1", "required": true },
+      { "key": "extra", "label": "更多 (score member ...)", "placeholder": "950 player:2 1200 player:3", "required": false }
+    ],
+    "tokens": [
+      { "key": "NX", "label": "仅添加新成员", "hasValue": false },
+      { "key": "XX", "label": "仅更新已存在成员", "hasValue": false },
+      { "key": "GT", "label": "仅当新分数 > 当前分数", "hasValue": false },
+      { "key": "LT", "label": "仅当新分数 < 当前分数", "hasValue": false },
+      { "key": "CH", "label": "返回被修改成员数", "hasValue": false },
+      { "key": "INCR", "label": "递增分数模式（仅单成员）", "hasValue": false }
+    ],
+    "exclusiveGroups": [
+      { "label": "添加/更新条件", "tokens": ["NX", "XX"] }
+    ]
+  },
+  "examples": [
+    {
+      "description": "添加玩家分数",
+      "code": "ZADD leaderboard 1000 player:1 950 player:2 1200 player:3"
+    }
+  ]
+}

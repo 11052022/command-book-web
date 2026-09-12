@@ -1,0 +1,52 @@
+{
+  "name": "dnf",
+  "description": "Fedora/RHEL 的新一代包管理工具（替代 yum）",
+  "synopsis": "dnf [命令] [包名]",
+  "category": "包管理",
+  "danger_level": "medium",
+  "tags": [
+    "安装",
+    "更新",
+    "包",
+    "软件",
+    "Fedora",
+    "RHEL"
+  ],
+  "common_options": [
+    {
+      "name": "install",
+      "description": "安装软件包"
+    },
+    {
+      "name": "update",
+      "description": "更新软件包"
+    },
+    {
+      "name": "remove",
+      "description": "删除软件包"
+    },
+    {
+      "name": "search",
+      "description": "搜索软件包"
+    }
+  ],
+  "related": [
+    "yum",
+    "rpm",
+    "apt"
+  ],
+  "examples": [
+    {
+      "description": "安装软件包",
+      "code": "sudo dnf install nginx"
+    },
+    {
+      "description": "搜索软件包",
+      "code": "dnf search golang"
+    },
+    {
+      "description": "系统升级",
+      "code": "sudo dnf upgrade"
+    }
+  ]
+}

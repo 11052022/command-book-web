@@ -1,0 +1,26 @@
+{
+  "name": "PUBLISH",
+  "description": "将消息发布到指定频道",
+  "synopsis": "PUBLISH channel message",
+  "category": "pubsub",
+  "danger_level": "low",
+  "tags": [
+    "发布",
+    "消息",
+    "频道",
+    "广播",
+    "实时"
+  ],
+  "common_options": [],
+  "related": [
+    "SUBSCRIBE",
+    "PSUBSCRIBE",
+    "PUBSUB"
+  ],
+  "examples": [
+    {
+      "description": "向 news 频道发布消息",
+      "code": "PUBLISH news 'Breaking: Redis 8.0 released!'"
+    }
+  ]
+}

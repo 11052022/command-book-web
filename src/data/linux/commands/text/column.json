@@ -1,0 +1,43 @@
+{
+  "name": "column",
+  "description": "将文本格式化为对齐的列",
+  "synopsis": "column [选项] [文件]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": [
+    "列",
+    "格式化",
+    "对齐",
+    "表格",
+    "显示"
+  ],
+  "related": [
+    "pr",
+    "paste",
+    "fmt"
+  ],
+  "common_options": [
+    {
+      "name": "-t",
+      "description": "按空格分隔并自动对齐"
+    },
+    {
+      "name": "-s",
+      "description": "指定分隔符"
+    },
+    {
+      "name": "-o",
+      "description": "指定输出分隔符"
+    }
+  ],
+  "examples": [
+    {
+      "description": "格式化 mount 输出为表格",
+      "code": "mount | column -t"
+    },
+    {
+      "description": "以逗号分隔并格式化",
+      "code": "column -t -s',' data.csv"
+    }
+  ]
+}

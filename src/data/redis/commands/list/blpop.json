@@ -1,0 +1,33 @@
+{
+  "name": "BLPOP",
+  "description": "阻塞式从列表头部弹出元素——列表为空时阻塞等待直到有元素或超时，避免空轮询",
+  "synopsis": "BLPOP key [key ...] timeout",
+  "category": "list",
+  "danger_level": "low",
+  "tags": [
+    "阻塞",
+    "弹出",
+    "队列",
+    "消费者",
+    "等待",
+    "超时"
+  ],
+  "common_options": [],
+  "related": [
+    "BRPOP",
+    "LPOP",
+    "LPUSH",
+    "RPUSH",
+    "BLMOVE"
+  ],
+  "examples": [
+    {
+      "description": "阻塞等待消息，最多等 5 秒",
+      "code": "BLPOP queue:tasks 5"
+    },
+    {
+      "description": "从多个队列中阻塞弹出（优先级队列）",
+      "code": "BLPOP queue:high queue:normal queue:low 0"
+    }
+  ]
+}

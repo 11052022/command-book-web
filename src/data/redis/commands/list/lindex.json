@@ -1,0 +1,24 @@
+{
+  "name": "LINDEX",
+  "description": "通过索引获取列表中的元素",
+  "synopsis": "LINDEX key index",
+  "category": "list",
+  "danger_level": "low",
+  "tags": [
+    "索引",
+    "列表",
+    "查询",
+    "位置"
+  ],
+  "common_options": [],
+  "related": [
+    "LRANGE",
+    "LSET"
+  ],
+  "examples": [
+    {
+      "description": "获取列表第 3 个元素",
+      "code": "LINDEX queue:tasks 2"
+    }
+  ]
+}

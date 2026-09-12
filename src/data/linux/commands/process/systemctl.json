@@ -1,0 +1,65 @@
+{
+  "name": "systemctl",
+  "description": "管理 systemd 系统和服务",
+  "synopsis": "systemctl [命令] [服务名]",
+  "category": "进程管理",
+  "danger_level": "high",
+  "tags": [
+    "服务",
+    "启动",
+    "停止",
+    "重启",
+    "systemd",
+    "守护",
+    "管理"
+  ],
+  "common_options": [
+    {
+      "name": "start",
+      "description": "启动服务"
+    },
+    {
+      "name": "stop",
+      "description": "停止服务"
+    },
+    {
+      "name": "restart",
+      "description": "重启服务"
+    },
+    {
+      "name": "enable",
+      "description": "设置开机自启"
+    },
+    {
+      "name": "disable",
+      "description": "取消开机自启"
+    },
+    {
+      "name": "status",
+      "description": "查看服务状态"
+    }
+  ],
+  "related": [
+    "service",
+    "journalctl",
+    "init.d"
+  ],
+  "examples": [
+    {
+      "description": "启动服务",
+      "code": "sudo systemctl start nginx"
+    },
+    {
+      "description": "查看服务状态",
+      "code": "sudo systemctl status nginx"
+    },
+    {
+      "description": "设置开机自启",
+      "code": "sudo systemctl enable nginx"
+    },
+    {
+      "description": "重启服务",
+      "code": "sudo systemctl restart nginx"
+    }
+  ]
+}

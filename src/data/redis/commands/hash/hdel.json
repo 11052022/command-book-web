@@ -1,0 +1,25 @@
+{
+  "name": "HDEL",
+  "description": "删除哈希表中的一个或多个指定字段",
+  "synopsis": "HDEL key field [field ...]",
+  "category": "hash",
+  "danger_level": "medium",
+  "tags": [
+    "删除",
+    "哈希",
+    "字段",
+    "移除"
+  ],
+  "common_options": [],
+  "related": [
+    "HSET",
+    "HGET",
+    "HEXISTS"
+  ],
+  "examples": [
+    {
+      "description": "删除用户的 age 字段",
+      "code": "HDEL user:1 age"
+    }
+  ]
+}

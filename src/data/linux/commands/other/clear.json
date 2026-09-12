@@ -1,0 +1,28 @@
+{
+  "name": "clear",
+  "description": "清空终端屏幕",
+  "synopsis": "clear",
+  "category": "其他常用",
+  "danger_level": "low",
+  "tags": [
+    "清屏",
+    "清理",
+    "屏幕",
+    "终端"
+  ],
+  "common_options": [],
+  "related": [
+    "reset",
+    "tput"
+  ],
+  "examples": [
+    {
+      "description": "清空终端屏幕",
+      "code": "clear"
+    },
+    {
+      "description": "快捷键清屏",
+      "code": "Ctrl+L"
+    }
+  ]
+}

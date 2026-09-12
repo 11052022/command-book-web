@@ -1,0 +1,31 @@
+{
+  "name": "INCR",
+  "description": "将 key 中储存的数字值增 1（原子递增）",
+  "synopsis": "INCR key",
+  "category": "string",
+  "danger_level": "medium",
+  "tags": [
+    "递增",
+    "计数器",
+    "原子",
+    "数字",
+    "自增"
+  ],
+  "common_options": [],
+  "related": [
+    "DECR",
+    "INCRBY",
+    "GET",
+    "SET"
+  ],
+  "examples": [
+    {
+      "description": "页面访问计数",
+      "code": "INCR page:home:views"
+    },
+    {
+      "description": "生成自增 ID",
+      "code": "INCR order:id"
+    }
+  ]
+}

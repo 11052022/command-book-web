@@ -1,0 +1,70 @@
+{
+  "name": "apt",
+  "description": "Debian/Ubuntu 系统的包管理工具",
+  "synopsis": "apt [命令] [包名]",
+  "category": "包管理",
+  "danger_level": "medium",
+  "tags": [
+    "安装",
+    "更新",
+    "包",
+    "软件",
+    "Ubuntu",
+    "Debian",
+    "源"
+  ],
+  "common_options": [
+    {
+      "name": "update",
+      "description": "刷新软件包索引"
+    },
+    {
+      "name": "upgrade",
+      "description": "升级所有已安装的包"
+    },
+    {
+      "name": "install",
+      "description": "安装软件包"
+    },
+    {
+      "name": "remove",
+      "description": "删除软件包"
+    },
+    {
+      "name": "search",
+      "description": "搜索软件包"
+    },
+    {
+      "name": "autoremove",
+      "description": "自动删除不再需要的依赖"
+    }
+  ],
+  "related": [
+    "apt-get",
+    "dpkg",
+    "snap",
+    "flatpak"
+  ],
+  "examples": [
+    {
+      "description": "更新软件包索引",
+      "code": "sudo apt update"
+    },
+    {
+      "description": "安装软件包",
+      "code": "sudo apt install nginx"
+    },
+    {
+      "description": "搜索软件包",
+      "code": "apt search python3"
+    },
+    {
+      "description": "删除软件包",
+      "code": "sudo apt remove nginx"
+    },
+    {
+      "description": "清理无用依赖",
+      "code": "sudo apt autoremove"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "git clone",
+  "description": "将远程仓库完整克隆到本地——下载所有文件、提交历史和分支",
+  "synopsis": "git clone [options] <repository-url> [directory]",
+  "category": "basic",
+  "danger_level": "low",
+  "tags": ["克隆", "下载", "远程", "复制", "拉取", "仓库"],
+  "common_options": [
+    { "name": "--branch <name> / -b", "description": "克隆后切换到指定分支" },
+    { "name": "--depth <n>", "description": "浅克隆——只拉取最近 n 次提交历史（加速大仓库）" },
+    { "name": "--single-branch", "description": "只克隆指定分支" },
+    { "name": "--recurse-submodules", "description": "同时初始化和更新子模块" }
+  ],
+  "related": ["git init", "git remote", "git fetch"],
+  "examples": [
+    { "description": "克隆仓库到当前目录", "code": "git clone https://github.com/user/repo.git" },
+    { "description": "浅克隆最近 10 次提交", "code": "git clone --depth=10 https://github.com/user/repo.git" },
+    { "description": "克隆指定分支到自定义目录", "code": "git clone -b develop https://github.com/user/repo.git my-folder" }
+  ]
+}

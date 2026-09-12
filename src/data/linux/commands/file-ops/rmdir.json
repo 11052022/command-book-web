@@ -1,0 +1,38 @@
+{
+  "name": "rmdir",
+  "description": "删除空目录",
+  "synopsis": "rmdir [选项] 目录...",
+  "category": "文件操作",
+  "danger_level": "medium",
+  "tags": [
+    "删除",
+    "目录",
+    "空",
+    "移除",
+    "文件夹"
+  ],
+  "common_options": [
+    {
+      "name": "-p",
+      "description": "递归删除路径中的空目录"
+    },
+    {
+      "name": "--ignore-fail-on-non-empty",
+      "description": "忽略非空目录错误"
+    }
+  ],
+  "related": [
+    "rm",
+    "mkdir"
+  ],
+  "examples": [
+    {
+      "description": "删除空目录",
+      "code": "rmdir empty_dir"
+    },
+    {
+      "description": "级联删除路径上所有空目录",
+      "code": "rmdir -p a/b/c"
+    }
+  ]
+}

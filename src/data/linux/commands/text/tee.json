@@ -1,0 +1,35 @@
+{
+  "name": "tee",
+  "description": "从标准输入读取，同时写入文件和标准输出",
+  "synopsis": "tee [选项] [文件...]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": [
+    "输出",
+    "保存",
+    "同时",
+    "日志",
+    "管道"
+  ],
+  "common_options": [
+    {
+      "name": "-a",
+      "description": "追加而非覆盖"
+    }
+  ],
+  "related": [
+    "cat",
+    "script",
+    ">"
+  ],
+  "examples": [
+    {
+      "description": "同时输出到终端和文件",
+      "code": "ls -l | tee output.txt"
+    },
+    {
+      "description": "追加到文件",
+      "code": "echo \"new line\" | tee -a log.txt"
+    }
+  ]
+}

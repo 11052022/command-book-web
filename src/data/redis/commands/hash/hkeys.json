@@ -1,0 +1,27 @@
+{
+  "name": "HKEYS",
+  "description": "获取哈希表中所有的字段名（field names）",
+  "synopsis": "HKEYS key",
+  "category": "hash",
+  "danger_level": "low",
+  "tags": [
+    "字段名",
+    "哈希",
+    "键名",
+    "遍历",
+    "查询"
+  ],
+  "common_options": [],
+  "related": [
+    "HVALS",
+    "HGETALL",
+    "HLEN",
+    "HSCAN"
+  ],
+  "examples": [
+    {
+      "description": "查看用户对象有哪些属性字段",
+      "code": "HKEYS user:1"
+    }
+  ]
+}

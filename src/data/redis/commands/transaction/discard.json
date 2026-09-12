@@ -1,0 +1,27 @@
+{
+  "name": "DISCARD",
+  "description": "放弃当前事务块——清除 MULTI 后排队的全部命令，并取消 WATCH 对所有 key 的监视",
+  "synopsis": "DISCARD",
+  "category": "transaction",
+  "danger_level": "low",
+  "tags": [
+    "事务",
+    "放弃",
+    "回滚",
+    "取消",
+    "清除"
+  ],
+  "common_options": [],
+  "related": [
+    "MULTI",
+    "EXEC",
+    "WATCH",
+    "UNWATCH"
+  ],
+  "examples": [
+    {
+      "description": "放弃事务中的操作",
+      "code": "MULTI\nSET temp:1 'draft'\nDISCARD  # 队列被清空，SET 不会执行"
+    }
+  ]
+}

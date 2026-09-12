@@ -1,0 +1,44 @@
+{
+  "name": "comm",
+  "description": "逐行比较两个已排序的文件",
+  "synopsis": "comm [选项] 文件1 文件2",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": [
+    "比较",
+    "文件",
+    "差异",
+    "交集",
+    "排序"
+  ],
+  "related": [
+    "diff",
+    "sort",
+    "uniq",
+    "join"
+  ],
+  "common_options": [
+    {
+      "name": "-1",
+      "description": "隐藏只在文件1中的行"
+    },
+    {
+      "name": "-2",
+      "description": "隐藏只在文件2中的行"
+    },
+    {
+      "name": "-3",
+      "description": "隐藏两个文件共有的行"
+    }
+  ],
+  "examples": [
+    {
+      "description": "找出两文件共有的行（交集）",
+      "code": "comm -12 file1.txt file2.txt"
+    },
+    {
+      "description": "找出只在文件1中的行",
+      "code": "comm -23 file1.txt file2.txt"
+    }
+  ]
+}

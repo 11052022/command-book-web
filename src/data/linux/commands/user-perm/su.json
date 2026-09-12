@@ -1,0 +1,43 @@
+{
+  "name": "su",
+  "description": "切换用户身份（默认切换到 root）",
+  "synopsis": "su [选项] [用户名]",
+  "category": "用户权限",
+  "danger_level": "high",
+  "tags": [
+    "切换",
+    "用户",
+    "root",
+    "管理员",
+    "身份"
+  ],
+  "related": [
+    "sudo",
+    "login",
+    "runuser"
+  ],
+  "common_options": [
+    {
+      "name": "-",
+      "description": "启动登录 shell（加载目标用户环境）"
+    },
+    {
+      "name": "-c",
+      "description": "以目标用户执行命令后退出"
+    }
+  ],
+  "examples": [
+    {
+      "description": "切换到 root",
+      "code": "su -"
+    },
+    {
+      "description": "切换到指定用户",
+      "code": "su - username"
+    },
+    {
+      "description": "以 root 执行单条命令",
+      "code": "su -c 'systemctl restart nginx'"
+    }
+  ]
+}

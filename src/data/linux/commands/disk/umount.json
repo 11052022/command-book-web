@@ -1,0 +1,43 @@
+{
+  "name": "umount",
+  "description": "卸载已挂载的文件系统",
+  "synopsis": "umount [选项] 挂载点|设备",
+  "category": "磁盘存储",
+  "danger_level": "high",
+  "tags": [
+    "卸载",
+    "取消",
+    "挂载",
+    "文件系统",
+    "弹出"
+  ],
+  "common_options": [
+    {
+      "name": "-f",
+      "description": "强制卸载"
+    },
+    {
+      "name": "-l",
+      "description": "延迟卸载（lazy unmount）"
+    }
+  ],
+  "related": [
+    "mount",
+    "findmnt",
+    "fuser"
+  ],
+  "examples": [
+    {
+      "description": "卸载文件系统",
+      "code": "sudo umount /mnt/data"
+    },
+    {
+      "description": "强制卸载",
+      "code": "sudo umount -f /mnt/stuck"
+    },
+    {
+      "description": "延迟卸载（安全退出繁忙设备）",
+      "code": "sudo umount -l /mnt/busy"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "name": "find",
+  "description": "在目录层次结构中搜索文件",
+  "synopsis": "find [路径] [表达式]",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "搜索",
+    "查找",
+    "文件",
+    "目录",
+    "递归",
+    "搜索文件"
+  ],
+  "common_options": [
+    {
+      "name": "-name",
+      "description": "按文件名模式匹配"
+    },
+    {
+      "name": "-type",
+      "description": "按文件类型筛选（f=文件, d=目录, l=符号链接）"
+    },
+    {
+      "name": "-size",
+      "description": "按文件大小筛选"
+    },
+    {
+      "name": "-mtime",
+      "description": "按修改时间筛选（天数）"
+    },
+    {
+      "name": "-exec",
+      "description": "对匹配文件执行命令"
+    },
+    {
+      "name": "-delete",
+      "description": "删除匹配的文件"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "文件类型筛选",
+        "type": "radio",
+        "options": [
+          { "flag": "", "label": "不过滤类型", "hint": "" },
+          { "flag": "-type f", "label": "只找普通文件", "hint": "file" },
+          { "flag": "-type d", "label": "只找目录", "hint": "directory" },
+          { "flag": "-type l", "label": "只找符号链接", "hint": "symlink" }
+        ]
+      },
+      {
+        "label": "附加选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-delete", "label": "删除匹配的文件（危险！）", "hint": "" },
+          { "flag": "-maxdepth 1", "label": "仅搜索当前目录（不递归）", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "path", "label": "搜索路径", "placeholder": ".", "prefix": "" },
+      { "key": "name", "label": "文件名匹配", "placeholder": "*.txt", "prefix": "-name" },
+      { "key": "size", "label": "文件大小", "placeholder": "+100M", "prefix": "-size" },
+      { "key": "mtime", "label": "修改时间（天）", "placeholder": "-7", "prefix": "-mtime" }
+    ]
+  },
+  "related": [
+    "locate",
+    "grep",
+    "xargs",
+    "fd"
+  ],
+  "examples": [
+    {
+      "description": "按文件名查找",
+      "code": "find /home -name \"*.txt\""
+    },
+    {
+      "description": "查找并删除临时文件",
+      "code": "find . -name \"*.tmp\" -delete"
+    },
+    {
+      "description": "查找大于 100MB 的文件",
+      "code": "find / -type f -size +100M"
+    },
+    {
+      "description": "查找最近 7 天修改的文件",
+      "code": "find . -mtime -7"
+    },
+    {
+      "description": "查找并执行命令",
+      "code": "find . -name \"*.log\" -exec gzip {} \\;"
+    }
+  ]
+}

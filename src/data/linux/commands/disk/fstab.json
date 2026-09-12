@@ -1,0 +1,29 @@
+{
+  "name": "fstab",
+  "description": "文件系统挂载表 /etc/fstab——定义系统启动时自动挂载哪些分区和设备的配置文件",
+  "synopsis": "/etc/fstab 配置文件，由 mount -a 或系统启动过程读取",
+  "category": "磁盘存储",
+  "danger_level": "critical",
+  "tags": ["挂载", "自动", "启动", "配置文件", "磁盘", "分区", "开机", "永久", "fstab"],
+  "common_options": [],
+  "related": ["mount", "umount", "blkid", "findfs", "lsblk", "systemd.mount"],
+  "examples": [
+    { "description": "【查看】查看当前的 fstab 配置", "code": "cat /etc/fstab" },
+    { "description": "【格式说明】fstab 每行 6 个字段：设备  挂载点  文件系统类型  选项  dump  fsck顺序", "code": "UUID=a1b2... /mnt/data ext4 defaults 0 2" },
+    { "description": "【字段1】设备标识——推荐用 UUID（稳定），也可用 /dev/sdb1 或 LABEL=mydata", "code": "lsblk -f   # 查看所有设备的 UUID 和文件系统类型" },
+    { "description": "【字段2】挂载点——分区挂载到的目录路径", "code": "sudo mkdir -p /mnt/data   # 先创建挂载点目录" },
+    { "description": "【字段3】文件系统类型——ext4 / xfs / ntfs / vfat / swap 等", "code": "lsblk -f   # 查看设备的文件系统类型" },
+    { "description": "【字段4】挂载选项——defaults（默认）/ noatime（不更新访问时间）/ ro（只读）/ noexec（禁止执行）", "code": "defaults,noatime   # 常用组合" },
+    { "description": "【字段5】dump 备份开关——0 禁用 / 1 启用（一般设 0）", "code": "0" },
+    { "description": "【字段6】fsck 检查顺序——0 不检查 / 1 根分区 / 2 其他分区（一般根分区设 1，其余设 2 或 0）", "code": "根分区用 1，其他 ext4 分区用 2，swap/NTFS 用 0" },
+
+    { "description": "【实战】添加一个 ext4 分区自动挂载", "code": "# 1. 获取 UUID\nsudo blkid /dev/sdb1\n# 输出: /dev/sdb1: UUID=\"abc123...\" TYPE=\"ext4\"\n# 2. 创建挂载点\nsudo mkdir -p /mnt/data\n# 3. 编辑 fstab（用 vi/vim 或 nano）\nsudo vim /etc/fstab\n# 添加一行：\nUUID=abc123 /mnt/data ext4 defaults 0 2" },
+    { "description": "【实战】添加 NTFS 移动硬盘自动挂载（只读）", "code": "UUID=xyz789 /mnt/windows ntfs defaults,ro,uid=1000,gid=1000 0 0" },
+    { "description": "【实战】添加 swap 分区", "code": "UUID=swap-uuid none swap sw 0 0" },
+    { "description": "【实战】添加 tmpfs 内存文件系统", "code": "tmpfs /mnt/ramdisk tmpfs defaults,size=2G 0 0" },
+
+    { "description": "【验证】修改 fstab 后务必测试——不重启验证配置是否正确", "code": "sudo mount -a   # 尝试挂载 fstab 中所有未挂载的条目" },
+    { "description": "【验证】检查当前挂载是否与 fstab 一致", "code": "findmnt --verify   # 检查 fstab 语法和挂载状态" },
+    { "description": "【排错】如果 fstab 配置错误导致系统无法启动", "code": "# 启动时进入 recovery mode，或从 Live USB 启动，然后：\nsudo mount /dev/sda1 /mnt\nsudo vim /mnt/etc/fstab   # 修复错误行\nsudo reboot" }
+  ]
+}

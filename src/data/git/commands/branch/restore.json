@@ -1,0 +1,19 @@
+{
+  "name": "git restore",
+  "description": "恢复工作区文件——Git 2.23+ 引入，用于替代 git checkout 的文件恢复功能，语义更清晰",
+  "synopsis": "git restore [options] <pathspec>...",
+  "category": "branch",
+  "danger_level": "medium",
+  "tags": ["恢复", "restore", "撤销", "文件", "丢弃", "2.23"],
+  "common_options": [
+    { "name": "-S / --staged", "description": "从暂存区恢复（取消暂存）" },
+    { "name": "-W / --worktree", "description": "恢复工作区文件（默认）" },
+    { "name": "-s <tree> / --source=<tree>", "description": "从指定提交/分支恢复" }
+  ],
+  "related": ["git checkout", "git switch", "git reset", "git stash"],
+  "examples": [
+    { "description": "丢弃工作区的修改（恢复到暂存状态）", "code": "git restore app.js" },
+    { "description": "从暂存区移出（取消 git add）", "code": "git restore --staged app.js" },
+    { "description": "从指定提交恢复文件", "code": "git restore --source=HEAD~2 app.js" }
+  ]
+}

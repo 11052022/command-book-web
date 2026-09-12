@@ -1,0 +1,56 @@
+{
+  "name": "ss",
+  "description": "查看 socket 统计信息（比 netstat 更快）",
+  "synopsis": "ss [选项]",
+  "category": "网络相关",
+  "danger_level": "low",
+  "tags": [
+    "网络",
+    "连接",
+    "端口",
+    "socket",
+    "查看",
+    "监听"
+  ],
+  "common_options": [
+    {
+      "name": "-t",
+      "description": "显示 TCP 连接"
+    },
+    {
+      "name": "-u",
+      "description": "显示 UDP 连接"
+    },
+    {
+      "name": "-l",
+      "description": "显示监听状态"
+    },
+    {
+      "name": "-p",
+      "description": "显示进程信息"
+    },
+    {
+      "name": "-n",
+      "description": "数字格式显示"
+    }
+  ],
+  "related": [
+    "netstat",
+    "lsof",
+    "nmap"
+  ],
+  "examples": [
+    {
+      "description": "查看所有监听端口",
+      "code": "ss -tlnp"
+    },
+    {
+      "description": "查看所有 TCP 连接",
+      "code": "ss -tan"
+    },
+    {
+      "description": "查看占用 80 端口的进程",
+      "code": "ss -tlnp 'sport = :80'"
+    }
+  ]
+}

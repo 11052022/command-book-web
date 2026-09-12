@@ -1,0 +1,38 @@
+{
+  "name": "git reset",
+  "description": "重置当前 HEAD 到指定状态——可以撤销提交、取消暂存或丢弃工作区修改，⚠️ 操作不可逆",
+  "synopsis": "git reset [options] [<commit>]",
+  "category": "stash-undo",
+  "danger_level": "high",
+  "tags": ["重置", "reset", "撤销", "危险", "HEAD", "回退"],
+  "common_options": [
+    { "name": "--soft", "description": "只移动 HEAD，保留暂存区和工作区的修改" },
+    { "name": "--mixed", "description": "移动 HEAD 并重置暂存区，但保留工作区修改（默认）" },
+    { "name": "--hard", "description": "移动 HEAD 并重置暂存区和工作区——⚠️所有修改将永久丢失！" },
+    { "name": "HEAD~n", "description": "回退 n 次提交" },
+    { "name": "-- <file>", "description": "从暂存区移除指定文件（取消 git add）" }
+  ],
+  "related": ["git revert", "git reflog", "git checkout", "git restore"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "重置模式",
+        "type": "radio",
+        "options": [
+          { "flag": "--soft", "label": "只移动 HEAD（保留暂存+工作区）", "hint": "" },
+          { "flag": "--mixed", "label": "重置暂存区（默认，保留工作区）", "hint": "" },
+          { "flag": "--hard", "label": "全部重置（⚠️丢失所有修改）", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "target", "label": "目标提交", "placeholder": "HEAD~1 或 a1b2c3d", "prefix": "" }
+    ]
+  },
+  "examples": [
+    { "description": "撤销最后一次提交但保留修改（安全）", "code": "git reset --soft HEAD~1" },
+    { "description": "取消所有暂存", "code": "git reset" },
+    { "description": "完全回退到某次提交（⚠️丢失后续修改）", "code": "git reset --hard a1b2c3d" },
+    { "description": "取消指定文件的暂存", "code": "git reset HEAD app.js" }
+  ]
+}

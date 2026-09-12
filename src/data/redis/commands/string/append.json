@@ -1,0 +1,25 @@
+{
+  "name": "APPEND",
+  "description": "将 value 追加到 key 的现有值末尾",
+  "synopsis": "APPEND key value",
+  "category": "string",
+  "danger_level": "low",
+  "tags": [
+    "追加",
+    "字符串",
+    "拼接",
+    "写入"
+  ],
+  "common_options": [],
+  "related": [
+    "SET",
+    "GET",
+    "STRLEN"
+  ],
+  "examples": [
+    {
+      "description": "追加日志内容",
+      "code": "APPEND log:errors 'Connection timeout'"
+    }
+  ]
+}

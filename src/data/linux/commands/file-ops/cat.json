@@ -1,0 +1,55 @@
+{
+  "name": "cat",
+  "description": "连接文件并输出到标准输出",
+  "synopsis": "cat [选项] [文件...]",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "查看",
+    "显示",
+    "文件",
+    "内容",
+    "输出",
+    "连接"
+  ],
+  "common_options": [
+    {
+      "name": "-n",
+      "description": "显示行号"
+    },
+    {
+      "name": "-b",
+      "description": "仅对非空行显示行号"
+    },
+    {
+      "name": "-s",
+      "description": "压缩连续的空行为一行"
+    }
+  ],
+  "related": [
+    "less",
+    "more",
+    "head",
+    "tail",
+    "tac",
+    "bat"
+  ],
+  "examples": [
+    {
+      "description": "查看文件内容",
+      "code": "cat file.txt"
+    },
+    {
+      "description": "带行号查看",
+      "code": "cat -n file.txt"
+    },
+    {
+      "description": "合并多个文件",
+      "code": "cat file1.txt file2.txt > merged.txt"
+    },
+    {
+      "description": "将内容追加到文件",
+      "code": "cat file1.txt >> file2.txt"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "passwd",
+  "description": "修改用户密码",
+  "synopsis": "passwd [选项] [用户名]",
+  "category": "用户权限",
+  "danger_level": "medium",
+  "tags": [
+    "密码",
+    "修改",
+    "设置",
+    "用户",
+    "账户"
+  ],
+  "common_options": [
+    {
+      "name": "-l",
+      "description": "锁定用户账户"
+    },
+    {
+      "name": "-u",
+      "description": "解锁用户账户"
+    },
+    {
+      "name": "-d",
+      "description": "删除密码（无密码登录）"
+    },
+    {
+      "name": "-e",
+      "description": "强制用户下次登录时修改密码"
+    }
+  ],
+  "related": [
+    "useradd",
+    "usermod",
+    "chage"
+  ],
+  "examples": [
+    {
+      "description": "修改当前用户密码",
+      "code": "passwd"
+    },
+    {
+      "description": "修改指定用户密码",
+      "code": "sudo passwd username"
+    },
+    {
+      "description": "锁定用户账户",
+      "code": "sudo passwd -l username"
+    }
+  ]
+}

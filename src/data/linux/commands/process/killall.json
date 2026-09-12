@@ -1,0 +1,48 @@
+{
+  "name": "killall",
+  "description": "按进程名终止所有匹配的进程",
+  "synopsis": "killall [选项] 进程名",
+  "category": "进程管理",
+  "danger_level": "high",
+  "tags": [
+    "终止",
+    "结束",
+    "杀掉",
+    "进程",
+    "名字",
+    "批量"
+  ],
+  "common_options": [
+    {
+      "name": "-9",
+      "description": "强制终止"
+    },
+    {
+      "name": "-i",
+      "description": "终止前询问确认"
+    },
+    {
+      "name": "-u",
+      "description": "只终止指定用户的进程"
+    }
+  ],
+  "related": [
+    "kill",
+    "pkill",
+    "pidof"
+  ],
+  "examples": [
+    {
+      "description": "终止所有 nginx 进程",
+      "code": "sudo killall nginx"
+    },
+    {
+      "description": "交互式终止（确认）",
+      "code": "killall -i node"
+    },
+    {
+      "description": "强制终止所有匹配进程",
+      "code": "killall -9 python"
+    }
+  ]
+}

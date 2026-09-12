@@ -1,0 +1,73 @@
+{
+  "name": "vim",
+  "description": "Vi IMproved——Unix/Linux 下最强大的终端文本编辑器。模态编辑器：在不同模式下按键有不同含义（Normal 模式浏览，Insert 模式输入，Command 模式执行命令）",
+  "synopsis": "vim [选项] [文件...]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": ["编辑", "编辑器", "文本", "vim", "vi", "修改", "文件", "编写", "代码", "配置", "日志"],
+  "common_options": [
+    { "name": "+N", "description": "打开文件并跳转到第 N 行" },
+    { "name": "+/pat", "description": "打开文件并跳到第一个匹配行" },
+    { "name": "-R", "description": "只读模式（view 命令等同）" },
+    { "name": "-b", "description": "二进制模式" },
+    { "name": "-d", "description": "差异模式——对比两个文件（vdiff）" },
+    { "name": "-o N", "description": "水平分屏打开 N 个文件" },
+    { "name": "-O N", "description": "垂直分屏打开 N 个文件" },
+    { "name": "-c cmd", "description": "启动后自动执行 Ex 命令" },
+    { "name": "-u vimrc", "description": "使用指定的配置文件" }
+  ],
+  "related": ["vi", "nano", "emacs", "neovim", "sed", "awk", "cat", "less", "tail", "grep"],
+  "examples": [
+    { "description": "【打开文件】基本打开", "code": "vim file.txt" },
+    { "description": "【打开文件】跳到第 50 行", "code": "vim +50 app.log" },
+    { "description": "【打开文件】跳到第一个 'error' 处", "code": "vim +/error app.log" },
+    { "description": "【打开文件】只读模式查看（保护文件不被误改）", "code": "vim -R /etc/nginx/nginx.conf" },
+
+    { "description": "【模式切换】进入编辑模式（插入文本）", "code": "在 Normal 模式下按 i" },
+    { "description": "【模式切换】在行尾插入（追加）", "code": "在 Normal 模式下按 A" },
+    { "description": "【模式切换】返回 Normal 模式", "code": "按 Esc 或 Ctrl+[" },
+    { "description": "【模式切换】进入命令行模式", "code": "在 Normal 模式下按 :" },
+    { "description": "【模式切换】进入可视模式（选择文本）", "code": "在 Normal 模式下按 v" },
+
+    { "description": "【保存退出】保存并退出", "code": "在命令模式下输入 :wq 然后回车" },
+    { "description": "【保存退出】保存并退出（等效写法）", "code": "在命令模式下输入 :x 然后回车" },
+    { "description": "【保存退出】不保存强制退出", "code": "在命令模式下输入 :q! 然后回车" },
+    { "description": "【保存退出】保存所有打开的文件并退出", "code": "在命令模式下输入 :wqa 然后回车" },
+    { "description": "【保存退出】Normal 模式快捷键保存退出", "code": "在 Normal 模式下按 ZZ（保存退出）或 ZQ（不保存退出）" },
+
+    { "description": "【光标移动】上下左右", "code": "h（左）j（下）k（上）l（右）——推荐替代方向键" },
+    { "description": "【光标移动】跳到文件头 / 文件尾", "code": "gg 跳到开头 / G 跳到末尾" },
+    { "description": "【光标移动】跳到行首 / 行尾", "code": "0 跳到行首 / $ 跳到行尾 / ^ 跳到第一个非空字符" },
+    { "description": "【光标移动】按单词移动", "code": "w 下一个单词开头 / b 上一个单词开头 / e 单词结尾" },
+    { "description": "【光标移动】翻页", "code": "Ctrl+f 下一页 / Ctrl+b 上一页 / Ctrl+d 下半页 / Ctrl+u 上半页" },
+
+    { "description": "【编辑操作】删除当前行", "code": "在 Normal 模式下按 dd" },
+    { "description": "【编辑操作】删除 5 行", "code": "在 Normal 模式下按 5dd" },
+    { "description": "【编辑操作】删除从光标到行尾", "code": "在 Normal 模式下按 D" },
+    { "description": "【编辑操作】复制当前行", "code": "在 Normal 模式下按 yy" },
+    { "description": "【编辑操作】粘贴", "code": "在 Normal 模式下按 p（光标后）或 P（光标前）" },
+    { "description": "【编辑操作】撤销 / 重做", "code": "u 撤销 / Ctrl+r 重做" },
+
+    { "description": "【搜索替换】向下搜索 'error'", "code": "在 Normal 模式下按 /error 然后回车" },
+    { "description": "【搜索替换】向上搜索", "code": "在 Normal 模式下按 ?error 然后回车" },
+    { "description": "【搜索替换】跳到下一个 / 上一个匹配", "code": "n 下一个 / N 上一个" },
+    { "description": "【搜索替换】全局替换（不确认）", "code": "在命令模式下 :%s/old/new/g" },
+    { "description": "【搜索替换】全局替换（逐个确认）", "code": "在命令模式下 :%s/old/new/gc" },
+    { "description": "【搜索替换】替换当前行第一个匹配", "code": "在命令模式下 :s/old/new/" },
+    { "description": "【搜索替换】指定行范围替换（10-20 行）", "code": "在命令模式下 :10,20s/foo/bar/g" },
+
+    { "description": "【查看日志】用 vim 打开大日志并跳到末尾", "code": "vim + app.log" },
+    { "description": "【查看日志】打开日志直接搜索 ERROR", "code": "vim +/ERROR /var/log/syslog" },
+    { "description": "【查看日志】在 vim 内高亮显示某关键字", "code": "在命令模式下 :set hlsearch 然后 /keyword" },
+    { "description": "【查看日志】关闭高亮", "code": "在命令模式下 :nohlsearch（或简写 :noh）" },
+    { "description": "【查看日志】显示行号方便定位", "code": "在命令模式下 :set number（或 :set nu）" },
+    { "description": "【查看日志】vim 内执行 grep 过滤结果到 quickfix 窗口", "code": "在命令模式下 :grep ERROR % 然后 :copen 查看结果列表" },
+    { "description": "【查看日志】跳转到特定行（如第 5000 行）", "code": "在命令模式下 :5000 然后回车" },
+    { "description": "【查看日志】折叠/展开可视区域", "code": "zf 创建折叠 / zo 打开折叠 / zc 关闭折叠" },
+
+    { "description": "【分屏操作】水平分屏", "code": "在命令模式下 :split（或 :sp）" },
+    { "description": "【分屏操作】垂直分屏", "code": "在命令模式下 :vsplit（或 :vsp）" },
+    { "description": "【分屏操作】在分屏间切换", "code": "Ctrl+w 然后按 h/j/k/l 切换到对应方向的分屏" },
+    { "description": "【分屏操作】关闭当前分屏", "code": "在命令模式下 :q" }
+  ]
+}

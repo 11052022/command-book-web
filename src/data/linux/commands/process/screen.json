@@ -1,0 +1,52 @@
+{
+  "name": "screen",
+  "description": "终端复用器（保持会话不中断）",
+  "synopsis": "screen [选项]",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "终端",
+    "会话",
+    "后台",
+    "复用",
+    "保持",
+    "多路"
+  ],
+  "common_options": [
+    {
+      "name": "-S",
+      "description": "指定会话名称"
+    },
+    {
+      "name": "-ls",
+      "description": "列出所有会话"
+    },
+    {
+      "name": "-r",
+      "description": "重新连接会话"
+    }
+  ],
+  "related": [
+    "tmux",
+    "nohup",
+    "byobu"
+  ],
+  "examples": [
+    {
+      "description": "创建新会话",
+      "code": "screen -S mysession"
+    },
+    {
+      "description": "列出所有会话",
+      "code": "screen -ls"
+    },
+    {
+      "description": "重新连接会话",
+      "code": "screen -r mysession"
+    },
+    {
+      "description": "分离当前会话",
+      "code": "Ctrl+A 然后按 D"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "mkdir",
+  "description": "创建目录",
+  "synopsis": "mkdir [选项] 目录...",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "创建",
+    "目录",
+    "文件夹",
+    "新建"
+  ],
+  "common_options": [
+    {
+      "name": "-p",
+      "description": "递归创建父目录（不存在时自动创建）"
+    },
+    {
+      "name": "-m",
+      "description": "设置目录权限模式"
+    },
+    {
+      "name": "-v",
+      "description": "显示创建过程"
+    }
+  ],
+  "related": [
+    "rmdir",
+    "touch",
+    "ls"
+  ],
+  "examples": [
+    {
+      "description": "创建目录",
+      "code": "mkdir new_dir"
+    },
+    {
+      "description": "递归创建多级目录（一步到位）",
+      "code": "mkdir -p /path/to/deep/directory"
+    },
+    {
+      "description": "创建并设置权限",
+      "code": "mkdir -m 755 public_dir"
+    }
+  ]
+}

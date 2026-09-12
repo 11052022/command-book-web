@@ -1,0 +1,43 @@
+{
+  "name": "git stash",
+  "description": "暂存当前工作区的修改并恢复到干净状态——临时保存未完成的更改，稍后可恢复",
+  "synopsis": "git stash [push | list | pop | apply | drop | show] [options]",
+  "category": "stash-undo",
+  "danger_level": "low",
+  "tags": ["暂存", "stash", "保存", "临时", "工作区", "暂缓"],
+  "common_options": [
+    { "name": "push", "description": "将当前修改保存到暂存栈（默认子命令）" },
+    { "name": "push -m \"msg\"", "description": "带描述信息地暂存" },
+    { "name": "push -u / --include-untracked", "description": "同时暂存未跟踪的文件" },
+    { "name": "list", "description": "列出所有暂存项" },
+    { "name": "pop [stash@{n}]", "description": "恢复最近的暂存并删除它" },
+    { "name": "apply [stash@{n}]", "description": "恢复暂存但保留它（不删除）" },
+    { "name": "drop [stash@{n}]", "description": "删除指定暂存项" },
+    { "name": "show [stash@{n}]", "description": "查看暂存的详细 diff" }
+  ],
+  "related": ["git reset", "git checkout", "git restore", "git clean"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "子命令",
+        "type": "radio",
+        "options": [
+          { "flag": "push", "label": "暂存当前修改", "hint": "" },
+          { "flag": "pop", "label": "恢复并删除最近暂存", "hint": "" },
+          { "flag": "apply", "label": "恢复但保留暂存", "hint": "" },
+          { "flag": "list", "label": "列出所有暂存", "hint": "" },
+          { "flag": "drop", "label": "删除指定暂存", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "extra", "label": "参数/描述", "placeholder": "push: -m \"msg\" / drop: stash@{0}", "prefix": "" }
+    ]
+  },
+  "examples": [
+    { "description": "暂存当前修改", "code": "git stash" },
+    { "description": "暂存并加描述", "code": "git stash push -m \"wip: half-done feature\"" },
+    { "description": "查看暂存列表", "code": "git stash list" },
+    { "description": "恢复最近的暂存", "code": "git stash pop" }
+  ]
+}

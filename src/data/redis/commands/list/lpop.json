@@ -1,0 +1,26 @@
+{
+  "name": "LPOP",
+  "description": "移除并返回列表的第一个元素",
+  "synopsis": "LPOP key [count]",
+  "category": "list",
+  "danger_level": "medium",
+  "tags": [
+    "弹出",
+    "列表",
+    "头部",
+    "移除",
+    "消费"
+  ],
+  "common_options": [],
+  "related": [
+    "LPUSH",
+    "RPOP",
+    "LRANGE"
+  ],
+  "examples": [
+    {
+      "description": "从左侧弹出消息",
+      "code": "LPOP messages:general"
+    }
+  ]
+}

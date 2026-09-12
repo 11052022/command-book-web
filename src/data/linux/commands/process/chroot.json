@@ -1,0 +1,36 @@
+{
+  "name": "chroot",
+  "description": "切换根目录并执行命令（创建隔离环境）",
+  "synopsis": "chroot [选项] 新根目录 [命令]",
+  "category": "进程管理",
+  "danger_level": "high",
+  "tags": [
+    "隔离",
+    "根目录",
+    "沙箱",
+    "切换",
+    "修复",
+    "系统"
+  ],
+  "related": [
+    "systemd-nspawn",
+    "docker",
+    "jail"
+  ],
+  "common_options": [
+    {
+      "name": "--userspec",
+      "description": "指定用户和组"
+    }
+  ],
+  "examples": [
+    {
+      "description": "切换根目录并进入 shell",
+      "code": "sudo chroot /mnt/newroot /bin/bash"
+    },
+    {
+      "description": "修复系统时切换到损坏的系统盘",
+      "code": "sudo chroot /mnt/rescue"
+    }
+  ]
+}

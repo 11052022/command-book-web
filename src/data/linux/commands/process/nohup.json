@@ -1,0 +1,31 @@
+{
+  "name": "nohup",
+  "description": "运行命令不受终端挂断影响",
+  "synopsis": "nohup 命令 [参数] &",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "后台",
+    "持续",
+    "运行",
+    "终端",
+    "退出"
+  ],
+  "common_options": [],
+  "related": [
+    "disown",
+    "screen",
+    "tmux",
+    "bg"
+  ],
+  "examples": [
+    {
+      "description": "在后台持续运行脚本",
+      "code": "nohup ./long_script.sh &"
+    },
+    {
+      "description": "运行并将输出保存到文件",
+      "code": "nohup python app.py > output.log 2>&1 &"
+    }
+  ]
+}

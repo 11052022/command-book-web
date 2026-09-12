@@ -1,0 +1,42 @@
+{
+  "name": "git log",
+  "description": "查看提交历史——显示提交的 SHA、作者、日期和提交信息，支持丰富的格式化和过滤选项",
+  "synopsis": "git log [options] [<revision-range>]",
+  "category": "basic",
+  "danger_level": "low",
+  "tags": ["历史", "日志", "提交记录", "log", "查看", "追溯"],
+  "common_options": [
+    { "name": "--oneline", "description": "每个提交一行（SHA + 标题），最紧凑的格式" },
+    { "name": "--graph", "description": "用 ASCII 图显示分支和合并历史" },
+    { "name": "-n <n>", "description": "只显示最近 n 条提交" },
+    { "name": "--author=<pattern>", "description": "只显示指定作者的提交" },
+    { "name": "--since/--until", "description": "按日期范围过滤" },
+    { "name": "--grep=<pattern>", "description": "在提交信息中搜索关键词" },
+    { "name": "-p", "description": "同时显示每个提交的完整 diff" },
+    { "name": "-- <path>", "description": "只显示涉及指定文件的提交" }
+  ],
+  "related": ["git show", "git diff", "git blame", "git reflog"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "显示选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "--oneline", "label": "每行一个提交（紧凑）", "hint": "" },
+          { "flag": "--graph", "label": "显示分支图", "hint": "" },
+          { "flag": "-p", "label": "显示完整 diff", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "count", "label": "最近 N 条", "placeholder": "10", "prefix": "-n " },
+      { "key": "author", "label": "按作者过滤", "placeholder": "zhangsan", "prefix": "--author=" }
+    ]
+  },
+  "examples": [
+    { "description": "查看最近 10 条提交（紧凑模式）", "code": "git log --oneline -10" },
+    { "description": "查看分支图", "code": "git log --oneline --graph --all" },
+    { "description": "查看某文件的修改历史", "code": "git log -p -- src/app.js" },
+    { "description": "搜索包含关键词的提交", "code": "git log --grep=\"bug fix\" --oneline" }
+  ]
+}

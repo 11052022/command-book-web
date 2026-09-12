@@ -1,0 +1,18 @@
+{
+  "name": "git init",
+  "description": "初始化一个新的 Git 仓库——在当前目录创建 .git 子目录，包含仓库所需的所有元数据",
+  "synopsis": "git init [--bare] [--initial-branch=<name>] [directory]",
+  "category": "basic",
+  "danger_level": "low",
+  "tags": ["初始化", "创建", "仓库", "新建", "开始", "setup"],
+  "common_options": [
+    { "name": "--bare", "description": "创建裸仓库（无工作目录，用于远程服务器）" },
+    { "name": "--initial-branch=<name>", "description": "指定初始分支名（默认取决于 init.defaultBranch 配置）" },
+    { "name": "--template=<dir>", "description": "使用自定义模板目录" }
+  ],
+  "related": ["git clone", "git config"],
+  "examples": [
+    { "description": "在当前目录初始化仓库", "code": "git init" },
+    { "description": "初始化并指定主分支名为 main", "code": "git init --initial-branch=main my-project" }
+  ]
+}

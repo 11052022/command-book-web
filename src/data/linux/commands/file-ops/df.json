@@ -1,0 +1,64 @@
+{
+  "name": "df",
+  "description": "查看文件系统磁盘空间使用情况",
+  "synopsis": "df [选项] [路径]",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "磁盘",
+    "空间",
+    "剩余",
+    "查看",
+    "分区",
+    "挂载"
+  ],
+  "common_options": [
+    {
+      "name": "-h",
+      "description": "人类可读格式"
+    },
+    {
+      "name": "-T",
+      "description": "显示文件系统类型"
+    },
+    {
+      "name": "-i",
+      "description": "显示 inode 使用情况"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "显示选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-h", "label": "人类可读格式 (GB/MB)", "hint": "human-readable" },
+          { "flag": "-T", "label": "显示文件系统类型", "hint": "" },
+          { "flag": "-i", "label": "显示 inode 使用情况", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "path", "label": "目标路径（可选）", "placeholder": "/home 或留空", "prefix": "" }
+    ]
+  },
+  "related": [
+    "du",
+    "mount",
+    "lsblk"
+  ],
+  "examples": [
+    {
+      "description": "查看所有分区的磁盘使用",
+      "code": "df -h"
+    },
+    {
+      "description": "查看特定目录所在分区",
+      "code": "df -h /home"
+    },
+    {
+      "description": "显示文件系统类型",
+      "code": "df -Th"
+    }
+  ]
+}

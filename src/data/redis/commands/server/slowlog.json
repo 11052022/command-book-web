@@ -1,0 +1,76 @@
+{
+  "name": "SLOWLOG",
+  "description": "查看和管理慢查询日志——记录执行时间超过 slowlog-log-slower-than 阈值的命令，用于性能排查",
+  "synopsis": "SLOWLOG subcommand [argument]",
+  "category": "server",
+  "danger_level": "low",
+  "tags": [
+    "慢查询",
+    "性能",
+    "诊断",
+    "日志",
+    "排查",
+    "优化"
+  ],
+  "builder_options": {
+    "subcommands": [
+      {
+        "name": "GET",
+        "label": "GET — 查看记录",
+        "arguments": [
+          { "key": "count", "label": "返回条数", "placeholder": "10", "required": false }
+        ],
+        "tokens": [],
+        "exclusiveGroups": []
+      },
+      {
+        "name": "LEN",
+        "label": "LEN — 记录数量",
+        "arguments": [],
+        "tokens": [],
+        "exclusiveGroups": []
+      },
+      {
+        "name": "RESET",
+        "label": "RESET — 清空记录",
+        "arguments": [],
+        "tokens": [],
+        "exclusiveGroups": []
+      }
+    ]
+  },
+  "common_options": [
+    {
+      "name": "SLOWLOG GET [count]",
+      "description": "返回最近 count 条慢查询（默认 10），每条含 ID、时间戳、耗时、命令"
+    },
+    {
+      "name": "SLOWLOG LEN",
+      "description": "返回当前慢查询日志中的记录数量"
+    },
+    {
+      "name": "SLOWLOG RESET",
+      "description": "清空所有慢查询记录"
+    }
+  ],
+  "related": [
+    "CONFIG",
+    "INFO",
+    "MONITOR",
+    "LATENCY"
+  ],
+  "examples": [
+    {
+      "description": "查询最近 10 条慢查询",
+      "code": "SLOWLOG GET 10"
+    },
+    {
+      "description": "查看慢查询总数",
+      "code": "SLOWLOG LEN"
+    },
+    {
+      "description": "设置慢查询阈值为 5 毫秒",
+      "code": "CONFIG SET slowlog-log-slower-than 5000"
+    }
+  ]
+}

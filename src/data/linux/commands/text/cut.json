@@ -1,0 +1,49 @@
+{
+  "name": "cut",
+  "description": "提取文本行中的指定字段或字符",
+  "synopsis": "cut [选项] [文件...]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": [
+    "列",
+    "字段",
+    "提取",
+    "分割",
+    "文本",
+    "裁剪"
+  ],
+  "common_options": [
+    {
+      "name": "-d",
+      "description": "指定字段分隔符"
+    },
+    {
+      "name": "-f",
+      "description": "选择字段（列）"
+    },
+    {
+      "name": "-c",
+      "description": "选择字符位置"
+    }
+  ],
+  "related": [
+    "awk",
+    "paste",
+    "sed",
+    "colrm"
+  ],
+  "examples": [
+    {
+      "description": "提取以冒号分隔的第 1 列",
+      "code": "cut -d':' -f1 /etc/passwd"
+    },
+    {
+      "description": "提取第 2 和第 4 列（逗号分隔）",
+      "code": "cut -d',' -f2,4 data.csv"
+    },
+    {
+      "description": "提取每行第 1-5 个字符",
+      "code": "cut -c1-5 file.txt"
+    }
+  ]
+}

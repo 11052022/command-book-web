@@ -1,0 +1,47 @@
+{
+  "name": "ln",
+  "description": "创建文件链接（硬链接或符号链接）",
+  "synopsis": "ln [选项] 目标 链接名",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "链接",
+    "快捷方式",
+    "符号",
+    "硬链接",
+    "软链接"
+  ],
+  "common_options": [
+    {
+      "name": "-s",
+      "description": "创建符号链接（软链接）"
+    },
+    {
+      "name": "-f",
+      "description": "强制覆盖已存在的目标文件"
+    },
+    {
+      "name": "-v",
+      "description": "显示创建过程"
+    }
+  ],
+  "related": [
+    "unlink",
+    "readlink",
+    "realpath"
+  ],
+  "examples": [
+    {
+      "description": "创建符号链接",
+      "code": "ln -s /path/to/original link_name"
+    },
+    {
+      "description": "创建硬链接",
+      "code": "ln original.txt hardlink.txt"
+    },
+    {
+      "description": "强制覆盖创建软链接",
+      "code": "ln -sf /new/target link_name"
+    }
+  ]
+}

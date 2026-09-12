@@ -1,0 +1,45 @@
+{
+  "name": "vmstat",
+  "description": "查看系统虚拟内存和整体性能统计",
+  "synopsis": "vmstat [间隔] [次数]",
+  "category": "系统信息",
+  "danger_level": "low",
+  "tags": [
+    "内存",
+    "性能",
+    "虚拟",
+    "统计",
+    "查看",
+    "监控"
+  ],
+  "related": [
+    "free",
+    "iostat",
+    "top",
+    "sar"
+  ],
+  "common_options": [
+    {
+      "name": "-s",
+      "description": "显示内存统计摘要"
+    },
+    {
+      "name": "-d",
+      "description": "显示磁盘统计"
+    }
+  ],
+  "examples": [
+    {
+      "description": "查看内存和 CPU 统计",
+      "code": "vmstat"
+    },
+    {
+      "description": "每 2 秒刷新 5 次",
+      "code": "vmstat 2 5"
+    },
+    {
+      "description": "显示内存统计摘要",
+      "code": "vmstat -s"
+    }
+  ]
+}

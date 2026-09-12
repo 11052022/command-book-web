@@ -1,0 +1,30 @@
+{
+  "name": "sync",
+  "description": "将缓存中的数据强制写入磁盘",
+  "synopsis": "sync",
+  "category": "磁盘存储",
+  "danger_level": "low",
+  "tags": [
+    "同步",
+    "写入",
+    "缓存",
+    "磁盘",
+    "保存",
+    "刷新"
+  ],
+  "common_options": [],
+  "related": [
+    "fsync",
+    "dd"
+  ],
+  "examples": [
+    {
+      "description": "同步所有缓存到磁盘",
+      "code": "sync"
+    },
+    {
+      "description": "安全弹出 USB 前执行",
+      "code": "sync && sudo umount /mnt/usb"
+    }
+  ]
+}

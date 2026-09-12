@@ -1,0 +1,19 @@
+{
+  "name": "git reflog",
+  "description": "查看本地 HEAD 和分支引用的变更历史——记录你所有的 checkout、commit、reset 等操作，是误操作后的救命稻草",
+  "synopsis": "git reflog [show] [<ref>]",
+  "category": "inspect",
+  "danger_level": "low",
+  "tags": ["reflog", "日志", "恢复", "救援", "HEAD", "历史"],
+  "common_options": [
+    { "name": "<ref>", "description": "查看指定引用的 reflog（默认为 HEAD）" },
+    { "name": "--expire=<time>", "description": "清理超过指定时间的 reflog 条目" },
+    { "name": "expire", "description": "手动清理旧 reflog" }
+  ],
+  "related": ["git reset", "git log", "git branch"],
+  "examples": [
+    { "description": "查看 HEAD 的变更历史", "code": "git reflog" },
+    { "description": "回退到误删分支前的状态", "code": "git checkout HEAD@{2}" },
+    { "description": "恢复被 git reset --hard 毁掉的提交", "code": "git reset --hard HEAD@{1}" }
+  ]
+}

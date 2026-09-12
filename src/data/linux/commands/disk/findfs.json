@@ -1,0 +1,22 @@
+{
+  "name": "findfs",
+  "description": "根据 UUID 或卷标（LABEL）查找对应的块设备文件路径（如 /dev/sda1）",
+  "synopsis": "findfs UUID=值 或 findfs LABEL=值",
+  "category": "磁盘存储",
+  "danger_level": "low",
+  "tags": ["查找", "UUID", "卷标", "设备", "磁盘", "标识", "搜索"],
+  "common_options": [
+    { "name": "UUID=xxxx", "description": "根据 UUID 查找设备" },
+    { "name": "LABEL=name", "description": "根据卷标查找设备" },
+    { "name": "PARTUUID=xxxx", "description": "根据分区 UUID 查找（GPT）" },
+    { "name": "PARTLABEL=name", "description": "根据分区标签查找（GPT）" }
+  ],
+  "related": ["blkid", "lsblk", "mount", "fstab"],
+  "examples": [
+    { "description": "根据 UUID 查找设备路径", "code": "sudo findfs UUID=a1b2c3d4-e5f6-7890-abcd-ef1234567890" },
+    { "description": "根据卷标查找设备路径", "code": "sudo findfs LABEL=mydata" },
+    { "description": "在 fstab 自动挂载脚本中使用（动态获取设备名）", "code": "sudo mount $(sudo findfs UUID=a1b2...890) /mnt/data" },
+    { "description": "先查 blkid 获取 UUID，再用 findfs 确认设备路径", "code": "blkid /dev/sdb1\nsudo findfs UUID=<上面输出的 UUID>" },
+    { "description": "查找并挂载（一行脚本）", "code": "sudo mount $(findfs UUID=a1b2...890) /mnt/backup" }
+  ]
+}

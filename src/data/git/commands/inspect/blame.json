@@ -1,0 +1,19 @@
+{
+  "name": "git blame",
+  "description": "逐行显示文件的修改者和提交信息——追溯每一行代码的来源，利于排查问题和 Code Review",
+  "synopsis": "git blame [options] <file>",
+  "category": "inspect",
+  "danger_level": "low",
+  "tags": ["追溯", "blame", "作者", "逐行", "历史", "排查"],
+  "common_options": [
+    { "name": "-L <start>,<end>", "description": "只显示指定行范围（如 -L 10,50 或 -L /regex/）" },
+    { "name": "-w", "description": "忽略空白字符变更" },
+    { "name": "-M", "description": "检测行在文件内部的移动" },
+    { "name": "-C", "description": "检测行来自其他文件的复制/移动" }
+  ],
+  "related": ["git log", "git show", "git diff"],
+  "examples": [
+    { "description": "查看文件每行的作者和提交", "code": "git blame src/app.js" },
+    { "description": "只看指定行范围", "code": "git blame -L 100,200 src/app.js" }
+  ]
+}

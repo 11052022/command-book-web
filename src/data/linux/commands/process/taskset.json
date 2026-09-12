@@ -1,0 +1,44 @@
+{
+  "name": "taskset",
+  "description": "设置或查看进程的 CPU 亲和性",
+  "synopsis": "taskset [选项] CPU掩码 命令",
+  "category": "进程管理",
+  "danger_level": "medium",
+  "tags": [
+    "CPU",
+    "亲和性",
+    "绑定",
+    "进程",
+    "性能"
+  ],
+  "related": [
+    "nice",
+    "renice",
+    "ionice",
+    "numactl"
+  ],
+  "common_options": [
+    {
+      "name": "-p",
+      "description": "操作已存在的进程"
+    },
+    {
+      "name": "-c",
+      "description": "使用 CPU 列表格式（如 0,2,4-6）"
+    }
+  ],
+  "examples": [
+    {
+      "description": "将进程绑定到 CPU 0",
+      "code": "taskset -c 0 ./my_program"
+    },
+    {
+      "description": "修改已有进程的 CPU 亲和性",
+      "code": "taskset -cp 0,2 1234"
+    },
+    {
+      "description": "查看进程 CPU 亲和性",
+      "code": "taskset -cp 1234"
+    }
+  ]
+}

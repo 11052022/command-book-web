@@ -1,0 +1,18 @@
+{
+  "name": "git pull",
+  "description": "拉取远程仓库的更新并合并到当前分支——等价于 git fetch + git merge（或 git rebase）",
+  "synopsis": "git pull [options] [<remote>] [<branch>]",
+  "category": "remote",
+  "danger_level": "medium",
+  "tags": ["拉取", "pull", "远程", "更新", "同步", "合并"],
+  "common_options": [
+    { "name": "-r / --rebase", "description": "使用 rebase 而非 merge 整合远程更新（产生线性历史）" },
+    { "name": "--ff-only", "description": "只在可以快进时才合并（拒绝产生合并提交）" },
+    { "name": "--no-commit", "description": "合并后暂存但不自动提交" }
+  ],
+  "related": ["git fetch", "git merge", "git push", "git rebase"],
+  "examples": [
+    { "description": "拉取并合并远程更新", "code": "git pull" },
+    { "description": "使用 rebase 模式拉取", "code": "git pull --rebase" }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "split",
+  "description": "将大文件分割成多个小文件",
+  "synopsis": "split [选项] 文件 [前缀]",
+  "category": "文件操作",
+  "danger_level": "medium",
+  "tags": [
+    "分割",
+    "拆分",
+    "文件",
+    "大文件",
+    "切割"
+  ],
+  "related": [
+    "cat",
+    "csplit",
+    "join"
+  ],
+  "common_options": [
+    {
+      "name": "-b",
+      "description": "按字节数分割（如 100M）"
+    },
+    {
+      "name": "-l",
+      "description": "按行数分割"
+    },
+    {
+      "name": "-d",
+      "description": "使用数字后缀"
+    }
+  ],
+  "examples": [
+    {
+      "description": "按 100MB 分割文件",
+      "code": "split -b 100M large_file.tar.gz part_"
+    },
+    {
+      "description": "按 1000 行分割",
+      "code": "split -l 1000 data.csv row_"
+    },
+    {
+      "description": "合并回去",
+      "code": "cat part_* > restored.tar.gz"
+    }
+  ]
+}

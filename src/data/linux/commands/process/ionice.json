@@ -1,0 +1,44 @@
+{
+  "name": "ionice",
+  "description": "设置或查看进程的 I/O 调度优先级",
+  "synopsis": "ionice [选项] -p PID",
+  "category": "进程管理",
+  "danger_level": "medium",
+  "tags": [
+    "IO",
+    "优先级",
+    "磁盘",
+    "调度",
+    "进程"
+  ],
+  "related": [
+    "nice",
+    "renice",
+    "taskset",
+    "iotop"
+  ],
+  "common_options": [
+    {
+      "name": "-c",
+      "description": "调度类别（1=实时, 2=尽力, 3=空闲）"
+    },
+    {
+      "name": "-n",
+      "description": "优先级（0-7, 0 最高）"
+    },
+    {
+      "name": "-p",
+      "description": "指定 PID"
+    }
+  ],
+  "examples": [
+    {
+      "description": "以空闲 I/O 优先级运行命令",
+      "code": "ionice -c 3 cp large_file /backup/"
+    },
+    {
+      "description": "查看进程 I/O 优先级",
+      "code": "ionice -p 1234"
+    }
+  ]
+}

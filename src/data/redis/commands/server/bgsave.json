@@ -1,0 +1,33 @@
+{
+  "name": "BGSAVE",
+  "description": "后台异步执行 RDB 快照——fork 子进程写入磁盘，主进程不阻塞，生产环境持久化首选",
+  "synopsis": "BGSAVE [SCHEDULE]",
+  "category": "server",
+  "danger_level": "low",
+  "tags": [
+    "持久化",
+    "RDB",
+    "后台",
+    "异步",
+    "快照",
+    "备份"
+  ],
+  "common_options": [
+    {
+      "name": "SCHEDULE",
+      "description": "如果有正在进行的 BGSAVE 或 BGREWRITEAOF，则排队等待而非立即执行"
+    }
+  ],
+  "related": [
+    "SAVE",
+    "LASTSAVE",
+    "BGREWRITEAOF",
+    "INFO"
+  ],
+  "examples": [
+    {
+      "description": "后台保存 RDB 快照",
+      "code": "BGSAVE"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "popd",
+  "description": "从目录栈弹出并切换到该目录",
+  "synopsis": "popd",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "目录",
+    "返回",
+    "切换",
+    "栈"
+  ],
+  "common_options": [],
+  "related": [
+    "pushd",
+    "dirs",
+    "cd"
+  ],
+  "examples": [
+    {
+      "description": "返回上一个目录",
+      "code": "popd"
+    },
+    {
+      "description": "查看目录栈",
+      "code": "dirs -v"
+    }
+  ]
+}

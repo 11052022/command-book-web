@@ -1,0 +1,31 @@
+{
+  "name": "bg",
+  "description": "将暂停的作业放到后台继续运行",
+  "synopsis": "bg [作业号]",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "后台",
+    "恢复",
+    "继续",
+    "运行",
+    "作业"
+  ],
+  "common_options": [],
+  "related": [
+    "fg",
+    "jobs",
+    "nohup",
+    "&"
+  ],
+  "examples": [
+    {
+      "description": "将最后一个暂停的任务放入后台",
+      "code": "bg"
+    },
+    {
+      "description": "将指定作业号的任务放入后台",
+      "code": "bg %1"
+    }
+  ]
+}

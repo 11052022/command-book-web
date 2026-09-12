@@ -1,0 +1,52 @@
+{
+  "name": "ZRANGEBYSCORE",
+  "description": "按分数区间返回有序集合中的成员（升序），支持偏移和数量限制",
+  "synopsis": "ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]",
+  "category": "sorted-set",
+  "danger_level": "low",
+  "tags": [
+    "范围",
+    "分数",
+    "有序集合",
+    "查询",
+    "区间"
+  ],
+  "common_options": [
+    {
+      "name": "WITHSCORES",
+      "description": "同时返回成员的分数"
+    },
+    {
+      "name": "LIMIT offset count",
+      "description": "偏移量和返回数量限制，用于分页"
+    }
+  ],
+  "related": [
+    "ZRANGE",
+    "ZCOUNT",
+    "ZADD",
+    "ZREVRANGEBYSCORE"
+  ],
+  "builder_options": {
+    "arguments": [
+      { "key": "key", "label": "Key", "placeholder": "leaderboard", "required": true },
+      { "key": "min", "label": "最低分", "placeholder": "60", "required": true },
+      { "key": "max", "label": "最高分", "placeholder": "100", "required": true }
+    ],
+    "tokens": [
+      { "key": "WITHSCORES", "label": "同时返回分数", "hasValue": false },
+      { "key": "LIMIT", "label": "分页（offset count）", "hasValue": true, "placeholder": "0 10" }
+    ],
+    "exclusiveGroups": []
+  },
+  "examples": [
+    {
+      "description": "查询及格学生（60-100 分）",
+      "code": "ZRANGEBYSCORE exam:scores 60 100 WITHSCORES"
+    },
+    {
+      "description": "分页查询第 2 页（每页 10 条）",
+      "code": "ZRANGEBYSCORE exam:scores 60 100 WITHSCORES LIMIT 10 10"
+    }
+  ]
+}

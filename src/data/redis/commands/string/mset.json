@@ -1,0 +1,25 @@
+{
+  "name": "MSET",
+  "description": "批量设置多个 key-value 对（原子操作）",
+  "synopsis": "MSET key value [key value ...]",
+  "category": "string",
+  "danger_level": "medium",
+  "tags": [
+    "批量",
+    "设置",
+    "多个",
+    "写入",
+    "原子"
+  ],
+  "common_options": [],
+  "related": [
+    "SET",
+    "MGET"
+  ],
+  "examples": [
+    {
+      "description": "批量设置多个键值",
+      "code": "MSET user:1:name Alice user:2:name Bob user:3:name Carol"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "GET",
+  "description": "获取指定 key 的值，key 不存在则返回 nil",
+  "synopsis": "GET key",
+  "category": "string",
+  "danger_level": "low",
+  "tags": [
+    "获取",
+    "读取",
+    "查询",
+    "字符串",
+    "缓存"
+  ],
+  "common_options": [],
+  "related": [
+    "SET",
+    "MGET",
+    "GETSET",
+    "STRLEN"
+  ],
+  "builder_options": {
+    "arguments": [
+      { "key": "key", "label": "Key", "placeholder": "user:1:name", "required": true }
+    ],
+    "tokens": [],
+    "exclusiveGroups": []
+  },
+  "examples": [
+    {
+      "description": "获取 key 的值",
+      "code": "GET user:1:name"
+    }
+  ]
+}

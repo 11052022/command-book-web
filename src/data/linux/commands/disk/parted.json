@@ -1,0 +1,40 @@
+{
+  "name": "parted",
+  "description": "磁盘分区管理工具（GPT/MBR）",
+  "synopsis": "parted [选项] 设备",
+  "category": "磁盘存储",
+  "danger_level": "critical",
+  "tags": [
+    "分区",
+    "磁盘",
+    "GPT",
+    "MBR",
+    "管理"
+  ],
+  "related": [
+    "fdisk",
+    "gdisk",
+    "mkfs",
+    "lsblk"
+  ],
+  "common_options": [
+    {
+      "name": "-l",
+      "description": "列出所有块设备的分区表"
+    }
+  ],
+  "examples": [
+    {
+      "description": "列出所有分区",
+      "code": "sudo parted -l"
+    },
+    {
+      "description": "进入交互式分区管理",
+      "code": "sudo parted /dev/sdb"
+    },
+    {
+      "description": "创建 GPT 分区表",
+      "code": "sudo parted /dev/sdb mklabel gpt"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "name": "diff",
+  "description": "逐行比较两个文件",
+  "synopsis": "diff [选项] 文件1 文件2",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": [
+    "比较",
+    "差异",
+    "对比",
+    "文件",
+    "区别"
+  ],
+  "common_options": [
+    {
+      "name": "-u",
+      "description": "统一格式输出（类似 git diff）"
+    },
+    {
+      "name": "-r",
+      "description": "递归比较目录"
+    },
+    {
+      "name": "-q",
+      "description": "只报告文件是否不同"
+    },
+    {
+      "name": "--color",
+      "description": "彩色输出"
+    }
+  ],
+  "related": [
+    "cmp",
+    "comm",
+    "patch",
+    "git"
+  ],
+  "examples": [
+    {
+      "description": "比较两个文件的差异",
+      "code": "diff file1.txt file2.txt"
+    },
+    {
+      "description": "统一格式（人类可读）比较",
+      "code": "diff -u old.txt new.txt"
+    },
+    {
+      "description": "递归比较两个目录",
+      "code": "diff -r dir1 dir2"
+    }
+  ]
+}

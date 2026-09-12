@@ -1,0 +1,55 @@
+{
+  "name": "xargs",
+  "description": "将标准输入转成命令参数并执行",
+  "synopsis": "xargs [选项] [命令]",
+  "category": "其他常用",
+  "danger_level": "medium",
+  "tags": [
+    "参数",
+    "批量",
+    "执行",
+    "管道",
+    "转换"
+  ],
+  "common_options": [
+    {
+      "name": "-I",
+      "description": "指定替换字符串"
+    },
+    {
+      "name": "-n",
+      "description": "每次执行使用 N 个参数"
+    },
+    {
+      "name": "-P",
+      "description": "并行执行"
+    },
+    {
+      "name": "-0",
+      "description": "以 null 字符分隔输入"
+    }
+  ],
+  "related": [
+    "find",
+    "parallel",
+    "exec"
+  ],
+  "examples": [
+    {
+      "description": "批量删除 .tmp 文件",
+      "code": "find . -name \"*.tmp\" | xargs rm"
+    },
+    {
+      "description": "处理带空格的文件名",
+      "code": "find . -name \"*.log\" -print0 | xargs -0 gzip"
+    },
+    {
+      "description": "批量重命名",
+      "code": "ls *.jpg | xargs -I {} mv {} backup_{}"
+    },
+    {
+      "description": "并行压缩（4 进程）",
+      "code": "find . -name \"*.log\" | xargs -P 4 gzip"
+    }
+  ]
+}

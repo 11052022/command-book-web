@@ -1,0 +1,48 @@
+{
+  "name": "vi",
+  "description": "Unix 标准文本编辑器——所有 Linux/Unix 系统预装。vim 的前身，操作方式与 vim 基本兼容。也是 vim 的兼容模式的别名",
+  "synopsis": "vi [选项] [文件...]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": ["编辑", "编辑器", "文本", "vi", "修改", "文件", "编写", "基础", "日志"],
+  "common_options": [
+    { "name": "+N", "description": "打开文件并跳到第 N 行" },
+    { "name": "+/pat", "description": "打开文件并跳到第一个匹配行" },
+    { "name": "-r", "description": "恢复上次崩溃时未保存的编辑内容" },
+    { "name": "-R", "description": "只读模式打开文件" },
+    { "name": "-c cmd", "description": "启动后自动执行 Ex 命令" }
+  ],
+  "related": ["vim", "nano", "emacs", "ed", "sed", "less", "grep"],
+  "examples": [
+    { "description": "【打开文件】打开或新建文件", "code": "vi file.txt" },
+    { "description": "【打开文件】跳到第 100 行", "code": "vi +100 app.log" },
+    { "description": "【打开文件】跳到第一个 'error' 处", "code": "vi +/error /var/log/syslog" },
+    { "description": "【打开文件】恢复未保存的编辑（崩溃后）", "code": "vi -r file.txt" },
+
+    { "description": "【模式切换】进入插入模式（开始编辑）", "code": "按 i（光标前插入）或 a（光标后追加）或 o（下一行插入）" },
+    { "description": "【模式切换】返回命令模式", "code": "按 Esc" },
+    { "description": "【模式切换】进入命令行模式", "code": "在命令模式下按 :" },
+
+    { "description": "【保存退出】保存并退出", "code": "在命令行模式输入 :wq 然后回车" },
+    { "description": "【保存退出】不保存强制退出", "code": "在命令行模式输入 :q! 然后回车" },
+    { "description": "【保存退出】快捷键保存退出", "code": "在命令模式下按 ZZ" },
+
+    { "description": "【光标移动】基本移动（推荐替代方向键）", "code": "h 左 / j 下 / k 上 / l 右" },
+    { "description": "【光标移动】跳到文件头尾", "code": "1G 或 gg 到开头 / G 到末尾" },
+
+    { "description": "【编辑】删除一行", "code": "在命令模式下按 dd" },
+    { "description": "【编辑】复制一行（yank）", "code": "在命令模式下按 yy" },
+    { "description": "【编辑】粘贴", "code": "在命令模式下按 p" },
+    { "description": "【编辑】撤销", "code": "在命令模式下按 u" },
+
+    { "description": "【搜索】搜索关键字", "code": "在命令模式下按 /keyword 然后回车" },
+    { "description": "【搜索】跳转到下一个匹配", "code": "按 n" },
+    { "description": "【搜索替换】替换当前行的第一个匹配", "code": "在命令行模式 :s/old/new/" },
+    { "description": "【搜索替换】全局替换", "code": "在命令行模式 :%s/old/new/g" },
+
+    { "description": "【查看日志】打开大日志文件并跳到末尾", "code": "vi + /var/log/syslog" },
+    { "description": "【查看日志】打开日志并直接搜索 ERROR", "code": "vi +/ERROR /var/log/syslog" },
+    { "description": "【查看日志】显示行号", "code": "在命令行模式 :set number" },
+    { "description": "【查看日志】跳到指定行", "code": "在命令行模式 :5000 跳到第 5000 行" }
+  ]
+}

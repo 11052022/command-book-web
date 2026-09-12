@@ -1,0 +1,45 @@
+{
+  "name": "last",
+  "description": "显示用户登录历史记录",
+  "synopsis": "last [选项] [用户名]",
+  "category": "用户权限",
+  "danger_level": "low",
+  "tags": [
+    "登录",
+    "历史",
+    "用户",
+    "审计",
+    "查看",
+    "记录"
+  ],
+  "related": [
+    "lastb",
+    "lastlog",
+    "who",
+    "w"
+  ],
+  "common_options": [
+    {
+      "name": "-n",
+      "description": "显示最后 N 条记录"
+    },
+    {
+      "name": "-f",
+      "description": "指定日志文件"
+    }
+  ],
+  "examples": [
+    {
+      "description": "查看登录历史",
+      "code": "last"
+    },
+    {
+      "description": "查看最后 10 条登录",
+      "code": "last -10"
+    },
+    {
+      "description": "查看指定用户登录历史",
+      "code": "last username"
+    }
+  ]
+}

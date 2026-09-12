@@ -1,0 +1,28 @@
+{
+  "name": "ZPOPMIN",
+  "description": "移除并返回有序集合中分数最低的一个或多个成员——适用于消费低优先级任务",
+  "synopsis": "ZPOPMIN key [count]",
+  "category": "sorted-set",
+  "danger_level": "medium",
+  "tags": [
+    "弹出",
+    "最小",
+    "有序集合",
+    "移除",
+    "消费",
+    "优先级"
+  ],
+  "common_options": [],
+  "related": [
+    "ZPOPMAX",
+    "ZADD",
+    "ZREM",
+    "BZPOPMIN"
+  ],
+  "examples": [
+    {
+      "description": "消费分数最低（最优先）的 3 个任务",
+      "code": "ZPOPMIN tasks:queue 3"
+    }
+  ]
+}

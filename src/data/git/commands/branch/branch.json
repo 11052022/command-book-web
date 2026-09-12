@@ -1,0 +1,42 @@
+{
+  "name": "git branch",
+  "description": "创建、列出或删除分支——Git 分支管理的核心命令",
+  "synopsis": "git branch [options] [<branch-name>]",
+  "category": "branch",
+  "danger_level": "medium",
+  "tags": ["分支", "branch", "创建", "删除", "列表", "管理"],
+  "common_options": [
+    { "name": "-a / --all", "description": "列出所有分支（包括远程跟踪分支）" },
+    { "name": "-r / --remotes", "description": "只列出远程跟踪分支" },
+    { "name": "-d / --delete", "description": "删除分支（已合并到 HEAD 的分支）" },
+    { "name": "-D", "description": "强制删除分支（即使未合并）" },
+    { "name": "-m <old> <new>", "description": "重命名分支" },
+    { "name": "-v / --verbose", "description": "显示每个分支的最新提交信息" },
+    { "name": "-u <upstream>", "description": "设置当前分支追踪的上游分支" }
+  ],
+  "related": ["git checkout", "git switch", "git merge", "git push"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "操作",
+        "type": "radio",
+        "options": [
+          { "flag": "", "label": "列出分支", "hint": "" },
+          { "flag": "-d", "label": "删除（已合并）", "hint": "" },
+          { "flag": "-D", "label": "强制删除", "hint": "" },
+          { "flag": "-m", "label": "重命名分支", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "name", "label": "分支名", "placeholder": "feature/new-ui 或旧名 新名", "prefix": "" }
+    ]
+  },
+  "examples": [
+    { "description": "列出本地分支", "code": "git branch" },
+    { "description": "创建新分支", "code": "git branch feature/login" },
+    { "description": "删除已合并的分支", "code": "git branch -d feature/login" },
+    { "description": "重命名当前分支", "code": "git branch -m old-name new-name" },
+    { "description": "查看所有分支（含远程）", "code": "git branch -av" }
+  ]
+}

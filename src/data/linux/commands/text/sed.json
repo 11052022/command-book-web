@@ -1,0 +1,75 @@
+{
+  "name": "sed",
+  "description": "流编辑器，对文本进行过滤和转换",
+  "synopsis": "sed [选项] '命令' [文件...]",
+  "category": "文本处理",
+  "danger_level": "medium",
+  "tags": [
+    "替换",
+    "编辑",
+    "文本",
+    "流",
+    "修改",
+    "处理",
+    "正则"
+  ],
+  "common_options": [
+    {
+      "name": "-i",
+      "description": "直接修改文件（原地编辑）"
+    },
+    {
+      "name": "-e",
+      "description": "指定要执行的脚本"
+    },
+    {
+      "name": "-n",
+      "description": "抑制自动输出"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "编辑模式",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-i", "label": "原地编辑（直接修改文件）", "hint": "in-place" },
+          { "flag": "-n", "label": "静默模式（配合 p 打印指定行）", "hint": "" },
+          { "flag": "-E", "label": "扩展正则表达式", "hint": "extended regex" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "expr", "label": "sed 表达式", "placeholder": "s/old/new/g", "prefix": "-e" },
+      { "key": "file", "label": "目标文件", "placeholder": "file.txt", "prefix": "" }
+    ]
+  },
+  "related": [
+    "awk",
+    "grep",
+    "tr",
+    "perl"
+  ],
+  "examples": [
+    {
+      "description": "替换文件中的字符串",
+      "code": "sed 's/old/new/g' file.txt"
+    },
+    {
+      "description": "原地替换（直接修改文件）",
+      "code": "sed -i 's/foo/bar/g' file.txt"
+    },
+    {
+      "description": "删除包含模式的行",
+      "code": "sed '/pattern/d' file.txt"
+    },
+    {
+      "description": "只显示第 5 到 10 行",
+      "code": "sed -n '5,10p' file.txt"
+    },
+    {
+      "description": "在每行开头添加内容",
+      "code": "sed 's/^/PREFIX: /' file.txt"
+    }
+  ]
+}

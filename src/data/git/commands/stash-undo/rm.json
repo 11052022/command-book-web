@@ -1,0 +1,18 @@
+{
+  "name": "git rm",
+  "description": "从工作区和暂存区中删除文件并暂存删除操作——等价于 rm + git add",
+  "synopsis": "git rm [options] <file>...",
+  "category": "stash-undo",
+  "danger_level": "medium",
+  "tags": ["删除", "rm", "移除", "文件", "暂存"],
+  "common_options": [
+    { "name": "-r", "description": "递归删除目录" },
+    { "name": "--cached", "description": "只从 Git 追踪中移除但保留磁盘文件（转为未跟踪）" },
+    { "name": "-f / --force", "description": "强制删除（用于文件已被修改的情况）" }
+  ],
+  "related": ["git mv", "git add", "git reset"],
+  "examples": [
+    { "description": "删除文件（从 Git 和磁盘）", "code": "git rm old-file.txt" },
+    { "description": "停止追踪但保留文件", "code": "git rm --cached config.local.js" }
+  ]
+}

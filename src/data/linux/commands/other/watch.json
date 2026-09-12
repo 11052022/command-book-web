@@ -1,0 +1,43 @@
+{
+  "name": "watch",
+  "description": "周期性地执行命令并显示输出",
+  "synopsis": "watch [选项] 命令",
+  "category": "其他常用",
+  "danger_level": "low",
+  "tags": [
+    "监控",
+    "周期",
+    "刷新",
+    "实时",
+    "重复"
+  ],
+  "common_options": [
+    {
+      "name": "-n",
+      "description": "指定刷新间隔（秒）"
+    },
+    {
+      "name": "-d",
+      "description": "高亮显示变化部分"
+    }
+  ],
+  "related": [
+    "crontab",
+    "while",
+    "top"
+  ],
+  "examples": [
+    {
+      "description": "每 2 秒查看磁盘使用",
+      "code": "watch -n 2 df -h"
+    },
+    {
+      "description": "高亮变化地监控进程",
+      "code": "watch -d 'ps aux | grep nginx'"
+    },
+    {
+      "description": "监控目录文件变化",
+      "code": "watch -n 1 'ls -l | wc -l'"
+    }
+  ]
+}

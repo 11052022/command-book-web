@@ -1,0 +1,24 @@
+{
+  "name": "TTL",
+  "description": "查看 key 的剩余生存时间（秒）",
+  "synopsis": "TTL key",
+  "category": "key",
+  "danger_level": "low",
+  "tags": [
+    "过期时间",
+    "TTL",
+    "查询",
+    "剩余时间"
+  ],
+  "common_options": [],
+  "related": [
+    "EXPIRE",
+    "PERSIST"
+  ],
+  "examples": [
+    {
+      "description": "查看缓存还有多久过期（-1=永久，-2=不存在）",
+      "code": "TTL user:1:cache"
+    }
+  ]
+}

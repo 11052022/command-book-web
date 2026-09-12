@@ -1,0 +1,27 @@
+{
+  "name": "LPUSH",
+  "description": "将一个或多个值插入到列表头部",
+  "synopsis": "LPUSH key element [element ...]",
+  "category": "list",
+  "danger_level": "low",
+  "tags": [
+    "插入",
+    "列表",
+    "头部",
+    "队列",
+    "栈"
+  ],
+  "common_options": [],
+  "related": [
+    "RPUSH",
+    "LPOP",
+    "LRANGE",
+    "LLEN"
+  ],
+  "examples": [
+    {
+      "description": "从左侧推入消息（最新消息在前）",
+      "code": "LPUSH messages:general 'Hello' 'Hi'"
+    }
+  ]
+}

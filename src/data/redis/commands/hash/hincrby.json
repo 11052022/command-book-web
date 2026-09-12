@@ -1,0 +1,31 @@
+{
+  "name": "HINCRBY",
+  "description": "为哈希表中的指定字段值增加整数增量（原子操作，字段不存在则初始化为 0）",
+  "synopsis": "HINCRBY key field increment",
+  "category": "hash",
+  "danger_level": "low",
+  "tags": [
+    "递增",
+    "计数器",
+    "哈希",
+    "原子",
+    "数字"
+  ],
+  "common_options": [],
+  "related": [
+    "HINCRBYFLOAT",
+    "HSET",
+    "HGET",
+    "INCRBY"
+  ],
+  "examples": [
+    {
+      "description": "文章阅读量 +1",
+      "code": "HINCRBY article:1001 views 1"
+    },
+    {
+      "description": "扣减库存",
+      "code": "HINCRBY product:sku001 stock -10"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "name": "scp",
+  "description": "在本地和远程之间安全复制文件",
+  "synopsis": "scp [选项] 源 目标",
+  "category": "网络相关",
+  "danger_level": "medium",
+  "tags": [
+    "复制",
+    "传输",
+    "远程",
+    "文件",
+    "上传",
+    "下载",
+    "安全"
+  ],
+  "common_options": [
+    {
+      "name": "-r",
+      "description": "递归复制整个目录"
+    },
+    {
+      "name": "-P",
+      "description": "指定 SSH 端口"
+    },
+    {
+      "name": "-q",
+      "description": "静默模式"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "传输选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-r", "label": "递归复制目录", "hint": "recursive" },
+          { "flag": "-q", "label": "静默模式", "hint": "" },
+          { "flag": "-C", "label": "传输时压缩", "hint": "compress" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "source", "label": "源路径", "placeholder": "local.txt 或 user@host:/path/", "prefix": "" },
+      { "key": "dest", "label": "目标路径", "placeholder": "user@host:/path/ 或 ./local/", "prefix": "" },
+      { "key": "port", "label": "SSH 端口", "placeholder": "2222", "prefix": "-P" }
+    ]
+  },
+  "related": [
+    "rsync",
+    "ssh",
+    "sftp"
+  ],
+  "examples": [
+    {
+      "description": "从本地复制到远程",
+      "code": "scp local.txt user@server:/path/"
+    },
+    {
+      "description": "从远程复制到本地",
+      "code": "scp user@server:/path/file.txt ./"
+    },
+    {
+      "description": "递归复制目录",
+      "code": "scp -r /local/dir user@server:/remote/dir"
+    },
+    {
+      "description": "使用指定端口复制",
+      "code": "scp -P 2222 file.txt user@server:/path/"
+    }
+  ]
+}

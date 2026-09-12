@@ -1,0 +1,36 @@
+{
+  "name": "git commit",
+  "description": "将暂存区内容创建为一个新的提交——Git 版本控制的核心操作",
+  "synopsis": "git commit [options] [-m <message>]",
+  "category": "basic",
+  "danger_level": "low",
+  "tags": ["提交", "commit", "保存", "版本", "快照", "记录"],
+  "common_options": [
+    { "name": "-m <msg>", "description": "直接指定提交信息" },
+    { "name": "-a / --all", "description": "自动暂存所有已跟踪文件的修改并提交（跳过 git add）" },
+    { "name": "--amend", "description": "修改上一次提交（追加更改或修改提交信息）" },
+    { "name": "--no-edit", "description": "使用上一次的提交信息（常与 --amend 配合）" },
+    { "name": "-v / --verbose", "description": "在提交信息编辑器中显示 diff 内容" }
+  ],
+  "related": ["git add", "git status", "git push", "git reset", "git log"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "提交模式",
+        "type": "checkbox",
+        "options": [
+          { "flag": "--amend", "label": "修改上一次提交", "hint": "" },
+          { "flag": "-a", "label": "跳过暂存（自动 add 已跟踪文件）", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "message", "label": "提交信息", "placeholder": "fix: resolve login issue", "prefix": "-m " }
+    ]
+  },
+  "examples": [
+    { "description": "提交并写提交信息", "code": "git commit -m \"fix: resolve login redirect issue\"" },
+    { "description": "修改上一次提交的信息", "code": "git commit --amend -m \"new message\"" },
+    { "description": "跳过暂存直接提交所有修改", "code": "git commit -am \"quick fix\"" }
+  ]
+}

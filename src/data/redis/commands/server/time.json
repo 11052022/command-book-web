@@ -1,0 +1,25 @@
+{
+  "name": "TIME",
+  "description": "返回当前 Redis 服务器的时间——包含 Unix 时间戳（秒）和微秒数",
+  "synopsis": "TIME",
+  "category": "server",
+  "danger_level": "low",
+  "tags": [
+    "时间",
+    "时间戳",
+    "时钟",
+    "工具"
+  ],
+  "common_options": [],
+  "related": [
+    "LASTSAVE",
+    "INFO",
+    "EXPIRE"
+  ],
+  "examples": [
+    {
+      "description": "获取服务器当前时间",
+      "code": "TIME\n# 返回 [1735689600, 123456]（秒 + 微秒）"
+    }
+  ]
+}

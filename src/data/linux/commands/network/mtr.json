@@ -1,0 +1,48 @@
+{
+  "name": "mtr",
+  "description": "结合 ping 和 traceroute 的网络诊断工具",
+  "synopsis": "mtr [选项] 目标",
+  "category": "网络相关",
+  "danger_level": "low",
+  "tags": [
+    "网络",
+    "诊断",
+    "路由",
+    "延迟",
+    "丢包",
+    "跟踪"
+  ],
+  "related": [
+    "ping",
+    "traceroute",
+    "tracepath"
+  ],
+  "common_options": [
+    {
+      "name": "-r",
+      "description": "报告模式（不交互）"
+    },
+    {
+      "name": "-c",
+      "description": "发送 N 个探测包"
+    },
+    {
+      "name": "-n",
+      "description": "不解析主机名"
+    }
+  ],
+  "examples": [
+    {
+      "description": "交互式网络诊断",
+      "code": "mtr google.com"
+    },
+    {
+      "description": "报告模式输出",
+      "code": "mtr -r -c 10 google.com"
+    },
+    {
+      "description": "不解析主机名",
+      "code": "mtr -n 8.8.8.8"
+    }
+  ]
+}

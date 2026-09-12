@@ -1,0 +1,68 @@
+{
+  "name": "SET",
+  "description": "设置指定 key 的值，支持过期时间和条件设置",
+  "synopsis": "SET key value [EX seconds|PX milliseconds] [NX|XX] [KEEPTTL] [GET]",
+  "category": "string",
+  "danger_level": "low",
+  "tags": [
+    "设置",
+    "写入",
+    "字符串",
+    "创建",
+    "更新",
+    "缓存"
+  ],
+  "common_options": [
+    {
+      "name": "EX seconds",
+      "description": "设置过期时间（秒）"
+    },
+    {
+      "name": "NX",
+      "description": "仅当 key 不存在时才设置"
+    },
+    {
+      "name": "XX",
+      "description": "仅当 key 已存在时才设置"
+    }
+  ],
+  "related": [
+    "GET",
+    "SETNX",
+    "SETEX",
+    "MSET",
+    "GETSET"
+  ],
+  "builder_options": {
+    "arguments": [
+      { "key": "key", "label": "Key", "placeholder": "user:1:name", "required": true },
+      { "key": "value", "label": "Value", "placeholder": "Alice", "required": true }
+    ],
+    "tokens": [
+      { "key": "EX", "label": "过期时间（秒）", "hasValue": true, "placeholder": "10" },
+      { "key": "PX", "label": "过期时间（毫秒）", "hasValue": true, "placeholder": "10000" },
+      { "key": "EXAT", "label": "过期时间戳-秒", "hasValue": true, "placeholder": "1735689600" },
+      { "key": "NX", "label": "仅当 key 不存在时设置", "hasValue": false },
+      { "key": "XX", "label": "仅当 key 已存在时设置", "hasValue": false },
+      { "key": "KEEPTTL", "label": "保留原有 TTL（覆盖值时）", "hasValue": false },
+      { "key": "GET", "label": "返回旧值（Redis 6.2+）", "hasValue": false }
+    ],
+    "exclusiveGroups": [
+      { "label": "条件设置", "tokens": ["NX", "XX"] }
+    ]
+  },
+  "examples": [
+    {
+      "description": "设置一个键值对",
+      "code": "SET user:1:name Alice"
+    },
+    {
+      "description": "设置键值对并指定 10 秒过期",
+      "code": "SET session:token abc123 EX 10"
+    },
+    {
+      "description": "仅当不存在时设置（分布式锁）",
+      "code": "SET lock:resource-123 token NX EX 30"
+    }
+  ]
+}

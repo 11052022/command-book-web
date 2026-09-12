@@ -1,0 +1,24 @@
+{
+  "name": "SUNION",
+  "description": "返回多个集合的并集",
+  "synopsis": "SUNION key [key ...]",
+  "category": "set",
+  "danger_level": "low",
+  "tags": [
+    "并集",
+    "集合",
+    "计算",
+    "合并"
+  ],
+  "common_options": [],
+  "related": [
+    "SINTER",
+    "SDIFF"
+  ],
+  "examples": [
+    {
+      "description": "合并两个群组的成员",
+      "code": "SUNION group:admins group:moderators"
+    }
+  ]
+}

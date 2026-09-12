@@ -1,0 +1,27 @@
+{
+  "name": "TYPE",
+  "description": "返回 key 所储存的值的类型",
+  "synopsis": "TYPE key",
+  "category": "key",
+  "danger_level": "low",
+  "tags": [
+    "类型",
+    "查询",
+    "数据结构"
+  ],
+  "common_options": [],
+  "related": [
+    "DEL",
+    "EXISTS"
+  ],
+  "examples": [
+    {
+      "description": "查看 key 的数据类型",
+      "code": "TYPE user:1:name"
+    },
+    {
+      "description": "返回: string/hash/list/set/zset/stream/none",
+      "code": "TYPE unknown_key"
+    }
+  ]
+}

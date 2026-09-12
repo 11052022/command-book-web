@@ -1,0 +1,31 @@
+{
+  "name": "LREM",
+  "description": "从列表中移除指定数量的匹配元素——count>0 从头删，count<0 从尾删，count=0 全删",
+  "synopsis": "LREM key count element",
+  "category": "list",
+  "danger_level": "medium",
+  "tags": [
+    "删除",
+    "移除",
+    "列表",
+    "匹配",
+    "清理"
+  ],
+  "common_options": [],
+  "related": [
+    "LPOP",
+    "RPOP",
+    "LTRIM",
+    "DEL"
+  ],
+  "examples": [
+    {
+      "description": "删除最近一条匹配消息",
+      "code": "LREM messages:pending 1 'spam-message'"
+    },
+    {
+      "description": "从头部开始删除 2 条匹配记录",
+      "code": "LREM queue:retry 2 'failed-task-42'"
+    }
+  ]
+}

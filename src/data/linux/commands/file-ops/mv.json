@@ -1,0 +1,52 @@
+{
+  "name": "mv",
+  "description": "移动或重命名文件/目录",
+  "synopsis": "mv [选项] 源 目标",
+  "category": "文件操作",
+  "danger_level": "medium",
+  "tags": [
+    "移动",
+    "重命名",
+    "改名",
+    "文件",
+    "目录",
+    "剪切"
+  ],
+  "common_options": [
+    {
+      "name": "-i",
+      "description": "覆盖前询问确认"
+    },
+    {
+      "name": "-v",
+      "description": "显示移动过程"
+    },
+    {
+      "name": "-u",
+      "description": "仅当源文件较新或目标不存在时移动"
+    },
+    {
+      "name": "-n",
+      "description": "不覆盖已有文件"
+    }
+  ],
+  "related": [
+    "cp",
+    "rename",
+    "mmv"
+  ],
+  "examples": [
+    {
+      "description": "重命名文件",
+      "code": "mv oldname.txt newname.txt"
+    },
+    {
+      "description": "移动文件到目录",
+      "code": "mv file.txt /target/directory/"
+    },
+    {
+      "description": "移动并询问覆盖确认",
+      "code": "mv -i source.txt dest.txt"
+    }
+  ]
+}

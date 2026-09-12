@@ -1,0 +1,26 @@
+{
+  "name": "HGETALL",
+  "description": "获取哈希表中所有的字段和值",
+  "synopsis": "HGETALL key",
+  "category": "hash",
+  "danger_level": "low",
+  "tags": [
+    "获取",
+    "全部",
+    "哈希",
+    "遍历",
+    "查询"
+  ],
+  "common_options": [],
+  "related": [
+    "HSET",
+    "HGET",
+    "HMGET"
+  ],
+  "examples": [
+    {
+      "description": "获取用户完整信息",
+      "code": "HGETALL user:1"
+    }
+  ]
+}

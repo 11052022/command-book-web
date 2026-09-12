@@ -1,0 +1,25 @@
+{
+  "name": "PSUBSCRIBE",
+  "description": "按模式订阅频道（支持通配符）",
+  "synopsis": "PSUBSCRIBE pattern [pattern ...]",
+  "category": "pubsub",
+  "danger_level": "low",
+  "tags": [
+    "订阅",
+    "模式匹配",
+    "通配符",
+    "频道"
+  ],
+  "common_options": [],
+  "related": [
+    "SUBSCRIBE",
+    "PUBLISH",
+    "PUNSUBSCRIBE"
+  ],
+  "examples": [
+    {
+      "description": "订阅所有 news.* 频道",
+      "code": "PSUBSCRIBE news.*"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "nslookup",
+  "description": "查询 DNS 记录",
+  "synopsis": "nslookup [选项] 域名",
+  "category": "网络相关",
+  "danger_level": "low",
+  "tags": [
+    "DNS",
+    "域名",
+    "查询",
+    "解析",
+    "IP",
+    "记录"
+  ],
+  "common_options": [],
+  "related": [
+    "dig",
+    "host",
+    "whois"
+  ],
+  "examples": [
+    {
+      "description": "查询域名 IP 地址",
+      "code": "nslookup google.com"
+    },
+    {
+      "description": "使用指定 DNS 服务器查询",
+      "code": "nslookup google.com 8.8.8.8"
+    }
+  ]
+}

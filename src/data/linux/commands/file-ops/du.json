@@ -1,0 +1,68 @@
+{
+  "name": "du",
+  "description": "查看目录或文件的磁盘使用量",
+  "synopsis": "du [选项] [路径]",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "磁盘",
+    "大小",
+    "空间",
+    "使用",
+    "目录",
+    "占用"
+  ],
+  "common_options": [
+    {
+      "name": "-h",
+      "description": "人类可读格式（KB, MB, GB）"
+    },
+    {
+      "name": "-s",
+      "description": "仅显示总计"
+    },
+    {
+      "name": "-d",
+      "description": "指定递归深度"
+    },
+    {
+      "name": "--max-depth",
+      "description": "最大深度"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "显示选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-h", "label": "人类可读格式", "hint": "human-readable" },
+          { "flag": "-s", "label": "仅显示总计", "hint": "summarize" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "path", "label": "目标路径", "placeholder": ". 或 /home/user", "prefix": "" },
+      { "key": "depth", "label": "最大递归深度", "placeholder": "1", "prefix": "--max-depth" }
+    ]
+  },
+  "related": [
+    "df",
+    "ncdu",
+    "ls"
+  ],
+  "examples": [
+    {
+      "description": "查看当前目录各子目录大小",
+      "code": "du -h --max-depth=1"
+    },
+    {
+      "description": "查看指定目录总大小",
+      "code": "du -sh /home/user"
+    },
+    {
+      "description": "按大小排序显示最大的目录",
+      "code": "du -h --max-depth=1 | sort -hr"
+    }
+  ]
+}

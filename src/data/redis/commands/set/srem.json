@@ -1,0 +1,24 @@
+{
+  "name": "SREM",
+  "description": "移除集合中的一个或多个成员",
+  "synopsis": "SREM key member [member ...]",
+  "category": "set",
+  "danger_level": "medium",
+  "tags": [
+    "移除",
+    "删除",
+    "集合",
+    "成员"
+  ],
+  "common_options": [],
+  "related": [
+    "SADD",
+    "SMEMBERS"
+  ],
+  "examples": [
+    {
+      "description": "移除用户标签",
+      "code": "SREM user:1:tags inactive"
+    }
+  ]
+}

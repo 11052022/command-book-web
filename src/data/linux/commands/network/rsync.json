@@ -1,0 +1,88 @@
+{
+  "name": "rsync",
+  "description": "高效的文件同步和传输工具",
+  "synopsis": "rsync [选项] 源 目标",
+  "category": "网络相关",
+  "danger_level": "medium",
+  "tags": [
+    "同步",
+    "传输",
+    "备份",
+    "复制",
+    "镜像",
+    "增量"
+  ],
+  "common_options": [
+    {
+      "name": "-a",
+      "description": "归档模式（保留属性和权限）"
+    },
+    {
+      "name": "-v",
+      "description": "显示详细信息"
+    },
+    {
+      "name": "-z",
+      "description": "传输时压缩"
+    },
+    {
+      "name": "--delete",
+      "description": "删除目标中源没有的文件"
+    },
+    {
+      "name": "-P",
+      "description": "显示进度并支持断点续传"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "基础模式",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-a", "label": "归档模式（保留权限/时间/所有者）", "hint": "archive" },
+          { "flag": "-v", "label": "显示详细信息", "hint": "verbose" },
+          { "flag": "-z", "label": "传输时压缩（节省带宽）", "hint": "compress" },
+          { "flag": "-P", "label": "显示进度 + 断点续传", "hint": "progress" }
+        ]
+      },
+      {
+        "label": "同步行为",
+        "type": "checkbox",
+        "options": [
+          { "flag": "--delete", "label": "删除目标中多余的文件（镜像同步）", "hint": "mirror" },
+          { "flag": "--dry-run", "label": "模拟运行（不实际传输）", "hint": "" },
+          { "flag": "--exclude", "label": "排除匹配的文件模式", "hint": "需在下栏填入模式" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "source", "label": "源路径", "placeholder": "/local/path/ 或 user@host:/remote/", "prefix": "" },
+      { "key": "dest", "label": "目标路径", "placeholder": "/dest/path/ 或 user@host:/remote/", "prefix": "" },
+      { "key": "exclude_pat", "label": "排除模式（--exclude 的值）", "placeholder": "*.tmp 或 node_modules", "prefix": "--exclude" }
+    ]
+  },
+  "related": [
+    "scp",
+    "cp",
+    "tar"
+  ],
+  "examples": [
+    {
+      "description": "本地同步目录",
+      "code": "rsync -av /source/ /dest/"
+    },
+    {
+      "description": "远程同步（压缩传输）",
+      "code": "rsync -avz /local/ user@server:/remote/"
+    },
+    {
+      "description": "镜像同步（删除多余文件）",
+      "code": "rsync -av --delete /src/ /dst/"
+    },
+    {
+      "description": "带进度条的传输",
+      "code": "rsync -avP large_file.iso user@server:/path/"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "name": "grep",
+  "description": "在文本中搜索匹配指定模式的行——Linux 最常用的文本搜索工具",
+  "synopsis": "grep [选项] 模式 [文件...]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": ["搜索", "查找", "文本", "匹配", "过滤", "正则", "关键字", "日志", "筛选"],
+  "common_options": [
+    { "name": "-i", "description": "忽略大小写（常用）" },
+    { "name": "-v", "description": "反向匹配——排除包含模式的行（常用）" },
+    { "name": "-r", "description": "递归搜索整个目录" },
+    { "name": "-n", "description": "显示匹配行的行号" },
+    { "name": "-c", "description": "只统计匹配行数，不输出内容" },
+    { "name": "-l", "description": "只输出包含匹配的文件名（不输出匹配行）" },
+    { "name": "-L", "description": "只输出不包含匹配的文件名" },
+    { "name": "-w", "description": "全词匹配（如 grep -w 'abc' 不匹配 abcd）" },
+    { "name": "-o", "description": "只输出匹配的部分（而非整行）" },
+    { "name": "-m N", "description": "最多匹配 N 行后停止" },
+    { "name": "-A N", "description": "同时显示匹配行之后的 N 行（After）" },
+    { "name": "-B N", "description": "同时显示匹配行之前的 N 行（Before）" },
+    { "name": "-C N", "description": "同时显示匹配行前后各 N 行（Context）" },
+    { "name": "-E", "description": "启用扩展正则表达式（支持 | + ? {} ）" },
+    { "name": "-P", "description": "启用 Perl 兼容正则（PCRE，支持更高级语法）" },
+    { "name": "-H", "description": "始终显示文件名（多文件时默认行为）" },
+    { "name": "-h", "description": "不显示文件名" },
+    { "name": "-q", "description": "静默模式——不输出，只返回退出码（脚本中用）" },
+    { "name": "--color=auto", "description": "高亮匹配的文本" }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "匹配选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-i", "label": "忽略大小写", "hint": "" },
+          { "flag": "-v", "label": "反向匹配（排除）", "hint": "" },
+          { "flag": "-w", "label": "全词匹配", "hint": "" },
+          { "flag": "-E", "label": "扩展正则 (支持 |+?)", "hint": "" },
+          { "flag": "-P", "label": "Perl 正则", "hint": "" }
+        ]
+      },
+      {
+        "label": "输出控制",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-n", "label": "显示行号", "hint": "" },
+          { "flag": "-c", "label": "只显示匹配行数", "hint": "" },
+          { "flag": "-l", "label": "只显示文件名", "hint": "" },
+          { "flag": "-o", "label": "只输出匹配部分", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "pattern", "label": "搜索模式", "placeholder": "error|fail|fatal", "prefix": "" },
+      { "key": "file", "label": "目标文件/目录", "placeholder": "app.log 或 ./src/", "prefix": "" },
+      { "key": "context", "label": "显示上下文（前后各 N 行）", "placeholder": "3", "prefix": "-C" },
+      { "key": "recursive", "label": "递归搜索（留空则否）", "placeholder": "若需要填入 -r", "prefix": "" }
+    ]
+  },
+  "related": ["sed", "awk", "tail", "less", "cat", "zgrep", "rg", "ack", "ag"],
+  "examples": [
+    { "description": "基本搜索：在文件中查找关键字", "code": "grep \"error\" app.log" },
+    { "description": "忽略大小写搜索", "code": "grep -i \"error\" app.log" },
+    { "description": "递归搜索目录中所有文件", "code": "grep -r \"TODO\" ./src/" },
+    { "description": "显示匹配行及行号", "code": "grep -n \"function\" app.js" },
+    { "description": "统计错误出现次数", "code": "grep -c \"ERROR\" /var/log/syslog" },
+    { "description": "排除注释行和空行查看配置", "code": "grep -v -E \"^#|^$\" nginx.conf" },
+    { "description": "显示匹配行及上下文（前后各 3 行）", "code": "grep -C 3 \"exception\" app.log" },
+    { "description": "仅输出匹配的 IP 地址", "code": "grep -oE '[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}' access.log" },
+    { "description": "全词匹配（避免误匹配子串）", "code": "grep -w 'abc' file.txt" },
+    { "description": "列出包含匹配的文件名", "code": "grep -rl \"config\" /etc/" },
+    { "description": "从管道读取（组合其他命令）", "code": "ps aux | grep nginx" },
+    { "description": "使用正则匹配多种错误类型", "code": "grep -E \"(error|fail|fatal|critical)\" app.log" },
+    { "description": "搜索并排除二进制文件", "code": "grep -rI \"pattern\" ./" },
+
+    { "description": "【日志排查】跟踪实时日志中的错误", "code": "tail -f /var/log/syslog | grep --color=auto \"ERROR\"" },
+    { "description": "【日志排查】查看某时间段日志（如 10:00 到 10:30）", "code": "grep -E \"2026-07-29 10:[0-2][0-9]\" app.log | grep \"error\"" },
+    { "description": "【日志排查】查找前后 10 行上下文以了解错误原因", "code": "grep -B 10 -A 10 \"FATAL\" app.log" },
+    { "description": "【日志排查】统计各错误类型的数量", "code": "grep -oE \"(ERROR|WARN|INFO|DEBUG)\" app.log | sort | uniq -c | sort -rn" },
+    { "description": "【日志排查】排查特定时间段内 500 错误", "code": "grep \"29/Jul/2026\" access.log | grep \" 500 \"" },
+    { "description": "【日志排查】从压缩日志中搜索（不解压）", "code": "zgrep \"error\" app.log.1.gz" },
+    { "description": "【性能排查】查找慢请求（超过 1000ms）", "code": "grep -E '[0-9]{4,}ms' slow_query.log" },
+
+    { "description": "多文件搜索（自动显示文件名）", "code": "grep \"config\" *.yml" },
+    { "description": "查找非空行", "code": "grep -v \"^$\" file.txt" },
+    { "description": "脚本中静默检查是否存在匹配", "code": "if grep -q \"healthy\" /var/log/health.log; then echo 'OK'; fi" },
+    { "description": "与 find 结合：在所有 .log 文件中搜索", "code": "find . -name \"*.log\" -exec grep -l \"error\" {} \\;" }
+  ]
+}

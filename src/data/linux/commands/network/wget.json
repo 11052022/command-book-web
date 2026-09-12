@@ -1,0 +1,77 @@
+{
+  "name": "wget",
+  "description": "从网络下载文件（支持递归和断点续传）",
+  "synopsis": "wget [选项] URL",
+  "category": "网络相关",
+  "danger_level": "low",
+  "tags": [
+    "下载",
+    "网络",
+    "文件",
+    "断点",
+    "递归"
+  ],
+  "common_options": [
+    {
+      "name": "-O",
+      "description": "指定输出文件名"
+    },
+    {
+      "name": "-c",
+      "description": "断点续传"
+    },
+    {
+      "name": "-r",
+      "description": "递归下载"
+    },
+    {
+      "name": "-np",
+      "description": "不追溯父目录"
+    },
+    {
+      "name": "--limit-rate",
+      "description": "限速下载"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "下载选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-c", "label": "断点续传", "hint": "continue" },
+          { "flag": "-r", "label": "递归下载（整站）", "hint": "recursive" },
+          { "flag": "-np", "label": "不追溯父目录", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "url", "label": "下载 URL", "placeholder": "https://example.com/file.tar.gz", "prefix": "" },
+      { "key": "output", "label": "保存文件名", "placeholder": "myfile.tar.gz", "prefix": "-O" },
+      { "key": "limit", "label": "限速（可选）", "placeholder": "500k 或 2M", "prefix": "--limit-rate" }
+    ]
+  },
+  "related": [
+    "curl",
+    "axel",
+    "aria2"
+  ],
+  "examples": [
+    {
+      "description": "下载文件",
+      "code": "wget https://example.com/file.tar.gz"
+    },
+    {
+      "description": "断点续传",
+      "code": "wget -c https://example.com/large_file.iso"
+    },
+    {
+      "description": "递归下载整个站点",
+      "code": "wget -r -np https://example.com/docs/"
+    },
+    {
+      "description": "限速 500KB/s 下载",
+      "code": "wget --limit-rate=500k https://example.com/file.iso"
+    }
+  ]
+}

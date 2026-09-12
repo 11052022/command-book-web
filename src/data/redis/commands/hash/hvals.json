@@ -1,0 +1,26 @@
+{
+  "name": "HVALS",
+  "description": "获取哈希表中所有的值（values），不包含字段名",
+  "synopsis": "HVALS key",
+  "category": "hash",
+  "danger_level": "low",
+  "tags": [
+    "值",
+    "哈希",
+    "遍历",
+    "查询"
+  ],
+  "common_options": [],
+  "related": [
+    "HKEYS",
+    "HGETALL",
+    "HLEN",
+    "HSCAN"
+  ],
+  "examples": [
+    {
+      "description": "查看用户对象的所有属性值",
+      "code": "HVALS user:1"
+    }
+  ]
+}

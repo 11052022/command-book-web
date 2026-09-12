@@ -1,0 +1,44 @@
+{
+  "name": "blkid",
+  "description": "查看块设备的 UUID 和文件系统类型",
+  "synopsis": "blkid [选项] [设备]",
+  "category": "磁盘存储",
+  "danger_level": "low",
+  "tags": [
+    "UUID",
+    "块设备",
+    "查看",
+    "磁盘",
+    "标识"
+  ],
+  "related": [
+    "lsblk",
+    "findfs",
+    "mount",
+    "fstab"
+  ],
+  "common_options": [
+    {
+      "name": "-s",
+      "description": "只显示指定标签"
+    },
+    {
+      "name": "-o",
+      "description": "指定输出格式"
+    }
+  ],
+  "examples": [
+    {
+      "description": "查看所有块设备 UUID",
+      "code": "blkid"
+    },
+    {
+      "description": "查看指定设备",
+      "code": "blkid /dev/sda1"
+    },
+    {
+      "description": "只显示 UUID",
+      "code": "blkid -s UUID /dev/sda1"
+    }
+  ]
+}

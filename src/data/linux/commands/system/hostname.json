@@ -1,0 +1,33 @@
+{
+  "name": "hostname",
+  "description": "显示或设置系统主机名",
+  "synopsis": "hostname [选项]",
+  "category": "系统信息",
+  "danger_level": "low",
+  "tags": [
+    "主机",
+    "名字",
+    "系统",
+    "查看"
+  ],
+  "common_options": [
+    {
+      "name": "-I",
+      "description": "显示本机所有 IP 地址"
+    }
+  ],
+  "related": [
+    "uname",
+    "hostnamectl"
+  ],
+  "examples": [
+    {
+      "description": "查看主机名",
+      "code": "hostname"
+    },
+    {
+      "description": "查看 IP 地址",
+      "code": "hostname -I"
+    }
+  ]
+}

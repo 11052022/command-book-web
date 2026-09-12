@@ -1,0 +1,48 @@
+{
+  "name": "XGROUP",
+  "description": "管理 Stream 消费者组——支持创建(CREATE)、删除(DESTROY)、删除消费者(DELCONSUMER)、设置起始 ID(SETID)",
+  "synopsis": "XGROUP subcommand key group [argument ...]",
+  "category": "stream",
+  "danger_level": "medium",
+  "tags": [
+    "消费者组",
+    "管理",
+    "创建",
+    "删除",
+    "Stream"
+  ],
+  "common_options": [
+    {
+      "name": "CREATE <key> <group> <id>",
+      "description": "创建消费者组，id 指定起始消费位置（$ 表示只消费新消息，0 表示从头开始）"
+    },
+    {
+      "name": "DESTROY <key> <group>",
+      "description": "删除消费者组及所有关联消费者"
+    },
+    {
+      "name": "DELCONSUMER <key> <group> <consumer>",
+      "description": "删除消费者组中的指定消费者"
+    },
+    {
+      "name": "SETID <key> <group> <id>",
+      "description": "修改消费者组的最后投递 ID"
+    }
+  ],
+  "related": [
+    "XREADGROUP",
+    "XACK",
+    "XADD",
+    "XPENDING"
+  ],
+  "examples": [
+    {
+      "description": "创建消费者组（从当前最新开始消费）",
+      "code": "XGROUP CREATE mystream mygroup $"
+    },
+    {
+      "description": "创建消费者组（流不存在时自动创建，从头消费）",
+      "code": "XGROUP CREATE mystream mygroup 0 MKSTREAM"
+    }
+  ]
+}

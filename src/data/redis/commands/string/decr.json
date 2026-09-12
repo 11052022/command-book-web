@@ -1,0 +1,25 @@
+{
+  "name": "DECR",
+  "description": "将 key 中储存的数字值减 1（原子递减）",
+  "synopsis": "DECR key",
+  "category": "string",
+  "danger_level": "medium",
+  "tags": [
+    "递减",
+    "计数器",
+    "原子",
+    "数字",
+    "自减"
+  ],
+  "common_options": [],
+  "related": [
+    "INCR",
+    "DECRBY"
+  ],
+  "examples": [
+    {
+      "description": "库存扣减",
+      "code": "DECR stock:item-123"
+    }
+  ]
+}

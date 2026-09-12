@@ -1,0 +1,48 @@
+{
+  "name": "tr",
+  "description": "翻译或删除字符",
+  "synopsis": "tr [选项] 集合1 [集合2]",
+  "category": "文本处理",
+  "danger_level": "medium",
+  "tags": [
+    "替换",
+    "转换",
+    "删除",
+    "字符",
+    "大小写",
+    "翻译"
+  ],
+  "common_options": [
+    {
+      "name": "-d",
+      "description": "删除指定字符"
+    },
+    {
+      "name": "-s",
+      "description": "压缩重复字符"
+    }
+  ],
+  "related": [
+    "sed",
+    "awk",
+    "iconv"
+  ],
+  "examples": [
+    {
+      "description": "大小写转换",
+      "code": "echo \"Hello\" | tr '[:lower:]' '[:upper:]'"
+    },
+    {
+      "description": "删除 Windows 换行符",
+      "code": "tr -d '\\r' < dos.txt > unix.txt"
+    },
+    {
+      "description": "将多个空格压缩为一个",
+      "code": "tr -s ' '"
+    },
+    {
+      "description": "替换特定字符",
+      "code": "echo \"a,b,c\" | tr ',' '\\t'"
+    }
+  ]
+}

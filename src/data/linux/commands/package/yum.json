@@ -1,0 +1,57 @@
+{
+  "name": "yum",
+  "description": "RHEL/CentOS 系统的包管理工具",
+  "synopsis": "yum [命令] [包名]",
+  "category": "包管理",
+  "danger_level": "medium",
+  "tags": [
+    "安装",
+    "更新",
+    "包",
+    "软件",
+    "CentOS",
+    "RHEL",
+    "RedHat"
+  ],
+  "common_options": [
+    {
+      "name": "install",
+      "description": "安装软件包"
+    },
+    {
+      "name": "update",
+      "description": "更新软件包"
+    },
+    {
+      "name": "remove",
+      "description": "删除软件包"
+    },
+    {
+      "name": "search",
+      "description": "搜索软件包"
+    },
+    {
+      "name": "info",
+      "description": "查看软件包信息"
+    }
+  ],
+  "related": [
+    "dnf",
+    "rpm",
+    "apt"
+  ],
+  "examples": [
+    {
+      "description": "安装软件包",
+      "code": "sudo yum install httpd"
+    },
+    {
+      "description": "搜索软件包",
+      "code": "yum search python3"
+    },
+    {
+      "description": "更新所有软件包",
+      "code": "sudo yum update"
+    }
+  ]
+}

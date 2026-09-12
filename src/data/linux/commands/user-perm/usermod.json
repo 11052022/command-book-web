@@ -1,0 +1,56 @@
+{
+  "name": "usermod",
+  "description": "修改已有用户账户的属性",
+  "synopsis": "usermod [选项] 用户名",
+  "category": "用户权限",
+  "danger_level": "high",
+  "tags": [
+    "修改",
+    "用户",
+    "账户",
+    "组",
+    "shell"
+  ],
+  "common_options": [
+    {
+      "name": "-aG",
+      "description": "将用户追加到附加组"
+    },
+    {
+      "name": "-s",
+      "description": "修改用户的默认 shell"
+    },
+    {
+      "name": "-l",
+      "description": "修改用户名"
+    },
+    {
+      "name": "-L",
+      "description": "锁定用户账户"
+    },
+    {
+      "name": "-U",
+      "description": "解锁用户账户"
+    }
+  ],
+  "related": [
+    "useradd",
+    "userdel",
+    "passwd",
+    "groupadd"
+  ],
+  "examples": [
+    {
+      "description": "将用户添加到 sudo 组",
+      "code": "sudo usermod -aG sudo username"
+    },
+    {
+      "description": "修改用户的默认 shell",
+      "code": "sudo usermod -s /bin/zsh username"
+    },
+    {
+      "description": "锁定用户",
+      "code": "sudo usermod -L username"
+    }
+  ]
+}

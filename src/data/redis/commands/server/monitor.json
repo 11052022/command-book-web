@@ -1,0 +1,27 @@
+{
+  "name": "MONITOR",
+  "description": "实时输出 Redis 服务器接收到的每条命令——调试利器，但生产环境慎用（性能开销大）",
+  "synopsis": "MONITOR",
+  "category": "server",
+  "danger_level": "high",
+  "tags": [
+    "监控",
+    "实时",
+    "调试",
+    "命令流",
+    "诊断",
+    "开销大"
+  ],
+  "common_options": [],
+  "related": [
+    "SLOWLOG",
+    "INFO",
+    "CLIENT LIST"
+  ],
+  "examples": [
+    {
+      "description": "实时监控所有命令（Ctrl+C 停止）",
+      "code": "MONITOR"
+    }
+  ]
+}

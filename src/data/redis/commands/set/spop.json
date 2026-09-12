@@ -1,0 +1,31 @@
+{
+  "name": "SPOP",
+  "description": "随机移除并返回集合中的一个或多个成员——适用于抽奖、随机分配等场景",
+  "synopsis": "SPOP key [count]",
+  "category": "set",
+  "danger_level": "medium",
+  "tags": [
+    "随机",
+    "弹出",
+    "集合",
+    "抽奖",
+    "移除"
+  ],
+  "common_options": [],
+  "related": [
+    "SRANDMEMBER",
+    "SREM",
+    "SADD",
+    "SMEMBERS"
+  ],
+  "examples": [
+    {
+      "description": "从奖池中随机抽一个奖品（拿走即移除）",
+      "code": "SPOP lottery:pool"
+    },
+    {
+      "description": "随机分配 3 个任务给当前 worker",
+      "code": "SPOP tasks:pending 3"
+    }
+  ]
+}

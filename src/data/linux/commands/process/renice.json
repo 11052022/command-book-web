@@ -1,0 +1,29 @@
+{
+  "name": "renice",
+  "description": "修改正在运行进程的优先级",
+  "synopsis": "renice [-n] 优先级 [-p] PID",
+  "category": "进程管理",
+  "danger_level": "medium",
+  "tags": [
+    "优先级",
+    "修改",
+    "进程",
+    "调整"
+  ],
+  "common_options": [],
+  "related": [
+    "nice",
+    "top",
+    "ps"
+  ],
+  "examples": [
+    {
+      "description": "降低进程优先级",
+      "code": "sudo renice -n 10 -p 1234"
+    },
+    {
+      "description": "提高进程优先级",
+      "code": "sudo renice -n -5 -p 1234"
+    }
+  ]
+}

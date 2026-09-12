@@ -1,0 +1,23 @@
+{
+  "name": "STRLEN",
+  "description": "返回 key 所储存的字符串值的长度",
+  "synopsis": "STRLEN key",
+  "category": "string",
+  "danger_level": "low",
+  "tags": [
+    "长度",
+    "字符串",
+    "查询"
+  ],
+  "common_options": [],
+  "related": [
+    "GET",
+    "APPEND"
+  ],
+  "examples": [
+    {
+      "description": "获取值的长度",
+      "code": "STRLEN user:1:bio"
+    }
+  ]
+}

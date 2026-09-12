@@ -1,0 +1,48 @@
+{
+  "name": "touch",
+  "description": "创建空文件或更新文件时间戳",
+  "synopsis": "touch [选项] 文件...",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "创建",
+    "文件",
+    "空",
+    "时间",
+    "时间戳",
+    "新建",
+    "更新"
+  ],
+  "common_options": [
+    {
+      "name": "-a",
+      "description": "仅修改访问时间"
+    },
+    {
+      "name": "-m",
+      "description": "仅修改修改时间"
+    },
+    {
+      "name": "-t",
+      "description": "指定时间戳"
+    }
+  ],
+  "related": [
+    "mkdir",
+    "stat"
+  ],
+  "examples": [
+    {
+      "description": "创建空文件",
+      "code": "touch newfile.txt"
+    },
+    {
+      "description": "批量创建多个文件",
+      "code": "touch file1.txt file2.txt file3.txt"
+    },
+    {
+      "description": "更新文件时间为当前时间",
+      "code": "touch existing_file.txt"
+    }
+  ]
+}

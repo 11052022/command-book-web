@@ -1,0 +1,24 @@
+{
+  "name": "RENAME",
+  "description": "将 key 重命名为 newkey（newkey 已存在则先覆盖）",
+  "synopsis": "RENAME key newkey",
+  "category": "key",
+  "danger_level": "high",
+  "tags": [
+    "重命名",
+    "改名",
+    "覆盖",
+    "危险"
+  ],
+  "common_options": [],
+  "related": [
+    "DEL",
+    "EXISTS"
+  ],
+  "examples": [
+    {
+      "description": "重命名 key",
+      "code": "RENAME old:key:name new:key:name"
+    }
+  ]
+}

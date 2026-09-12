@@ -1,0 +1,47 @@
+{
+  "name": "tree",
+  "description": "以树形结构列出目录内容",
+  "synopsis": "tree [选项] [目录]",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "目录",
+    "树",
+    "结构",
+    "显示",
+    "层级",
+    "查看"
+  ],
+  "common_options": [
+    {
+      "name": "-L",
+      "description": "限制显示深度"
+    },
+    {
+      "name": "-d",
+      "description": "只显示目录"
+    },
+    {
+      "name": "-a",
+      "description": "包含隐藏文件"
+    }
+  ],
+  "related": [
+    "ls",
+    "find"
+  ],
+  "examples": [
+    {
+      "description": "树形显示当前目录",
+      "code": "tree"
+    },
+    {
+      "description": "限制深度为 2 级",
+      "code": "tree -L 2"
+    },
+    {
+      "description": "只显示目录结构",
+      "code": "tree -d"
+    }
+  ]
+}

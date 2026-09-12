@@ -1,0 +1,57 @@
+{
+  "name": "tcpdump",
+  "description": "抓取和分析网络数据包",
+  "synopsis": "tcpdump [选项] [过滤表达式]",
+  "category": "网络相关",
+  "danger_level": "medium",
+  "tags": [
+    "抓包",
+    "网络",
+    "分析",
+    "数据包",
+    "诊断",
+    "流量"
+  ],
+  "related": [
+    "wireshark",
+    "tshark",
+    "ngrep",
+    "iptables"
+  ],
+  "common_options": [
+    {
+      "name": "-i",
+      "description": "指定网络接口"
+    },
+    {
+      "name": "-n",
+      "description": "不解析主机名"
+    },
+    {
+      "name": "-c",
+      "description": "抓取 N 个包后停止"
+    },
+    {
+      "name": "-w",
+      "description": "写入 pcap 文件"
+    },
+    {
+      "name": "-r",
+      "description": "读取 pcap 文件"
+    }
+  ],
+  "examples": [
+    {
+      "description": "抓取 80 端口流量",
+      "code": "sudo tcpdump -i eth0 port 80"
+    },
+    {
+      "description": "抓 100 个包保存到文件",
+      "code": "sudo tcpdump -c 100 -w capture.pcap"
+    },
+    {
+      "description": "读取抓包文件",
+      "code": "tcpdump -r capture.pcap"
+    }
+  ]
+}

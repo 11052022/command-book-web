@@ -1,0 +1,46 @@
+{
+  "name": "XREADGROUP",
+  "description": "消费者组模式读取 Stream 消息——支持消息确认、未确认消息重投、新消息分发，是实现可靠消息队列的核心命令",
+  "synopsis": "XREADGROUP GROUP group consumer [COUNT count] [BLOCK ms] [NOACK] STREAMS key [key ...] id [id ...]",
+  "category": "stream",
+  "danger_level": "low",
+  "tags": [
+    "消费者组",
+    "读取",
+    "分发",
+    "可靠队列",
+    "Stream",
+    "ACK"
+  ],
+  "common_options": [
+    {
+      "name": "COUNT count",
+      "description": "最多返回 count 条消息"
+    },
+    {
+      "name": "BLOCK ms",
+      "description": "阻塞等待 ms 毫秒"
+    },
+    {
+      "name": "NOACK",
+      "description": "不等待确认，读取后即标记已处理"
+    }
+  ],
+  "related": [
+    "XREAD",
+    "XGROUP",
+    "XACK",
+    "XADD",
+    "XPENDING"
+  ],
+  "examples": [
+    {
+      "description": "消费者组读取新消息",
+      "code": "XREADGROUP GROUP mygroup consumer1 COUNT 5 STREAMS mystream >"
+    },
+    {
+      "description": "重新投递未确认消息（id=0）",
+      "code": "XREADGROUP GROUP mygroup consumer1 STREAMS mystream 0"
+    }
+  ]
+}

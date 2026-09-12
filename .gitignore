@@ -1,0 +1,29 @@
+# 依赖
+node_modules/
+
+# 构建产物与缓存
+dist/
+.vite/
+
+# 日志
+*.log
+npm-debug.log*
+
+# 系统文件
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+
+# 本地环境配置
+*.local
+.env
+.env.*
+
+# 迁移残留（后续手动清理后可删除此行）
+.staging-web/
+src/styles/styles/
+scripts/scripts/

@@ -1,0 +1,20 @@
+{
+  "name": "git rev-list",
+  "description": "列出符合条件的提交 SHA——支持强大的过滤选项，是高级 git log 的底层命令",
+  "synopsis": "git rev-list [options] <commit>...",
+  "category": "inspect",
+  "danger_level": "low",
+  "tags": ["列表", "rev-list", "SHA", "过滤", "高级", "查询"],
+  "common_options": [
+    { "name": "--count", "description": "只返回提交数量" },
+    { "name": "--since/--until", "description": "按日期过滤" },
+    { "name": "--author=<pattern>", "description": "按作者过滤" },
+    { "name": "--diff-filter=D -- <path>", "description": "查找删除指定文件的提交" },
+    { "name": "--max-count=<n>", "description": "最多返回 n 个提交" }
+  ],
+  "related": ["git log", "git blame", "git bisect"],
+  "examples": [
+    { "description": "统计两个版本间的提交数", "code": "git rev-list --count v1.0..v2.0" },
+    { "description": "查找删除某文件的所有提交", "code": "git rev-list HEAD --diff-filter=D -- app.js" }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "name": "pip",
+  "description": "Python 包管理器",
+  "synopsis": "pip [命令] [包名]",
+  "category": "包管理",
+  "danger_level": "medium",
+  "tags": [
+    "Python",
+    "包",
+    "安装",
+    "pip",
+    "模块"
+  ],
+  "related": [
+    "pip3",
+    "npm",
+    "conda",
+    "virtualenv"
+  ],
+  "common_options": [
+    {
+      "name": "install",
+      "description": "安装包"
+    },
+    {
+      "name": "uninstall",
+      "description": "卸载包"
+    },
+    {
+      "name": "list",
+      "description": "列出已安装的包"
+    },
+    {
+      "name": "freeze",
+      "description": "以 requirements.txt 格式输出"
+    }
+  ],
+  "examples": [
+    {
+      "description": "安装 Python 包",
+      "code": "pip install requests"
+    },
+    {
+      "description": "卸载包",
+      "code": "pip uninstall requests"
+    },
+    {
+      "description": "导出依赖到文件",
+      "code": "pip freeze > requirements.txt"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "groups",
+  "description": "显示用户所属的用户组",
+  "synopsis": "groups [用户名]",
+  "category": "用户权限",
+  "danger_level": "low",
+  "tags": [
+    "组",
+    "用户",
+    "查看",
+    "权限"
+  ],
+  "common_options": [],
+  "related": [
+    "id",
+    "whoami",
+    "usermod"
+  ],
+  "examples": [
+    {
+      "description": "查看当前用户所属组",
+      "code": "groups"
+    },
+    {
+      "description": "查看指定用户所属组",
+      "code": "groups username"
+    }
+  ]
+}

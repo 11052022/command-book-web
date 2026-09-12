@@ -1,0 +1,25 @@
+{
+  "name": "ZINCRBY",
+  "description": "为有序集合中成员的分数加上增量",
+  "synopsis": "ZINCRBY key increment member",
+  "category": "sorted-set",
+  "danger_level": "medium",
+  "tags": [
+    "递增",
+    "分数",
+    "有序集合",
+    "更新",
+    "排名变化"
+  ],
+  "common_options": [],
+  "related": [
+    "ZADD",
+    "ZSCORE"
+  ],
+  "examples": [
+    {
+      "description": "玩家得分 +50",
+      "code": "ZINCRBY leaderboard 50 player:1"
+    }
+  ]
+}

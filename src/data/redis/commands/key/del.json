@@ -1,0 +1,30 @@
+{
+  "name": "DEL",
+  "description": "删除一个或多个 key",
+  "synopsis": "DEL key [key ...]",
+  "category": "key",
+  "danger_level": "high",
+  "tags": [
+    "删除",
+    "移除",
+    "销毁",
+    "清理",
+    "危险"
+  ],
+  "common_options": [],
+  "related": [
+    "EXISTS",
+    "UNLINK",
+    "EXPIRE"
+  ],
+  "examples": [
+    {
+      "description": "删除单个 key",
+      "code": "DEL user:1:cache"
+    },
+    {
+      "description": "批量删除 key",
+      "code": "DEL user:1:name user:1:age user:1:email"
+    }
+  ]
+}

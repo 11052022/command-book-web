@@ -1,0 +1,41 @@
+{
+  "name": "free",
+  "description": "查看系统内存使用情况",
+  "synopsis": "free [选项]",
+  "category": "系统信息",
+  "danger_level": "low",
+  "tags": [
+    "内存",
+    "RAM",
+    "查看",
+    "使用",
+    "剩余",
+    "交换"
+  ],
+  "common_options": [
+    {
+      "name": "-h",
+      "description": "人类可读格式"
+    },
+    {
+      "name": "-s",
+      "description": "持续监控（指定秒数间隔）"
+    }
+  ],
+  "related": [
+    "top",
+    "vmstat",
+    "htop",
+    "smem"
+  ],
+  "examples": [
+    {
+      "description": "查看内存使用（人类可读）",
+      "code": "free -h"
+    },
+    {
+      "description": "每 2 秒刷新一次内存使用",
+      "code": "free -h -s 2"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "RPUSH",
+  "description": "将一个或多个值插入到列表尾部",
+  "synopsis": "RPUSH key element [element ...]",
+  "category": "list",
+  "danger_level": "low",
+  "tags": [
+    "插入",
+    "列表",
+    "尾部",
+    "队列",
+    "追加"
+  ],
+  "common_options": [],
+  "related": [
+    "LPUSH",
+    "RPOP",
+    "LRANGE",
+    "LLEN"
+  ],
+  "examples": [
+    {
+      "description": "从右侧推入任务到队列",
+      "code": "RPUSH queue:tasks 'send_email:123' 'resize_image:456'"
+    }
+  ]
+}

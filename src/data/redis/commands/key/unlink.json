@@ -1,0 +1,32 @@
+{
+  "name": "UNLINK",
+  "description": "异步删除 key——与 DEL 类似，但在后台线程中回收内存，不会阻塞主线程。删除大 key 时更安全",
+  "synopsis": "UNLINK key [key ...]",
+  "category": "key",
+  "danger_level": "high",
+  "tags": [
+    "删除",
+    "异步",
+    "非阻塞",
+    "大Key",
+    "清理",
+    "危险"
+  ],
+  "common_options": [],
+  "related": [
+    "DEL",
+    "EXISTS",
+    "EXPIRE",
+    "MEMORY"
+  ],
+  "examples": [
+    {
+      "description": "异步删除大 key（几百万成员的集合）",
+      "code": "UNLINK cache:big-dataset"
+    },
+    {
+      "description": "批量异步删除，避免阻塞",
+      "code": "UNLINK session:123 temp:456 cache:789"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "echo",
+  "description": "输出一行文本到标准输出",
+  "synopsis": "echo [选项] [字符串]",
+  "category": "其他常用",
+  "danger_level": "low",
+  "tags": [
+    "输出",
+    "显示",
+    "打印",
+    "文本",
+    "字符串"
+  ],
+  "common_options": [
+    {
+      "name": "-n",
+      "description": "不输出末尾换行"
+    },
+    {
+      "name": "-e",
+      "description": "启用转义字符（\\n, \\t 等）"
+    }
+  ],
+  "related": [
+    "printf",
+    "cat"
+  ],
+  "examples": [
+    {
+      "description": "输出普通文本",
+      "code": "echo \"Hello World\""
+    },
+    {
+      "description": "输出不换行",
+      "code": "echo -n \"Loading...\""
+    },
+    {
+      "description": "使用转义字符",
+      "code": "echo -e \"Line1\\nLine2\\nLine3\""
+    },
+    {
+      "description": "输出变量",
+      "code": "echo \"Current user: $USER\""
+    }
+  ]
+}

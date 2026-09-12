@@ -1,0 +1,50 @@
+{
+  "name": "ip",
+  "description": "管理网络接口、路由、地址等",
+  "synopsis": "ip [选项] 对象 命令",
+  "category": "网络相关",
+  "danger_level": "high",
+  "tags": [
+    "网络",
+    "IP",
+    "地址",
+    "接口",
+    "路由",
+    "配置",
+    "网卡"
+  ],
+  "common_options": [
+    {
+      "name": "addr",
+      "description": "管理 IP 地址"
+    },
+    {
+      "name": "link",
+      "description": "管理网络接口"
+    },
+    {
+      "name": "route",
+      "description": "管理路由表"
+    }
+  ],
+  "related": [
+    "ifconfig",
+    "route",
+    "netstat",
+    "iwconfig"
+  ],
+  "examples": [
+    {
+      "description": "查看所有网络接口和 IP",
+      "code": "ip addr show"
+    },
+    {
+      "description": "查看路由表",
+      "code": "ip route show"
+    },
+    {
+      "description": "启用网络接口",
+      "code": "sudo ip link set eth0 up"
+    }
+  ]
+}

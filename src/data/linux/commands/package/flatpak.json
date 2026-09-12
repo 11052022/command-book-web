@@ -1,0 +1,56 @@
+{
+  "name": "flatpak",
+  "description": "跨发行版的通用 Linux 应用分发系统",
+  "synopsis": "flatpak [命令] [参数]",
+  "category": "包管理",
+  "danger_level": "medium",
+  "tags": [
+    "包",
+    "安装",
+    "通用",
+    "沙箱",
+    "Linux"
+  ],
+  "related": [
+    "snap",
+    "appimage",
+    "apt",
+    "dnf"
+  ],
+  "common_options": [
+    {
+      "name": "install",
+      "description": "安装应用"
+    },
+    {
+      "name": "remove",
+      "description": "卸载应用"
+    },
+    {
+      "name": "list",
+      "description": "列出已安装的应用"
+    },
+    {
+      "name": "search",
+      "description": "搜索应用"
+    },
+    {
+      "name": "update",
+      "description": "更新所有应用"
+    }
+  ],
+  "examples": [
+    {
+      "description": "搜索应用",
+      "code": "flatpak search firefox"
+    },
+    {
+      "description": "安装应用",
+      "code": "flatpak install flathub org.mozilla.firefox"
+    },
+    {
+      "description": "列出已安装应用",
+      "code": "flatpak list"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "SORT",
+  "description": "对列表、集合或有序集合中的元素排序并返回，支持 BY 模式（按外部 key 排序）、LIMIT、ASC/DESC、ALPHA",
+  "synopsis": "SORT key [BY pattern] [LIMIT offset count] [GET pattern ...] [ASC|DESC] [ALPHA] [STORE destination]",
+  "category": "key",
+  "danger_level": "low",
+  "tags": [
+    "排序",
+    "列表",
+    "集合",
+    "查询",
+    "分页"
+  ],
+  "common_options": [
+    {
+      "name": "ASC",
+      "description": "升序排列（默认）"
+    },
+    {
+      "name": "DESC",
+      "description": "降序排列"
+    },
+    {
+      "name": "ALPHA",
+      "description": "按字母序排序而非数字"
+    },
+    {
+      "name": "LIMIT offset count",
+      "description": "跳过 offset 条后取 count 条"
+    }
+  ],
+  "related": [
+    "LRANGE",
+    "SMEMBERS",
+    "ZRANGE",
+    "SCAN"
+  ],
+  "examples": [
+    {
+      "description": "对列表中的数字降序排列",
+      "code": "LPUSH scores 85 92 78 95\nSORT scores DESC"
+    },
+    {
+      "description": "分页：跳过前 10 条，取 5 条",
+      "code": "SORT user:list LIMIT 10 5"
+    }
+  ]
+}

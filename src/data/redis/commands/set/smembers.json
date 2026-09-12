@@ -1,0 +1,26 @@
+{
+  "name": "SMEMBERS",
+  "description": "返回集合中的所有成员",
+  "synopsis": "SMEMBERS key",
+  "category": "set",
+  "danger_level": "low",
+  "tags": [
+    "查看",
+    "集合",
+    "全部",
+    "成员",
+    "查询"
+  ],
+  "common_options": [],
+  "related": [
+    "SADD",
+    "SISMEMBER",
+    "SCARD"
+  ],
+  "examples": [
+    {
+      "description": "查看用户所有标签",
+      "code": "SMEMBERS user:1:tags"
+    }
+  ]
+}

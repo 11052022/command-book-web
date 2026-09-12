@@ -1,0 +1,27 @@
+{
+  "name": "XLEN",
+  "description": "返回 Stream 中的消息总数——O(1) 时间复杂度",
+  "synopsis": "XLEN key",
+  "category": "stream",
+  "danger_level": "low",
+  "tags": [
+    "长度",
+    "计数",
+    "Stream",
+    "消息",
+    "统计"
+  ],
+  "common_options": [],
+  "related": [
+    "XADD",
+    "XRANGE",
+    "XTRIM",
+    "XINFO"
+  ],
+  "examples": [
+    {
+      "description": "查看 Stream 中消息数量",
+      "code": "XLEN mystream"
+    }
+  ]
+}

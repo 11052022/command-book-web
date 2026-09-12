@@ -1,0 +1,27 @@
+{
+  "name": "XDEL",
+  "description": "从 Stream 中删除指定消息——消息不会立即从内存移除，只做删除标记",
+  "synopsis": "XDEL key id [id ...]",
+  "category": "stream",
+  "danger_level": "medium",
+  "tags": [
+    "删除",
+    "移除",
+    "Stream",
+    "消息",
+    "清理"
+  ],
+  "common_options": [],
+  "related": [
+    "XADD",
+    "XRANGE",
+    "XTRIM",
+    "XLEN"
+  ],
+  "examples": [
+    {
+      "description": "删除单条消息",
+      "code": "XDEL mystream 1699999999999-0"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "paste",
+  "description": "并行合并文件的行（按列拼接）",
+  "synopsis": "paste [选项] [文件...]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": [
+    "合并",
+    "列",
+    "拼接",
+    "文件",
+    "并行"
+  ],
+  "related": [
+    "cut",
+    "join",
+    "column",
+    "pr"
+  ],
+  "common_options": [
+    {
+      "name": "-d",
+      "description": "指定分隔符（默认 Tab）"
+    },
+    {
+      "name": "-s",
+      "description": "串行合并（按行而非列）"
+    }
+  ],
+  "examples": [
+    {
+      "description": "并排合并两个文件",
+      "code": "paste file1.txt file2.txt"
+    },
+    {
+      "description": "用逗号合并为 CSV",
+      "code": "paste -d',' names.txt ages.txt"
+    },
+    {
+      "description": "将多行转为一列",
+      "code": "paste -s file.txt"
+    }
+  ]
+}

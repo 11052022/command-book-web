@@ -1,0 +1,51 @@
+{
+  "name": "uniq",
+  "description": "报告或省略重复的行",
+  "synopsis": "uniq [选项] [输入] [输出]",
+  "category": "文本处理",
+  "danger_level": "low",
+  "tags": [
+    "去重",
+    "重复",
+    "唯一",
+    "统计",
+    "文本"
+  ],
+  "common_options": [
+    {
+      "name": "-c",
+      "description": "在每行前显示重复次数"
+    },
+    {
+      "name": "-d",
+      "description": "只显示重复的行"
+    },
+    {
+      "name": "-u",
+      "description": "只显示唯一的行（不重复）"
+    }
+  ],
+  "related": [
+    "sort",
+    "comm",
+    "awk"
+  ],
+  "examples": [
+    {
+      "description": "去重（需先排序）",
+      "code": "sort file.txt | uniq"
+    },
+    {
+      "description": "统计每行出现次数",
+      "code": "sort file.txt | uniq -c"
+    },
+    {
+      "description": "只显示重复的行",
+      "code": "sort file.txt | uniq -d"
+    },
+    {
+      "description": "按频率排序显示最高频的行",
+      "code": "sort file.txt | uniq -c | sort -rn"
+    }
+  ]
+}

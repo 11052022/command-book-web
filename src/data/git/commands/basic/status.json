@@ -1,0 +1,18 @@
+{
+  "name": "git status",
+  "description": "显示工作区和暂存区的状态——哪些文件已修改、已暂存、未跟踪",
+  "synopsis": "git status [options]",
+  "category": "basic",
+  "danger_level": "low",
+  "tags": ["状态", "查看", "检查", "工作区", "暂存", "诊断"],
+  "common_options": [
+    { "name": "-s / --short", "description": "简洁输出——每个文件一行，两列分别表示暂存和工作区状态" },
+    { "name": "-b / --branch", "description": "同时显示分支信息（与上游的差异）" },
+    { "name": "-u / --untracked-files", "description": "控制未跟踪文件的显示（normal/all/no）" }
+  ],
+  "related": ["git diff", "git add", "git commit", "git log"],
+  "examples": [
+    { "description": "查看完整状态", "code": "git status" },
+    { "description": "简洁模式查看状态", "code": "git status -s" }
+  ]
+}

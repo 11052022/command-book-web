@@ -1,0 +1,25 @@
+{
+  "name": "HEXISTS",
+  "description": "检查哈希表中指定字段是否存在",
+  "synopsis": "HEXISTS key field",
+  "category": "hash",
+  "danger_level": "low",
+  "tags": [
+    "存在",
+    "哈希",
+    "字段",
+    "检查",
+    "判断"
+  ],
+  "common_options": [],
+  "related": [
+    "HSET",
+    "HGET"
+  ],
+  "examples": [
+    {
+      "description": "检查用户是否有 email 字段",
+      "code": "HEXISTS user:1 email"
+    }
+  ]
+}

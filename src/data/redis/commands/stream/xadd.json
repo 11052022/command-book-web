@@ -1,0 +1,64 @@
+{
+  "name": "XADD",
+  "description": "向 Stream 追加一条消息——自动生成全局唯一 ID，支持 MAXLEN 自动裁剪限制长度",
+  "synopsis": "XADD key [NOMKSTREAM] [MAXLEN|MINID [=] threshold] *|ID field value [field value ...]",
+  "category": "stream",
+  "danger_level": "low",
+  "tags": [
+    "Stream",
+    "消息",
+    "追加",
+    "消息队列",
+    "事件",
+    "日志"
+  ],
+  "common_options": [
+    {
+      "name": "MAXLEN ~ N",
+      "description": "近似裁剪，保留最近 N 条消息"
+    },
+    {
+      "name": "NOMKSTREAM",
+      "description": "如果 Stream 不存在则不创建"
+    },
+    {
+      "name": "*",
+      "description": "由 Redis 自动生成消息 ID（推荐）"
+    }
+  ],
+  "builder_options": {
+    "arguments": [
+      { "key": "key", "label": "Stream Key", "placeholder": "mystream", "required": true },
+      { "key": "id", "label": "消息 ID", "placeholder": "*", "required": true },
+      { "key": "field1", "label": "字段 1", "placeholder": "type", "required": true },
+      { "key": "value1", "label": "值 1", "placeholder": "order_created", "required": true },
+      { "key": "extra", "label": "更多 (field value ...)", "placeholder": "user_id 42 amount 99.99", "required": false }
+    ],
+    "tokens": [
+      { "key": "NOMKSTREAM", "label": "不自动创建 Stream", "hasValue": false },
+      { "key": "MAXLEN", "label": "最大长度（裁剪旧消息）", "hasValue": true, "placeholder": "1000" },
+      { "key": "MINID", "label": "最小 ID（删除小于此 ID 的消息）", "hasValue": true, "placeholder": "1699999999999-0" }
+    ],
+    "exclusiveGroups": [
+      { "label": "裁剪策略", "tokens": ["MAXLEN", "MINID"] }
+    ]
+  },
+  "related": [
+    "XRANGE",
+    "XREAD",
+    "XREADGROUP",
+    "XGROUP",
+    "XDEL",
+    "XLEN"
+  ],
+  "examples": [
+    {
+      "description": "追加一条消息（自动生成 ID）",
+      "code": "XADD mystream * sensor_id 1234 temperature 19.8"
+    },
+    {
+      "description": "追加并限制 Stream 最多保留 1000 条",
+      "code": "XADD mystream MAXLEN ~ 1000 * event login user_id 42"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "name": "ps",
+  "description": "查看当前运行的进程信息",
+  "synopsis": "ps [选项]",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "进程",
+    "查看",
+    "运行",
+    "程序",
+    "列表",
+    "状态"
+  ],
+  "common_options": [
+    {
+      "name": "aux",
+      "description": "显示所有用户的所有进程（BSD 风格）"
+    },
+    {
+      "name": "-ef",
+      "description": "显示所有进程（标准风格）"
+    },
+    {
+      "name": "-u",
+      "description": "指定用户查看进程"
+    },
+    {
+      "name": "--sort",
+      "description": "按指定字段排序"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "显示风格",
+        "type": "radio",
+        "options": [
+          { "flag": "aux", "label": "BSD 风格（aux）— 所有用户所有进程", "hint": "最常用" },
+          { "flag": "-ef", "label": "Unix 风格（-ef）— 所有进程", "hint": "兼容性好" }
+        ]
+      },
+      {
+        "label": "排序方式",
+        "type": "radio",
+        "options": [
+          { "flag": "", "label": "不排序", "hint": "" },
+          { "flag": "--sort=-%cpu", "label": "按 CPU 使用率降序", "hint": "" },
+          { "flag": "--sort=-%mem", "label": "按内存使用率降序", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "user", "label": "筛选用户（可选）", "placeholder": "root 或 www-data", "prefix": "-u" },
+      { "key": "grep_filter", "label": "grep 过滤关键词（可选）", "placeholder": "nginx", "prefix": "| grep" }
+    ]
+  },
+  "related": [
+    "top",
+    "htop",
+    "kill",
+    "pgrep",
+    "pidof"
+  ],
+  "examples": [
+    {
+      "description": "查看所有进程（详细）",
+      "code": "ps aux"
+    },
+    {
+      "description": "按内存使用排序显示进程",
+      "code": "ps aux --sort=-%mem"
+    },
+    {
+      "description": "查看特定用户的进程",
+      "code": "ps -u username"
+    },
+    {
+      "description": "查找特定进程",
+      "code": "ps aux | grep nginx"
+    }
+  ]
+}

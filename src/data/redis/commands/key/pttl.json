@@ -1,0 +1,31 @@
+{
+  "name": "PTTL",
+  "description": "返回 key 的剩余过期时间，以毫秒为单位——比 TTL 精度更高，用于需要毫秒级精度判断的场景",
+  "synopsis": "PTTL key",
+  "category": "key",
+  "danger_level": "low",
+  "tags": [
+    "过期",
+    "毫秒",
+    "TTL",
+    "精度",
+    "查询"
+  ],
+  "common_options": [],
+  "related": [
+    "TTL",
+    "EXPIRE",
+    "PEXPIRE",
+    "EXPIRETIME"
+  ],
+  "examples": [
+    {
+      "description": "查看剩余毫秒数",
+      "code": "PTTL session:token-abc"
+    },
+    {
+      "description": "如果 key 有 2.5 秒过期，TTL 返回 2，PTTL 返回 2500",
+      "code": "SETEX key:demo 3 'hello'\nTTL key:demo   # 返回 2 或 3\nPTTL key:demo  # 返回 2893（精确到毫秒）"
+    }
+  ]
+}

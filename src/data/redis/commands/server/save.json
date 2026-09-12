@@ -1,0 +1,28 @@
+{
+  "name": "SAVE",
+  "description": "同步执行 RDB 快照保存——阻塞 Redis 直到持久化完成，生产环境建议用 BGSAVE 替代",
+  "synopsis": "SAVE",
+  "category": "server",
+  "danger_level": "high",
+  "tags": [
+    "持久化",
+    "RDB",
+    "快照",
+    "同步",
+    "阻塞",
+    "备份"
+  ],
+  "common_options": [],
+  "related": [
+    "BGSAVE",
+    "LASTSAVE",
+    "CONFIG",
+    "INFO"
+  ],
+  "examples": [
+    {
+      "description": "立即同步保存（会阻塞直到完成）",
+      "code": "SAVE"
+    }
+  ]
+}

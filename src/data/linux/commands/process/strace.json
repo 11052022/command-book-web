@@ -1,0 +1,56 @@
+{
+  "name": "strace",
+  "description": "跟踪进程的系统调用和信号",
+  "synopsis": "strace [选项] 命令",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "调试",
+    "跟踪",
+    "系统调用",
+    "诊断",
+    "进程"
+  ],
+  "related": [
+    "ltrace",
+    "gdb",
+    "perf",
+    "lsof"
+  ],
+  "common_options": [
+    {
+      "name": "-p",
+      "description": "跟踪指定 PID"
+    },
+    {
+      "name": "-e",
+      "description": "只跟踪指定系统调用"
+    },
+    {
+      "name": "-c",
+      "description": "统计系统调用次数和时间"
+    },
+    {
+      "name": "-o",
+      "description": "输出到文件"
+    }
+  ],
+  "examples": [
+    {
+      "description": "跟踪命令执行",
+      "code": "strace ls"
+    },
+    {
+      "description": "跟踪运行中的进程",
+      "code": "strace -p 1234"
+    },
+    {
+      "description": "只跟踪文件操作",
+      "code": "strace -e trace=file ls"
+    },
+    {
+      "description": "统计系统调用耗时",
+      "code": "strace -c ls"
+    }
+  ]
+}

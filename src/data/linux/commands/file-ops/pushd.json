@@ -1,0 +1,34 @@
+{
+  "name": "pushd",
+  "description": "切换目录并将当前目录压入目录栈",
+  "synopsis": "pushd [目录]",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "目录",
+    "切换",
+    "栈",
+    "返回",
+    "导航"
+  ],
+  "common_options": [],
+  "related": [
+    "popd",
+    "dirs",
+    "cd"
+  ],
+  "examples": [
+    {
+      "description": "跳转并压栈",
+      "code": "pushd /var/log"
+    },
+    {
+      "description": "交换栈顶两个目录",
+      "code": "pushd"
+    },
+    {
+      "description": "查看目录栈",
+      "code": "dirs -v"
+    }
+  ]
+}

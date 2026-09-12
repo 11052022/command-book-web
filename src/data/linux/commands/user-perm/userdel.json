@@ -1,0 +1,38 @@
+{
+  "name": "userdel",
+  "description": "删除用户账户",
+  "synopsis": "userdel [选项] 用户名",
+  "category": "用户权限",
+  "danger_level": "high",
+  "tags": [
+    "删除",
+    "用户",
+    "账户",
+    "移除"
+  ],
+  "common_options": [
+    {
+      "name": "-r",
+      "description": "同时删除用户主目录和邮件"
+    },
+    {
+      "name": "-f",
+      "description": "强制删除（即使用户已登录）"
+    }
+  ],
+  "related": [
+    "useradd",
+    "usermod",
+    "rm"
+  ],
+  "examples": [
+    {
+      "description": "删除用户（保留主目录）",
+      "code": "sudo userdel username"
+    },
+    {
+      "description": "删除用户及主目录",
+      "code": "sudo userdel -r username"
+    }
+  ]
+}

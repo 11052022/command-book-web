@@ -1,0 +1,41 @@
+{
+  "name": "EXPIRE",
+  "description": "为 key 设置过期时间（秒）",
+  "synopsis": "EXPIRE key seconds [NX|XX|GT|LT]",
+  "category": "key",
+  "danger_level": "low",
+  "tags": [
+    "过期",
+    "TTL",
+    "超时",
+    "自动删除",
+    "缓存策略"
+  ],
+  "common_options": [],
+  "related": [
+    "TTL",
+    "PERSIST",
+    "EXPIREAT"
+  ],
+  "builder_options": {
+    "arguments": [
+      { "key": "key", "label": "Key", "placeholder": "user:1:cache", "required": true },
+      { "key": "seconds", "label": "过期秒数", "placeholder": "3600", "required": true }
+    ],
+    "tokens": [
+      { "key": "NX", "label": "仅当 key 没有过期时间时设置", "hasValue": false },
+      { "key": "XX", "label": "仅当 key 已有过期时间时设置", "hasValue": false },
+      { "key": "GT", "label": "仅当新 TTL > 当前 TTL 时设置", "hasValue": false },
+      { "key": "LT", "label": "仅当新 TTL < 当前 TTL 时设置", "hasValue": false }
+    ],
+    "exclusiveGroups": [
+      { "label": "条件模式（NX/XX/GT/LT 四选一）", "tokens": ["NX", "XX", "GT", "LT"] }
+    ]
+  },
+  "examples": [
+    {
+      "description": "设置缓存 1 小时后过期",
+      "code": "EXPIRE user:1:cache 3600"
+    }
+  ]
+}

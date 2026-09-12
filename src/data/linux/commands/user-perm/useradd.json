@@ -1,0 +1,52 @@
+{
+  "name": "useradd",
+  "description": "创建新用户账户",
+  "synopsis": "useradd [选项] 用户名",
+  "category": "用户权限",
+  "danger_level": "high",
+  "tags": [
+    "创建",
+    "用户",
+    "账户",
+    "添加",
+    "新建"
+  ],
+  "common_options": [
+    {
+      "name": "-m",
+      "description": "自动创建用户主目录"
+    },
+    {
+      "name": "-s",
+      "description": "指定用户的默认 shell"
+    },
+    {
+      "name": "-g",
+      "description": "指定主组"
+    },
+    {
+      "name": "-G",
+      "description": "指定附加组"
+    }
+  ],
+  "related": [
+    "userdel",
+    "usermod",
+    "passwd",
+    "adduser"
+  ],
+  "examples": [
+    {
+      "description": "创建用户并生成主目录",
+      "code": "sudo useradd -m newuser"
+    },
+    {
+      "description": "创建用户并指定 shell",
+      "code": "sudo useradd -m -s /bin/bash newuser"
+    },
+    {
+      "description": "创建用户并加入附加组",
+      "code": "sudo useradd -m -G sudo,docker newuser"
+    }
+  ]
+}

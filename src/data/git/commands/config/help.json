@@ -1,0 +1,18 @@
+{
+  "name": "git help",
+  "description": "显示 Git 命令的帮助文档——支持命令行、HTML 和 man 页面格式",
+  "synopsis": "git help [options] <command>",
+  "category": "config",
+  "danger_level": "low",
+  "tags": ["帮助", "help", "文档", "手册", "man"],
+  "common_options": [
+    { "name": "-a / --all", "description": "列出所有可用命令（包括不那么常用的）" },
+    { "name": "-g / --guides", "description": "列出 Git 概念指南" },
+    { "name": "-w / --web", "description": "在浏览器中打开 HTML 版帮助" }
+  ],
+  "related": ["git config", "git --help"],
+  "examples": [
+    { "description": "查看 rebase 的帮助", "code": "git help rebase" },
+    { "description": "列出所有命令", "code": "git help -a" }
+  ]
+}

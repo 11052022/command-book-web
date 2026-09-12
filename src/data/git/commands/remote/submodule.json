@@ -1,0 +1,22 @@
+{
+  "name": "git submodule",
+  "description": "管理 Git 子模块——在一个仓库中嵌套引用另一个仓库，适用于共享库、第三方依赖等",
+  "synopsis": "git submodule <add | update | init | deinit | status | foreach> [options]",
+  "category": "remote",
+  "danger_level": "medium",
+  "tags": ["子模块", "submodule", "依赖", "嵌套", "仓库", "共享"],
+  "common_options": [
+    { "name": "add <url> [path]", "description": "添加新的子模块" },
+    { "name": "update --init --recursive", "description": "初始化和更新所有子模块（克隆新仓库时常用）" },
+    { "name": "update --remote", "description": "更新子模块到远程最新提交" },
+    { "name": "deinit <path>", "description": "取消子模块注册（保留工作区文件）" },
+    { "name": "status", "description": "查看子模块状态" },
+    { "name": "foreach <command>", "description": "在每个子模块中执行指定命令" }
+  ],
+  "related": ["git clone", "git remote", "git init"],
+  "examples": [
+    { "description": "添加子模块", "code": "git submodule add https://github.com/lib/common.git libs/common" },
+    { "description": "克隆含子模块的仓库后初始化", "code": "git submodule update --init --recursive" },
+    { "description": "一键更新所有子模块", "code": "git submodule update --remote --recursive" }
+  ]
+}

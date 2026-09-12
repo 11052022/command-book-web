@@ -1,0 +1,42 @@
+{
+  "name": "seq",
+  "description": "生成数字序列",
+  "synopsis": "seq [选项] 结尾 | 开头 结尾 | 开头 步长 结尾",
+  "category": "其他常用",
+  "danger_level": "low",
+  "tags": [
+    "序列",
+    "数字",
+    "生成",
+    "循环"
+  ],
+  "common_options": [
+    {
+      "name": "-s",
+      "description": "指定分隔符"
+    },
+    {
+      "name": "-w",
+      "description": "等宽补零"
+    }
+  ],
+  "related": [
+    "echo",
+    "printf",
+    "for"
+  ],
+  "examples": [
+    {
+      "description": "生成 1 到 10 的数字",
+      "code": "seq 1 10"
+    },
+    {
+      "description": "用逗号分隔",
+      "code": "seq -s ',' 1 5"
+    },
+    {
+      "description": "以步长 2 生成",
+      "code": "seq 0 2 10"
+    }
+  ]
+}

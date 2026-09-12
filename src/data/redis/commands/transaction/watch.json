@@ -1,0 +1,27 @@
+{
+  "name": "WATCH",
+  "description": "监视指定 key——如果在 EXEC 执行前被监视的 key 被其他客户端修改，事务将自动放弃（乐观锁）",
+  "synopsis": "WATCH key [key ...]",
+  "category": "transaction",
+  "danger_level": "low",
+  "tags": [
+    "监视",
+    "乐观锁",
+    "CAS",
+    "事务",
+    "一致性"
+  ],
+  "common_options": [],
+  "related": [
+    "UNWATCH",
+    "MULTI",
+    "EXEC",
+    "DISCARD"
+  ],
+  "examples": [
+    {
+      "description": "乐观锁扣库存——仅当库存未变时才执行",
+      "code": "WATCH stock:sku001\nval = GET stock:sku001\nMULTI\nDECRBY stock:sku001 1\nEXEC  # 若 stock 被改则返回 nil，需重试"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "which",
+  "description": "查找命令的可执行文件路径",
+  "synopsis": "which 命令名",
+  "category": "其他常用",
+  "danger_level": "low",
+  "tags": [
+    "查找",
+    "路径",
+    "命令",
+    "位置",
+    "可执行"
+  ],
+  "common_options": [],
+  "related": [
+    "whereis",
+    "type",
+    "locate",
+    "command -v"
+  ],
+  "examples": [
+    {
+      "description": "查找 python 的位置",
+      "code": "which python3"
+    },
+    {
+      "description": "显示所有匹配的路径",
+      "code": "which -a python"
+    }
+  ]
+}

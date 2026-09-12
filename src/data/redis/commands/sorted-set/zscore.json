@@ -1,0 +1,25 @@
+{
+  "name": "ZSCORE",
+  "description": "返回有序集合中成员的分数",
+  "synopsis": "ZSCORE key member",
+  "category": "sorted-set",
+  "danger_level": "low",
+  "tags": [
+    "查询",
+    "分数",
+    "有序集合",
+    "排名"
+  ],
+  "common_options": [],
+  "related": [
+    "ZADD",
+    "ZRANK",
+    "ZRANGE"
+  ],
+  "examples": [
+    {
+      "description": "查询玩家分数",
+      "code": "ZSCORE leaderboard player:1"
+    }
+  ]
+}

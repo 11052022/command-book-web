@@ -1,0 +1,31 @@
+{
+  "name": "ifconfig",
+  "description": "配置和查看网络接口（已逐渐被 ip 替代）",
+  "synopsis": "ifconfig [接口] [选项]",
+  "category": "网络相关",
+  "danger_level": "medium",
+  "tags": [
+    "网络",
+    "IP",
+    "接口",
+    "配置",
+    "网卡",
+    "查看"
+  ],
+  "common_options": [],
+  "related": [
+    "ip",
+    "iwconfig",
+    "ethtool"
+  ],
+  "examples": [
+    {
+      "description": "查看所有网络接口",
+      "code": "ifconfig"
+    },
+    {
+      "description": "查看指定接口",
+      "code": "ifconfig eth0"
+    }
+  ]
+}

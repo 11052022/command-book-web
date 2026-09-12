@@ -1,0 +1,39 @@
+{
+  "name": "git tag",
+  "description": "创建、列出或删除标签——用于标记发布版本（如 v1.0.0），支持轻量标签和附注标签",
+  "synopsis": "git tag [options] [<tagname>] [<commit>]",
+  "category": "tag",
+  "danger_level": "low",
+  "tags": ["标签", "tag", "版本", "发布", "release", "标记"],
+  "common_options": [
+    { "name": "-a <tagname> -m \"msg\"", "description": "创建附注标签（含作者、日期和说明信息，推荐用于发布）" },
+    { "name": "-l / --list \"pattern\"", "description": "按模式列出标签" },
+    { "name": "-d <tagname>", "description": "删除本地标签" },
+    { "name": "-f <tagname>", "description": "强制覆盖已有标签" },
+    { "name": "-s <tagname>", "description": "创建 GPG 签名的标签" }
+  ],
+  "related": ["git push", "git show", "git branch"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "操作",
+        "type": "radio",
+        "options": [
+          { "flag": "-l", "label": "列出标签", "hint": "" },
+          { "flag": "-a", "label": "创建附注标签（推荐）", "hint": "" },
+          { "flag": "-d", "label": "删除标签", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "name", "label": "标签名", "placeholder": "v1.0.0", "prefix": "" },
+      { "key": "msg", "label": "附注信息", "placeholder": "First stable release", "prefix": "-m " }
+    ]
+  },
+  "examples": [
+    { "description": "列出所有标签", "code": "git tag" },
+    { "description": "创建附注标签", "code": "git tag -a v1.0.0 -m \"First stable release\"" },
+    { "description": "推送标签到远程", "code": "git push origin v1.0.0" },
+    { "description": "删除标签", "code": "git tag -d v0.0.1" }
+  ]
+}

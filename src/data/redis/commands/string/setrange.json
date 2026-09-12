@@ -1,0 +1,27 @@
+{
+  "name": "SETRANGE",
+  "description": "从指定偏移量开始覆写字符串值，如果偏移量超出原长度则用零字节填充",
+  "synopsis": "SETRANGE key offset value",
+  "category": "string",
+  "danger_level": "medium",
+  "tags": [
+    "覆写",
+    "字符串",
+    "偏移",
+    "修改",
+    "替换"
+  ],
+  "common_options": [],
+  "related": [
+    "GETRANGE",
+    "SET",
+    "APPEND",
+    "STRLEN"
+  ],
+  "examples": [
+    {
+      "description": "替换字符串中指定位置的内容",
+      "code": "SET msg 'Hello World'\nSETRANGE msg 6 'Redis'"
+    }
+  ]
+}

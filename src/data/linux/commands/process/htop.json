@@ -1,0 +1,41 @@
+{
+  "name": "htop",
+  "description": "交互式进程查看器（top 的增强版）",
+  "synopsis": "htop [选项]",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "进程",
+    "监控",
+    "实时",
+    "资源",
+    "交互",
+    "查看"
+  ],
+  "common_options": [
+    {
+      "name": "-u",
+      "description": "只显示指定用户的进程"
+    },
+    {
+      "name": "-p",
+      "description": "只显示指定 PID"
+    }
+  ],
+  "related": [
+    "top",
+    "ps",
+    "btop",
+    "glances"
+  ],
+  "examples": [
+    {
+      "description": "启动交互式进程查看",
+      "code": "htop"
+    },
+    {
+      "description": "只显示指定用户的进程",
+      "code": "htop -u username"
+    }
+  ]
+}

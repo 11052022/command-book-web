@@ -1,0 +1,52 @@
+{
+  "name": "iptables",
+  "description": "配置 Linux 网络防火墙规则",
+  "synopsis": "iptables [选项] [链] [规则]",
+  "category": "网络相关",
+  "danger_level": "critical",
+  "tags": [
+    "防火墙",
+    "网络",
+    "规则",
+    "安全",
+    "过滤",
+    "端口"
+  ],
+  "common_options": [
+    {
+      "name": "-L",
+      "description": "列出所有规则"
+    },
+    {
+      "name": "-A",
+      "description": "追加规则"
+    },
+    {
+      "name": "-D",
+      "description": "删除规则"
+    },
+    {
+      "name": "-F",
+      "description": "清空所有规则"
+    }
+  ],
+  "related": [
+    "ufw",
+    "nftables",
+    "firewalld"
+  ],
+  "examples": [
+    {
+      "description": "查看所有规则",
+      "code": "sudo iptables -L -n"
+    },
+    {
+      "description": "开放 80 端口",
+      "code": "sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT"
+    },
+    {
+      "description": "阻止特定 IP",
+      "code": "sudo iptables -A INPUT -s 192.168.1.100 -j DROP"
+    }
+  ]
+}

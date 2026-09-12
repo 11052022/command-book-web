@@ -1,0 +1,73 @@
+{
+  "name": "chmod",
+  "description": "修改文件或目录的权限",
+  "synopsis": "chmod [选项] 模式 文件...",
+  "category": "用户权限",
+  "danger_level": "high",
+  "tags": [
+    "权限",
+    "修改",
+    "授权",
+    "文件",
+    "目录",
+    "读写",
+    "执行"
+  ],
+  "common_options": [
+    {
+      "name": "-R",
+      "description": "递归修改目录及其内容"
+    },
+    {
+      "name": "-v",
+      "description": "显示修改过程"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "权限设置方式",
+        "type": "radio",
+        "options": [
+          { "flag": "", "label": "符号模式 (如 +x)", "hint": "在下方填入如 +x, u+w, a=r" },
+          { "flag": "", "label": "八进制模式 (如 755)", "hint": "在下方填入如 755, 644, 600" }
+        ]
+      },
+      {
+        "label": "附加选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-R", "label": "递归修改目录及子文件", "hint": "" },
+          { "flag": "-v", "label": "显示修改过程", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "mode", "label": "权限模式", "placeholder": "755 或 +x 或 u+w", "prefix": "" },
+      { "key": "target", "label": "目标文件/目录", "placeholder": "script.sh 或 /var/www/", "prefix": "" }
+    ]
+  },
+  "related": [
+    "chown",
+    "umask",
+    "ls"
+  ],
+  "examples": [
+    {
+      "description": "给文件添加执行权限",
+      "code": "chmod +x script.sh"
+    },
+    {
+      "description": "设置为 rwxr-xr-x（755）",
+      "code": "chmod 755 file"
+    },
+    {
+      "description": "递归修改目录下所有文件为 644",
+      "code": "chmod -R 644 /var/www"
+    },
+    {
+      "description": "给所有用户只读权限",
+      "code": "chmod a=r file.txt"
+    }
+  ]
+}

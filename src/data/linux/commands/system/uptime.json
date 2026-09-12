@@ -1,0 +1,35 @@
+{
+  "name": "uptime",
+  "description": "显示系统运行时间和负载",
+  "synopsis": "uptime [选项]",
+  "category": "系统信息",
+  "danger_level": "low",
+  "tags": [
+    "运行",
+    "时间",
+    "负载",
+    "系统",
+    "启动"
+  ],
+  "common_options": [
+    {
+      "name": "-p",
+      "description": "以美观格式显示运行时间"
+    }
+  ],
+  "related": [
+    "w",
+    "top",
+    "who"
+  ],
+  "examples": [
+    {
+      "description": "查看系统运行时间",
+      "code": "uptime"
+    },
+    {
+      "description": "美观显示运行时间",
+      "code": "uptime -p"
+    }
+  ]
+}

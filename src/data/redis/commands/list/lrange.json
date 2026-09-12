@@ -1,0 +1,30 @@
+{
+  "name": "LRANGE",
+  "description": "返回列表中指定区间内的元素",
+  "synopsis": "LRANGE key start stop",
+  "category": "list",
+  "danger_level": "low",
+  "tags": [
+    "范围",
+    "列表",
+    "查询",
+    "分页",
+    "遍历"
+  ],
+  "common_options": [],
+  "related": [
+    "LPUSH",
+    "RPUSH",
+    "LINDEX"
+  ],
+  "examples": [
+    {
+      "description": "获取列表全部元素",
+      "code": "LRANGE messages:general 0 -1"
+    },
+    {
+      "description": "获取最新 10 条消息",
+      "code": "LRANGE messages:general 0 9"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "fdisk",
+  "description": "磁盘分区管理工具",
+  "synopsis": "fdisk [选项] 设备",
+  "category": "磁盘存储",
+  "danger_level": "critical",
+  "tags": [
+    "分区",
+    "磁盘",
+    "管理",
+    "格式化",
+    "创建"
+  ],
+  "common_options": [
+    {
+      "name": "-l",
+      "description": "列出所有分区表"
+    }
+  ],
+  "related": [
+    "parted",
+    "gdisk",
+    "lsblk",
+    "mkfs"
+  ],
+  "examples": [
+    {
+      "description": "列出所有分区",
+      "code": "sudo fdisk -l"
+    },
+    {
+      "description": "管理指定磁盘",
+      "code": "sudo fdisk /dev/sdb"
+    },
+    {
+      "description": "查看特定磁盘分区表",
+      "code": "sudo fdisk -l /dev/sda"
+    }
+  ]
+}

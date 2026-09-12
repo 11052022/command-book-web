@@ -1,0 +1,57 @@
+{
+  "name": "netstat",
+  "description": "查看网络连接、路由表和网络接口统计",
+  "synopsis": "netstat [选项]",
+  "category": "网络相关",
+  "danger_level": "low",
+  "tags": [
+    "网络",
+    "连接",
+    "端口",
+    "查看",
+    "监听",
+    "统计"
+  ],
+  "common_options": [
+    {
+      "name": "-t",
+      "description": "显示 TCP 连接"
+    },
+    {
+      "name": "-u",
+      "description": "显示 UDP 连接"
+    },
+    {
+      "name": "-l",
+      "description": "显示监听状态的端口"
+    },
+    {
+      "name": "-n",
+      "description": "以数字形式显示地址和端口"
+    },
+    {
+      "name": "-p",
+      "description": "显示进程信息"
+    }
+  ],
+  "related": [
+    "ss",
+    "lsof",
+    "nmap",
+    "iptables"
+  ],
+  "examples": [
+    {
+      "description": "查看所有监听端口",
+      "code": "netstat -tlnp"
+    },
+    {
+      "description": "查看所有连接",
+      "code": "netstat -tunap"
+    },
+    {
+      "description": "查看端口被哪个进程占用",
+      "code": "netstat -tlnp | grep :80"
+    }
+  ]
+}

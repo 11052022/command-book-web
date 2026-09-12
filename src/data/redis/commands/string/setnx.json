@@ -1,0 +1,26 @@
+{
+  "name": "SETNX",
+  "description": "仅当 key 不存在时设置值（SET if Not eXists）",
+  "synopsis": "SETNX key value",
+  "category": "string",
+  "danger_level": "low",
+  "tags": [
+    "设置",
+    "创建",
+    "不存在",
+    "原子",
+    "分布式锁"
+  ],
+  "common_options": [],
+  "related": [
+    "SET",
+    "SETEX",
+    "GET"
+  ],
+  "examples": [
+    {
+      "description": "仅当 key 不存在时设置",
+      "code": "SETNX lock:order-456 1"
+    }
+  ]
+}

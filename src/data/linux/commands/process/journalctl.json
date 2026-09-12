@@ -1,0 +1,60 @@
+{
+  "name": "journalctl",
+  "description": "查看 systemd 日志",
+  "synopsis": "journalctl [选项]",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "日志",
+    "查看",
+    "systemd",
+    "服务",
+    "启动"
+  ],
+  "common_options": [
+    {
+      "name": "-u",
+      "description": "查看指定服务的日志"
+    },
+    {
+      "name": "-f",
+      "description": "实时跟踪日志"
+    },
+    {
+      "name": "--since",
+      "description": "从指定时间开始查看"
+    },
+    {
+      "name": "-n",
+      "description": "显示最后 N 行"
+    },
+    {
+      "name": "-b",
+      "description": "显示本次启动以来的日志"
+    }
+  ],
+  "related": [
+    "systemctl",
+    "dmesg",
+    "tail",
+    "rsyslog"
+  ],
+  "examples": [
+    {
+      "description": "查看所有日志",
+      "code": "journalctl"
+    },
+    {
+      "description": "查看指定服务日志",
+      "code": "journalctl -u nginx"
+    },
+    {
+      "description": "实时跟踪日志",
+      "code": "journalctl -f"
+    },
+    {
+      "description": "查看今天的日志",
+      "code": "journalctl --since today"
+    }
+  ]
+}

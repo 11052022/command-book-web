@@ -1,0 +1,25 @@
+{
+  "name": "UNWATCH",
+  "description": "取消 WATCH 对所有 key 的监视——在执行 EXEC/DISCARD 后自动调用，也可手动调用",
+  "synopsis": "UNWATCH",
+  "category": "transaction",
+  "danger_level": "low",
+  "tags": [
+    "取消监视",
+    "事务",
+    "解锁"
+  ],
+  "common_options": [],
+  "related": [
+    "WATCH",
+    "MULTI",
+    "EXEC",
+    "DISCARD"
+  ],
+  "examples": [
+    {
+      "description": "手动取消所有 key 的监视",
+      "code": "WATCH key1 key2\n# ... 决定不执行事务\nUNWATCH"
+    }
+  ]
+}

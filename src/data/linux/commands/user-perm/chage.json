@@ -1,0 +1,47 @@
+{
+  "name": "chage",
+  "description": "管理用户密码过期策略",
+  "synopsis": "chage [选项] 用户名",
+  "category": "用户权限",
+  "danger_level": "medium",
+  "tags": [
+    "密码",
+    "过期",
+    "策略",
+    "用户",
+    "安全"
+  ],
+  "related": [
+    "passwd",
+    "usermod",
+    "useradd"
+  ],
+  "common_options": [
+    {
+      "name": "-l",
+      "description": "显示密码过期信息"
+    },
+    {
+      "name": "-M",
+      "description": "密码最大有效天数"
+    },
+    {
+      "name": "-E",
+      "description": "账户过期日期（YYYY-MM-DD）"
+    }
+  ],
+  "examples": [
+    {
+      "description": "查看密码过期信息",
+      "code": "chage -l username"
+    },
+    {
+      "description": "设置密码 90 天后过期",
+      "code": "sudo chage -M 90 username"
+    },
+    {
+      "description": "设置账户过期日期",
+      "code": "sudo chage -E 2026-12-31 username"
+    }
+  ]
+}

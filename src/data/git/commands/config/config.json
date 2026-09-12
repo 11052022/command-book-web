@@ -1,0 +1,23 @@
+{
+  "name": "git config",
+  "description": "读取和设置 Git 配置——用户信息、别名、编辑器、合并策略等，支持本地(仓库)、全局和系统三级作用域",
+  "synopsis": "git config [options] [<key> [<value>]]",
+  "category": "config",
+  "danger_level": "medium",
+  "tags": ["配置", "config", "设置", "用户", "别名", "全局"],
+  "common_options": [
+    { "name": "--global", "description": "读写全局配置（~/.gitconfig，对所有仓库生效）" },
+    { "name": "--local", "description": "读写当前仓库配置（默认）" },
+    { "name": "--list / -l", "description": "列出所有配置项" },
+    { "name": "--get <key>", "description": "获取指定配置项的值" },
+    { "name": "--unset <key>", "description": "移除指定配置项" },
+    { "name": "--edit / -e", "description": "在编辑器中打开配置文件" },
+    { "name": "alias.<name> <command>", "description": "为 Git 命令创建别名" }
+  ],
+  "related": ["git init", "git help"],
+  "examples": [
+    { "description": "设置全局用户名和邮箱", "code": "git config --global user.name \"Your Name\"\ngit config --global user.email \"you@example.com\"" },
+    { "description": "创建常用别名", "code": "git config --global alias.co checkout\ngit config --global alias.br branch" },
+    { "description": "查看所有配置", "code": "git config --list" }
+  ]
+}

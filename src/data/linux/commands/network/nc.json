@@ -1,0 +1,58 @@
+{
+  "name": "nc",
+  "description": "网络工具中的瑞士军刀（TCP/UDP 读写）",
+  "synopsis": "nc [选项] 主机 端口",
+  "category": "网络相关",
+  "danger_level": "medium",
+  "tags": [
+    "网络",
+    "端口",
+    "测试",
+    "监听",
+    "连接",
+    "TCP",
+    "UDP"
+  ],
+  "common_options": [
+    {
+      "name": "-l",
+      "description": "监听模式"
+    },
+    {
+      "name": "-p",
+      "description": "指定本地端口"
+    },
+    {
+      "name": "-v",
+      "description": "详细输出"
+    },
+    {
+      "name": "-z",
+      "description": "端口扫描模式（不发送数据）"
+    }
+  ],
+  "related": [
+    "ncat",
+    "socat",
+    "telnet",
+    "nmap"
+  ],
+  "examples": [
+    {
+      "description": "测试端口是否开放",
+      "code": "nc -zv 192.168.1.1 80"
+    },
+    {
+      "description": "监听端口",
+      "code": "nc -l 8080"
+    },
+    {
+      "description": "简易聊天（服务端）",
+      "code": "nc -l 1234"
+    },
+    {
+      "description": "简易聊天（客户端）",
+      "code": "nc server_ip 1234"
+    }
+  ]
+}

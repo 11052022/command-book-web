@@ -1,0 +1,25 @@
+{
+  "name": "ZRANK",
+  "description": "返回有序集合中成员的排名（分数低到高，0-based）",
+  "synopsis": "ZRANK key member",
+  "category": "sorted-set",
+  "danger_level": "low",
+  "tags": [
+    "排名",
+    "有序集合",
+    "查询",
+    "索引"
+  ],
+  "common_options": [],
+  "related": [
+    "ZREVRANK",
+    "ZSCORE",
+    "ZRANGE"
+  ],
+  "examples": [
+    {
+      "description": "查询玩家排名",
+      "code": "ZRANK leaderboard player:1"
+    }
+  ]
+}

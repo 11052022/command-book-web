@@ -1,0 +1,27 @@
+{
+  "name": "ZPOPMAX",
+  "description": "移除并返回有序集合中分数最高的一个或多个成员——适用于消费高优先级任务或排行榜淘汰",
+  "synopsis": "ZPOPMAX key [count]",
+  "category": "sorted-set",
+  "danger_level": "medium",
+  "tags": [
+    "弹出",
+    "最大",
+    "有序集合",
+    "移除",
+    "排行榜"
+  ],
+  "common_options": [],
+  "related": [
+    "ZPOPMIN",
+    "ZADD",
+    "ZREM",
+    "BZPOPMAX"
+  ],
+  "examples": [
+    {
+      "description": "淘汰排行榜末尾玩家（最高分=最低排名）",
+      "code": "ZPOPMAX leaderboard 10"
+    }
+  ]
+}

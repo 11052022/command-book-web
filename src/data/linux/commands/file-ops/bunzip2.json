@@ -1,0 +1,37 @@
+{
+  "name": "bunzip2",
+  "description": "解压 bzip2 压缩的文件（等同 bzip2 -d）",
+  "synopsis": "bunzip2 [选项] 文件.bz2",
+  "category": "文件操作",
+  "danger_level": "low",
+  "tags": [
+    "解压",
+    "文件",
+    "bzip2"
+  ],
+  "related": [
+    "bzip2",
+    "gunzip",
+    "xz"
+  ],
+  "common_options": [
+    {
+      "name": "-k",
+      "description": "保留压缩文件"
+    },
+    {
+      "name": "-v",
+      "description": "显示详细信息"
+    }
+  ],
+  "examples": [
+    {
+      "description": "解压文件",
+      "code": "bunzip2 file.txt.bz2"
+    },
+    {
+      "description": "解压并保留原文件",
+      "code": "bunzip2 -k file.txt.bz2"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "name": "curl",
+  "description": "通过 URL 传输数据的命令行工具",
+  "synopsis": "curl [选项] URL",
+  "category": "网络相关",
+  "danger_level": "low",
+  "tags": [
+    "网络",
+    "下载",
+    "请求",
+    "HTTP",
+    "API",
+    "上传",
+    "接口"
+  ],
+  "common_options": [
+    {
+      "name": "-o",
+      "description": "将输出保存到文件"
+    },
+    {
+      "name": "-O",
+      "description": "使用远程文件名保存"
+    },
+    {
+      "name": "-X",
+      "description": "指定请求方法（GET/POST/PUT/DELETE）"
+    },
+    {
+      "name": "-H",
+      "description": "添加请求头"
+    },
+    {
+      "name": "-d",
+      "description": "发送 POST 数据"
+    },
+    {
+      "name": "-L",
+      "description": "跟随重定向"
+    },
+    {
+      "name": "-I",
+      "description": "只获取响应头"
+    }
+  ],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "HTTP 方法",
+        "type": "radio",
+        "options": [
+          { "flag": "", "label": "GET（默认）", "hint": "" },
+          { "flag": "-X POST", "label": "POST", "hint": "发送数据" },
+          { "flag": "-X PUT", "label": "PUT", "hint": "更新资源" },
+          { "flag": "-X DELETE", "label": "DELETE", "hint": "删除资源" }
+        ]
+      },
+      {
+        "label": "常用选项",
+        "type": "checkbox",
+        "options": [
+          { "flag": "-L", "label": "跟随重定向", "hint": "" },
+          { "flag": "-I", "label": "只获取响应头", "hint": "HEAD 请求" },
+          { "flag": "-s", "label": "静默模式（不显示进度）", "hint": "" },
+          { "flag": "-k", "label": "忽略 SSL 证书错误", "hint": "自签名证书" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "url", "label": "请求 URL", "placeholder": "https://api.example.com", "prefix": "" },
+      { "key": "header", "label": "请求头", "placeholder": "Content-Type: application/json", "prefix": "-H" },
+      { "key": "data", "label": "POST 数据", "placeholder": "{\"key\":\"value\"}", "prefix": "-d" },
+      { "key": "output", "label": "保存到文件", "placeholder": "output.json", "prefix": "-o" }
+    ]
+  },
+  "related": [
+    "wget",
+    "httpie",
+    "ping"
+  ],
+  "examples": [
+    {
+      "description": "发送 GET 请求",
+      "code": "curl https://api.example.com"
+    },
+    {
+      "description": "下载文件",
+      "code": "curl -O https://example.com/file.zip"
+    },
+    {
+      "description": "发送 POST JSON 数据",
+      "code": "curl -X POST -H \"Content-Type: application/json\" -d '{\"key\":\"value\"}' https://api.example.com"
+    },
+    {
+      "description": "只显示响应头",
+      "code": "curl -I https://example.com"
+    },
+    {
+      "description": "跟随重定向下载",
+      "code": "curl -L -O https://example.com/redirect"
+    }
+  ]
+}

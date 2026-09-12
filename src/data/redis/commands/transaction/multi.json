@@ -1,0 +1,27 @@
+{
+  "name": "MULTI",
+  "description": "开启一个事务块——后续命令进入队列，直到 EXEC 执行才会原子性地批量提交",
+  "synopsis": "MULTI",
+  "category": "transaction",
+  "danger_level": "medium",
+  "tags": [
+    "事务",
+    "原子",
+    "批量",
+    "队列",
+    "开启"
+  ],
+  "common_options": [],
+  "related": [
+    "EXEC",
+    "DISCARD",
+    "WATCH",
+    "UNWATCH"
+  ],
+  "examples": [
+    {
+      "description": "原子性转账：A 减 100，B 加 100",
+      "code": "MULTI\nDECRBY account:A 100\nINCRBY account:B 100\nEXEC"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "git bisect",
+  "description": "二分查找定位引入 bug 的提交——标记好和坏的版本，Git 自动二分搜索缩小范围到你最早引入问题的那个 commit",
+  "synopsis": "git bisect <start | bad | good | skip | reset | run>",
+  "category": "inspect",
+  "danger_level": "low",
+  "tags": ["二分", "bisect", "排查", "bug", "定位", "调试"],
+  "common_options": [
+    { "name": "start", "description": "开始二分查找" },
+    { "name": "bad [<rev>]", "description": "标记当前版本（或指定版本）为有问题" },
+    { "name": "good [<rev>]", "description": "标记当前版本（或指定版本）为正常" },
+    { "name": "skip [<rev>]", "description": "跳过当前版本（无法判断时）" },
+    { "name": "reset", "description": "退出二分模式并回到原始 HEAD" },
+    { "name": "run <command>", "description": "自动执行测试脚本判断好坏（全自动 bisect）" }
+  ],
+  "related": ["git log", "git blame", "git show"],
+  "builder_options": {
+    "groups": [
+      {
+        "label": "子命令",
+        "type": "radio",
+        "options": [
+          { "flag": "start", "label": "开始二分查找", "hint": "" },
+          { "flag": "bad", "label": "标记为有问题", "hint": "" },
+          { "flag": "good", "label": "标记为正常", "hint": "" },
+          { "flag": "skip", "label": "跳过当前版本", "hint": "" },
+          { "flag": "reset", "label": "退出二分模式", "hint": "" }
+        ]
+      }
+    ],
+    "arguments": [
+      { "key": "ref", "label": "版本引用（bad/good/skip 时用）", "placeholder": "HEAD 或 v1.0.0", "prefix": "" },
+      { "key": "run_cmd", "label": "自动测试命令（run 时用）", "placeholder": "npm test", "prefix": "run " }
+    ]
+  },
+  "examples": [
+    { "description": "开始二分查找", "code": "git bisect start" },
+    { "description": "标记当前版本为有问题", "code": "git bisect bad" },
+    { "description": "标记某个旧版本为正常", "code": "git bisect good v1.0.0" },
+    { "description": "用脚本自动二分查找", "code": "git bisect run npm test" },
+    { "description": "退出二分模式", "code": "git bisect reset" }
+  ]
+}

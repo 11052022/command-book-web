@@ -1,0 +1,45 @@
+{
+  "name": "jobs",
+  "description": "显示当前 shell 的后台作业",
+  "synopsis": "jobs [选项]",
+  "category": "进程管理",
+  "danger_level": "low",
+  "tags": [
+    "后台",
+    "作业",
+    "查看",
+    "任务",
+    "shell"
+  ],
+  "common_options": [
+    {
+      "name": "-l",
+      "description": "显示 PID 和作业信息"
+    },
+    {
+      "name": "-p",
+      "description": "只显示 PID"
+    }
+  ],
+  "related": [
+    "bg",
+    "fg",
+    "nohup",
+    "disown",
+    "&"
+  ],
+  "examples": [
+    {
+      "description": "列出所有后台作业",
+      "code": "jobs"
+    },
+    {
+      "description": "列出作业及 PID",
+      "code": "jobs -l"
+    },
+    {
+      "description": "将前台任务放到后台",
+      "code": "command &"
+    }
+  ]
+}
