@@ -27,3 +27,6 @@ Desktop.ini
 .staging-web/
 src/styles/styles/
 scripts/scripts/
+
+# 本地工具/临时目录
+.tmp-gh/
