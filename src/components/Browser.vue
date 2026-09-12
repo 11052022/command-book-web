@@ -6,7 +6,7 @@ import SearchBar from './SearchBar.vue'
 import CategoryTree from './CategoryTree.vue'
 import CommandList from './CommandList.vue'
 import ResultSummary from './ResultSummary.vue'
-import { MODULES } from '../data/modules.js'
+import { MODULES, loadModule } from '../data/modules.js'
 import { useSearch } from '../composables/useSearch'
 import { useKeyboard } from '../composables/useKeyboard'
 import { useSuggestions } from '../composables/useSuggestions'
@@ -26,6 +26,28 @@ const moduleId = computed(() => route.params.module || null)
 const currentModule = computed(() => (moduleId.value ? MODULES[moduleId.value] : null))
 const viewMode = computed(() => props.mode || 'module')
 
+// ---- 模块数据：按需异步加载（仅模块页需要） ----
+const moduleData = ref(null)
+const moduleLoading = ref(false)
+const moduleError = ref(false)
+watch(
+  moduleId,
+  async (id) => {
+    moduleData.value = null
+    moduleError.value = false
+    if (!id) return
+    moduleLoading.value = true
+    try {
+      moduleData.value = await loadModule(id)
+    } catch {
+      moduleError.value = true
+    } finally {
+      moduleLoading.value = false
+    }
+  },
+  { immediate: true }
+)
+
 // ---- 数据源：模块 / 收藏 / 最近，统一做 _type/_module 契约 ----
 const favCommands = computed(() => favoritesList.value.filter((f) => f.type === 'command').map((f) => f.item))
 const favRecipes = computed(() => favoritesList.value.filter((f) => f.type === 'recipe').map((f) => f.item))
@@ -35,12 +57,12 @@ const recRecipes = computed(() => recentList.value.filter((r) => r.type === 'rec
 const commands = computed(() => {
   if (viewMode.value === 'favorites') return favCommands.value
   if (viewMode.value === 'recent') return recCommands.value
-  return (currentModule.value?.commands ?? []).map((c) => ({ ...c, _module: moduleId.value }))
+  return (moduleData.value?.commands ?? []).map((c) => ({ ...c, _module: moduleId.value }))
 })
 const recipes = computed(() => {
   if (viewMode.value === 'favorites') return favRecipes.value
   if (viewMode.value === 'recent') return recRecipes.value
-  return (currentModule.value?.recipes ?? []).map((r) => ({ ...r, _module: moduleId.value }))
+  return (moduleData.value?.recipes ?? []).map((r) => ({ ...r, _module: moduleId.value }))
 })
 
 // ---- 搜索（数据源注入式） ----
@@ -148,6 +170,17 @@ const titleMap = { favorites: '我的收藏', recent: '最近查看', module: ''
 
       <NLayoutContent class="app-content">
         <div class="content-wrapper">
+          <!-- 模块数据异步加载中 -->
+          <div v-if="moduleLoading" class="module-state">
+            <span class="module-state-icon">{{ currentModule?.icon }}</span>
+            <span>正在载入 {{ currentModule?.name }} 命令数据…</span>
+          </div>
+          <!-- 模块数据加载失败 -->
+          <div v-else-if="moduleError" class="module-state module-state-error">
+            <span>命令数据加载失败，请刷新重试。</span>
+          </div>
+
+          <template v-else>
           <!-- 收藏/最近视图说明 -->
           <div v-if="viewMode !== 'module'" class="view-banner">
             <span class="view-title">{{ titleMap[viewMode] }}</span>
@@ -169,6 +202,7 @@ const titleMap = { favorites: '我的收藏', recent: '最近查看', module: ''
             :selected-index="selectedIndex"
             @navigate="navigateToCommand"
           />
+          </template>
         </div>
 
         <Transition name="fade">
@@ -228,6 +262,22 @@ const titleMap = { favorites: '我的收藏', recent: '最近查看', module: ''
   align-items: center;
   gap: 12px;
   margin-bottom: 14px;
+}
+.module-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 80px 0;
+  font-size: 14px;
+  opacity: 0.6;
+}
+.module-state-icon {
+  font-size: 26px;
+}
+.module-state-error {
+  opacity: 1;
+  color: var(--n-error-color, #d03050);
 }
 .view-title {
   font-size: 18px;

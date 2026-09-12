@@ -6,7 +6,7 @@
 
 | 对比项 | v1 单文件版 | v2 在线版 |
 |---|---|---|
-| 入口体积 | 10 MB 单 HTML | 首屏入口 **~0.9 kB** + 按需拆包 |
+| 入口体积 | 10 MB 单 HTML | 首屏入口 **~31 kB**（gzip ~12 kB）+ 按需拆包 |
 | 路由 | 无 | `#/linux` `#/redis` `#/git` `#/favorites` `#/recent` |
 | 构建方式 | `vite-plugin-singlefile` 全内联 | 常规多文件 + `manualChunks` 拆包（shiki/naive/vendor 独立 chunk） |
 | 语法高亮 | Shiki 全量 | Shiki 全局单例 + 动态 import 按需加载 + 结果缓存 |
@@ -45,14 +45,16 @@ npm run dev      # 开发（热更新），浏览器打开 http://localhost:5173
 
 ## 项目结构
 
+**数据按模块懒加载**：`src/data/modules.js` 只同步导出模块元信息（导航用），命令/配方 JSON 通过 `loadModule()` 动态 `import` 按需加载——进哪个模块才拉取哪份数据（构建期自动拆出 linux/redis/git 独立 chunk），命令库持续增长也不会拖累首屏。
+
 ```
 src/
 ├── main.js                # 入口
 ├── App.vue                # 布局 + 全局提供（theme/compact/message）
 ├── router/index.js        # hash 路由（模块 / 收藏 / 最近）
 ├── components/
-│   ├── Browser.vue        # ★ 页面组件：数据源注入搜索 + 收藏/最近接线 + 键盘导航
-│   ├── HeaderBar.vue      # 顶部栏（模块切换 / 收藏 / 最近 / 主题 / 紧凑）
+│   ├── Browser.vue        # ★ 页面组件：按需加载模块数据 + 搜索 + 收藏/最近接线 + 键盘导航
+│   ├── HeaderBar.vue      # 顶部栏（模块切换 / 收藏 / 最近 / 主题 / 紧凑 / 设置）
 │   ├── SearchBar.vue      # 搜索 + 类型过滤 + 建议
 │   ├── CategoryTree.vue   # 分类侧栏（仅模块页）
 │   ├── CommandCard.vue    # 命令卡片（星标 / 高亮 / 复制）
