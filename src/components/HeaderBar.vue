@@ -10,7 +10,7 @@ defineProps({
   isDark: Boolean,
   compactMode: Boolean,
 })
-const emit = defineEmits(['toggleTheme', 'toggleCompact'])
+const emit = defineEmits(['toggleTheme', 'toggleCompact', 'openSettings'])
 
 const router = useRouter()
 const route = useRoute()
@@ -54,6 +54,9 @@ function go(id) {
         </NButton>
         <NButton text size="small" @click="emit('toggleTheme')">
           {{ isDark ? '☀️ 亮色' : '🌙 暗色' }}
+        </NButton>
+        <NButton text size="small" @click="emit('openSettings')" title="设置">
+          ⚙️
         </NButton>
       </div>
     </div>

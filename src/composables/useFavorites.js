@@ -1,10 +1,13 @@
 import { ref, computed } from 'vue'
-import { loadJSON, saveJSON } from '../utils/storage.js'
+import { loadJSON, saveJSON, syncOnStorage } from '../utils/storage.js'
 
 // 收藏：全局单例状态（跨模块），持久化到 localStorage。
-// 条目结构：{ key, moduleId, name, type: 'command' | 'recipe', item }
+// 条目结构：{ key, moduleId, type: 'command' | 'recipe', item }
 const KEY = 'cb.favorites.v2'
 const favorites = ref(loadJSON(KEY, []))
+
+// 其它标签页修改收藏时，本页自动刷新
+syncOnStorage(KEY, [], (v) => { favorites.value = v })
 
 function itemKey(moduleId, type, name) {
   return `${moduleId}|${type}|${name}`
@@ -34,5 +37,10 @@ export function useFavorites() {
     saveJSON(KEY, favorites.value)
   }
 
-  return { favoritesList, isFav, toggle }
+  function clear() {
+    favorites.value = []
+    saveJSON(KEY, favorites.value)
+  }
+
+  return { favoritesList, isFav, toggle, clear }
 }

@@ -3,8 +3,9 @@ import { provide, ref } from 'vue'
 import { NConfigProvider, NMessageProvider, NGlobalStyle, NLayout } from 'naive-ui'
 import { createDiscreteApi } from 'naive-ui'
 import HeaderBar from './components/HeaderBar.vue'
+import SettingsModal from './components/SettingsModal.vue'
 import { useTheme } from './composables/useTheme'
-import { loadJSON, saveJSON } from './utils/storage.js'
+import { loadJSON, saveJSON, syncOnStorage } from './utils/storage.js'
 
 const { isDark, naiveTheme, toggleTheme } = useTheme()
 
@@ -14,11 +15,15 @@ provide('cb_message', message)
 
 // 紧凑模式：全局开关，持久化
 const compactMode = ref(loadJSON('cb.compact', false))
+syncOnStorage('cb.compact', false, (v) => { compactMode.value = v })
 function toggleCompact() {
   compactMode.value = !compactMode.value
   saveJSON('cb.compact', compactMode.value)
 }
 provide('compactMode', compactMode)
+
+// 设置弹窗
+const showSettings = ref(false)
 </script>
 
 <template>
@@ -31,7 +36,9 @@ provide('compactMode', compactMode)
           :compact-mode="compactMode"
           @toggle-theme="toggleTheme"
           @toggle-compact="toggleCompact"
+          @open-settings="showSettings = true"
         />
+        <SettingsModal v-model:show="showSettings" />
         <router-view />
       </NLayout>
     </NMessageProvider>
