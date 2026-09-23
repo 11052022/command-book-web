@@ -110,7 +110,6 @@ npm run check
 
 | 远端名 | 地址 | 用途 |
 |---|---|---|
-| `origin` | gitee.com/fang-mingrui/command-book-web | 国内源码镜像 |
 | `github` | github.com/11052022/command-book-web | 源码 + 触发自动部署 |
 
 ```bash
